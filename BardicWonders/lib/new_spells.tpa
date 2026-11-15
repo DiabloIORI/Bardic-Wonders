@@ -30,7 +30,7 @@ OUTER_SPRINT C0BW102_DESC ~勇气
 
 OUTER_SPRINT C0BW103_NAME1 ~厄运~
 OUTER_SPRINT C0BW103_DESC ~厄运
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：1
 射程：施法者视觉范围
@@ -56,7 +56,7 @@ OUTER_SPRINT C0BW201_DESC ~净化咏叹
 
 OUTER_SPRINT C0BW202_NAME1 ~英雄术~
 OUTER_SPRINT C0BW202_DESC ~英雄术
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：2
 射程：施法者视觉范围
@@ -82,7 +82,7 @@ OUTER_SPRINT C0BW203_DESC ~声波爆裂
 
 OUTER_SPRINT C0BW301_NAME1 ~绝望重压~
 OUTER_SPRINT C0BW301_DESC ~绝望重压
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：3
 射程：施法者视觉范围
@@ -95,7 +95,7 @@ OUTER_SPRINT C0BW301_DESC ~绝望重压
 
 OUTER_SPRINT C0BW302_NAME1 ~战斗好运~
 OUTER_SPRINT C0BW302_DESC ~战斗好运
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：3
 射程：施法者视觉范围
@@ -108,7 +108,7 @@ OUTER_SPRINT C0BW302_DESC ~战斗好运
 
 OUTER_SPRINT C0BW403_NAME1 ~英勇呐喊~
 OUTER_SPRINT C0BW403_DESC ~英勇呐喊
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：4
 射程：施法者视觉范围
@@ -121,7 +121,7 @@ OUTER_SPRINT C0BW403_DESC ~英勇呐喊
 
 OUTER_SPRINT C0BW502_NAME1 ~强效英雄术~
 OUTER_SPRINT C0BW502_DESC ~强效英雄术
-（附魔/魅惑系）
+（附魔系/魅惑系）
 
 等级：5
 射程：施法者视觉范围

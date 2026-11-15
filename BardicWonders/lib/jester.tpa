@@ -16,7 +16,7 @@ COPY_EXISTING ~LUBA0.2DA~ ~OVERRIDE/LUBA2.2DA~
   REPLACE_TEXTUALLY ~AP_SPCL920~ ~AP_C0JES03~
 
 LAF ~GET_KIT_STRREF~ STR_VAR kit_name = ~JESTER~ RET kit_strref END
-STRING_SET_EVALUATE kit_strref ~弄臣：这位诗人精通嘲讽与戏谑之术，在战斗中疯狂腾跃，运用 <PRO_HISHER> 的本事分散、迷惑 <PRO_HISHER> 敌人。但切勿把 <PRO_HIMHER> 当成真正的傻瓜——<PRO_HESHE> 同样可能相当致命。
+STRING_SET_EVALUATE kit_strref ~弄臣：这位诗人精通嘲讽与戏谑之术，在战斗中疯狂腾跃，运用 <PRO_HISHER> 的本事分散、迷惑 <PRO_HISHER> 敌人。但切勿把 <PRO_HESHE> 当成真正的傻瓜——<PRO_HESHE> 同样可能相当致命。
 
 优势：
 – 弄臣之歌“刺骨嘲弄”并不扶助盟友。相反，30 尺内的每个对手每轮都须豁免，否则受其影响：

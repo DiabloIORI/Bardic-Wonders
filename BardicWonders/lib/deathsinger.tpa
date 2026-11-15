@@ -190,7 +190,7 @@ SAY UNIDENTIFIED_DESC ~死亡护甲
 作用范围：施法者
 豁免：无
 
-一道魔法光环环绕施法者，伤害触碰 <PRO_HIMHER> 的生物。任何在近战范围内击中 <PRO_HIMHER> 的生物都受到 1d4+1 点魔法伤害；4 级以后每级再增加 1 点，12 级时上限 +5。~
+一道魔法光环环绕施法者，伤害触碰 <PRO_HESHE> 的生物。任何在近战范围内击中 <PRO_HESHE> 的生物都受到 1d4+1 点魔法伤害；4 级以后每级再增加 1 点，12 级时上限 +5。~
 COPY ~%MOD_FOLDER%/DEATHSINGER/C0DESP3.SPL~ ~OVERRIDE~
 SAY NAME1 ~降咒~
 SAY UNIDENTIFIED_DESC ~降咒
