@@ -2,23 +2,23 @@ COPY ~%MOD_FOLDER%/Blade/2da~ ~override~
 COPY ~%MOD_FOLDER%/Blade/spells~ ~override~
 
 LAF ~GET_KIT_STRREF~ STR_VAR kit_name = ~BLADE~ RET kit_strref END
-STRING_SET_EVALUATE kit_strref ~BLADE: Blades are master artisans with bladed weapons. Everyone has seen a Blade in action at fairs and carnivals. They are the knife throwers who pop balloons while blindfolded and swallow slender sabers such as those used by lawless pirates on the high seas. Blades also perform amazing displays of weapon skill and control as they flash various weapons all about their bodies with deadly precision. 
+STRING_SET_EVALUATE kit_strref ~刀锋：刀锋是精于刃器的技艺大师。人人都曾在集市与嘉年华上见过刀锋献技：蒙眼投掷飞刀击破气球，吞下海贼在远海上使用的那种细长弯刀。刀锋还会表演令人惊叹的武技与控械，将各种兵器绕身翻飞，精准而致命。
 
-Advantages:
-– Blade Dancer: The blade uses their Charisma modifier, if higher, for melee bonuses to hit instead of Strength.
-– May achieve Grand Mastery (five slots) in any bladed weapon.
-– Gains Mastery in Two-Weapon Style at 1st level.
-– Instead of a regular Bard Song, the blade may perform a Weapons Display, performing a deadly dance with their weapons to intimidate their foes while inspiring their allies. This reduces the morale of all nearby foes by 2 while granting a +1 bonus to hit to all allies within visual range. The display has no effect on non-sentient creatures such as golems or undead.
-– May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 1 and an additional use each every 4 levels thereafter. Using either spin will remove the effects of the other, if ongoing.
+优势：
+– 剑舞者：若魅力调整值更高，刀锋在近战命中加成上以魅力取代力量。
+– 可在任意刃器上达到宗师（五个熟练度点）。
+– 1 级即习得双武器风格精通。
+– 刀锋不以常规诗人歌谣取而代之，而是进行“兵器展演”：以兵器跳一支夺命之舞，威慑敌人的同时激励盟友。此举使附近所有敌人士气降低 2，同时使视觉范围内所有盟友命中 +1。对魔像、亡灵等无心智生物无效。
+– 每日可使用一次“进攻旋身”与“防御旋身”。1 级时各得一次使用次数，此后每 4 级各增加一次。使用任一旋身都会终止另一项仍在持续的旋身效果。
 
-OFFENSIVE SPIN: The blade takes on a fighting maneuver which is both fearsome and lethal. For the next four rounds, the blade receives movement speed and a bonus attack per round as a haste spell, while additionally dealing maximum damage for the duration. However, the blade cannot cast spells during this time. After the end of the duration, the blade is briefly winded and may not attack or cast spells for three rounds.
+进攻旋身：刀锋施展一种既凶悍又致命的格斗招式。接下来 4 轮内，刀锋获得加速术般的移动速度与每回合额外一次攻击，并在持续期间造成最大伤害。但此间刀锋无法施法。持续结束后，刀锋会短暂脱力，3 轮内无法攻击或施法。
 
-DEFENSIVE SPIN: The blade whirls their weapon rapidly around their body in a defensive stance for up to four rounds. During this period, the blade cannot move, attack, or cast spells, but receives a +1 bonus to Armor Class per level up to a maximum of 10. The blade also deflects projectiles while spinning, becoming immune to most missile attacks. If the blade is struck by a melee attack during the spin, they negate the damage and return 1d10 slashing damage per 5 levels to the attacker and disarms them, rendering them unable to attack for three rounds and ending the spin.
+防御旋身：刀锋以防御姿态绕身飞速旋挥兵器，持续至多 4 轮。此间无法移动、攻击或施法，但每级获得 +1 护甲等级加成，上限 +10。旋身期间刀锋还能拨挡远程武器，免疫多数远程攻击。若旋身期间被近战击中，刀锋化解伤害，并向攻击者反弹每 5 级 1d10 挥砍伤害，缴械对方，使其 3 轮内无法攻击，并结束旋身。
 
-Disadvantages:
-– Weapons Display does not improve with level.
-– Only has one half the normal Lore value.
-– Only has one half the normal Pick Pockets skill.~
+劣势：
+– 兵器展演不随等级提升。
+– 学识值仅为常人一半。
+– 扒窃技能仅为常人一半。~
 
 COPY_EXISTING ~luabbr.2da~ ~override~
 	COUNT_2DA_COLS cols // amount of columns
@@ -61,8 +61,8 @@ COPY_EXISTING ~splprot.2da~ ~override~
 
 // Resistances
 DEFINE_ACTION_FUNCTION	ADD_SPLPROT	INT_VAR	stat = 0	value = 0	relation = 0	RET	new_row		BEGIN
-	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA - Stat out of Bounds.~	END
-	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA - Relation out of Bounds.~	END
+	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA — 属性超出范围。~	END
+	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA — 关系码超出范围。~	END
 	COPY_EXISTING ~SPLPROT.2DA~	OVERRIDE
 		COUNT_2DA_COLS	cols
 		COUNT_2DA_ROWS cols rows
@@ -154,45 +154,41 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
 
 END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Weapons Display~) STR_VAR bam_file = c0bldsoi RET c0bldsoi = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~兵器展演~) STR_VAR bam_file = c0bldsoi RET c0bldsoi = icon END
 
 COPY_EXISTING ~C0BLDSO.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = c0bldsoi END
 
 COPY_EXISTING ~SPCL521.SPL~ OVERRIDE
-SAY NAME1 ~Offensive Spin~
-SAY UNIDENTIFIED_DESC ~Offensive Spin
-The blade takes on a fighting maneuver which is both fearsome and lethal. For the next four rounds, the blade receives movement speed and a bonus attack per round as a haste spell, while additionally dealing maximum damage for the duration. However, the blade cannot cast spells during this time. After the end of the duration, the blade is briefly winded and may not attack or cast spells for three rounds.~
+SAY NAME1 ~进攻旋身~
+SAY UNIDENTIFIED_DESC ~进攻旋身
+刀锋施展一种既凶悍又致命的格斗招式。接下来 4 轮内，刀锋获得加速术般的移动速度与每回合额外一次攻击，并在持续期间造成最大伤害。但此间刀锋无法施法。持续结束后，刀锋会短暂脱力，3 轮内无法攻击或施法。~
 COPY_EXISTING ~SPCL521a.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Winded~) END
 
 COPY_EXISTING ~SPCL522.SPL~ OVERRIDE
-SAY NAME1 ~Defensive Spin~
-SAY UNIDENTIFIED_DESC ~Defensive Spin
-The blade whirls their weapon rapidly around their body in a defensive stance for up to four rounds. During this period, the blade cannot move, attack, or cast spells, but receives a +1 bonus to Armor Class per level up to a maximum of 10. The blade also deflects projectiles while spinning, becoming immune to most missile attacks. If the blade is struck by a melee attack during the spin, they negate the damage and return 1d10 slashing damage per 5 levels to the attacker and disarms them, rendering them unable to attack for three rounds and ending the spin.~
+SAY NAME1 ~防御旋身~
+SAY UNIDENTIFIED_DESC ~防御旋身
+刀锋以防御姿态绕身飞速旋挥兵器，持续至多 4 轮。此间无法移动、攻击或施法，但每级获得 +1 护甲等级加成，上限 +10。旋身期间刀锋还能拨挡远程武器，免疫多数远程攻击。若旋身期间被近战击中，刀锋化解伤害，并向攻击者反弹每 5 级 1d10 挥砍伤害，缴械对方，使其 3 轮内无法攻击，并结束旋身。~
 COPY_EXISTING ~SPCL522a.SPL~ OVERRIDE
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_target = 1 parameter1 = RESOLVE_STR_REF (~Stopped Defensive Spin~) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_target = 1 parameter1 = RESOLVE_STR_REF (~已停止防御旋身~) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_target = 2 parameter1 = RESOLVE_STR_REF (~Disarmed~) END
 
 COPY_EXISTING ~C0BLDH1.SPL~ OVERRIDE
-SAY NAME1 ~Improved Offensive Spin~
-SAY UNIDENTIFIED_DESC ~Improved Offensive Spin
-The blade has achieved mastery of the Offensive Spin technique and will no longer become winded after the duration ends. In addition, they may use an Improved version of the ability once per day, granting them an increased critical hit modifier of 5 and doubled attacks per round for the duration instead of only one.~
+SAY NAME1 ~精进攻旋身~
+SAY UNIDENTIFIED_DESC ~精进攻旋身~
 
 COPY_EXISTING ~C0BLDH1a.SPL~ OVERRIDE
-SAY NAME1 ~Improved Offensive Spin~
-SAY UNIDENTIFIED_DESC ~Improved Offensive Spin
-The blade has achieved mastery of the Offensive Spin technique and will no longer become winded after the duration ends. In addition, they may use an Improved version of the ability once per day, granting them an increased critical hit modifier of 5 and doubled attacks per round for the duration instead of only one.~
+SAY NAME1 ~精进攻旋身~
+SAY UNIDENTIFIED_DESC ~精进攻旋身~
 
 COPY_EXISTING ~C0BLDH2.SPL~ OVERRIDE
-SAY NAME1 ~Improved Defensive Spin~
-SAY UNIDENTIFIED_DESC ~Improved Defensive Spin
-The blade has achieved mastery of the Defensive Spin technique and may now move while using the ability, albeit at a 50% reduced movement rate. In addition, they may use an improved version of the ability once per day, in which they throw blades at all enemies within a 20-ft. radius dealing 1d6 damage once per second for a total of twenty-four times over the duration.~
+SAY NAME1 ~精进防御旋身~
+SAY UNIDENTIFIED_DESC ~精进防御旋身~
 
 COPY_EXISTING ~C0BLDH2a.SPL~ OVERRIDE
-SAY NAME1 ~Improved Defensive Spin~
-SAY UNIDENTIFIED_DESC ~Improved Defensive Spin
-The blade has achieved mastery of the Defensive Spin technique and may now move while using the ability, albeit at a 50% reduced movement rate. In addition, they may use an improved version of the ability once per day, in which they throw blades at all enemies within a 20-ft. radius dealing 1d6 damage once per second for a total of twenty-four times over the duration.~
+SAY NAME1 ~精进防御旋身~
+SAY UNIDENTIFIED_DESC ~精进防御旋身~
 
 COPY_EXISTING ~C0BLDC1.SPL~ ~OVERRIDE~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = C0HTSTR END

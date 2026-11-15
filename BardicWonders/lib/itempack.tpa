@@ -9,8 +9,8 @@ EXTEND_TOP ~ar2017.bcs~ ~%MOD_FOLDER%/scripts/ar2017.baf~
 // CREATURE
 
 COPY ~%MOD_FOLDER%/creatures/c0leanne.cre~ ~override~
-SAY NAME1 ~Leanne~
-SAY NAME2 ~Leanne~
+SAY NAME1 ~莉安~
+SAY NAME2 ~莉安~
 WRITE_ASCII 0x2cc ~c0leanne~ #8  // dialogue
 WRITE_ASCII 0x248 ~c0leanne~  #8  // override
 WRITE_ASCII 0x280 ~c0leanne~ #32 // death variable
@@ -18,7 +18,7 @@ WRITE_ASCII 0x280 ~c0leanne~ #32 // death variable
 // STORE
 
 COPY ~%MOD_FOLDER%/store/c0leanne.sto~ ~override~
-SAY 0xc ~Leanne's Bardic Wonders~
+SAY 0xc ~莉安的奇珍铺~
 
 // ITEMS
 
@@ -26,18 +26,18 @@ COPY ~%MOD_FOLDER%/items~ ~override~
 
 COPY ~%MOD_FOLDER%/items/c0bwam1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwam1.itm~ ~override~
-SAY NAME1 ~The Silence~
-SAY NAME2 ~The Silence~
-SAY DESC ~Legends once spoke of a skilled bard who had lost his singing voice who took up the way of the sword. Whether this amulet was responsible for his change or whether it took on some of his identity after his passing, but one thing is known – wearers of this strange amulet will gain great skill at arms, but at a significant cost.
+SAY NAME1 ~寂音~
+SAY NAME2 ~寂音~
+SAY DESC ~传说有位技艺精湛的诗人失去了歌喉，转而投身剑道。究竟是这条项链促成了他的转变，还是在他逝去后承继了他的部分身份，已无从得知——但有一点确凿无疑：佩戴这条奇异项链的人将获得高超的武艺，却要付出沉重代价。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– May only be removed with a Remove Curse spell
-– THAC0: +1 bonus
-– Elegy of Lost Tongues: If the wearer is a bard, they lose the ability to cast spells and use their bard song, but gain an additional +2 bonus to THAC0, Damage and Armor Class, as well as one bonus attack per round.
+装备能力：
+– 只能通过解除诅咒法术卸下
+– THAC0：+1 加成
+– 失歌挽言：若佩戴者是诗人，将失去施法与使用诗人歌谣的能力，但 THAC0、伤害与护甲等级再 +2，并获得每回合一次额外攻击。
 
-Weight: 1~
+重量：1~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWAM1.ITM~ ~OVERRIDE~
@@ -47,21 +47,21 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwar1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwar1.itm~ ~override~
-SAY NAME1 ~Armor of the Grey Fox +3~
-SAY NAME2 ~Armor of the Grey Fox +3~
-SAY DESC ~This suit of leather armor is both lightweight and fashionable. It bears the emblem of a fox playing a lute, and no doubt once belonged to a bard. It is designed to complement a bard's talents, and is of little use of anyone else.
+SAY NAME1 ~灰狐护甲 +3~
+SAY NAME2 ~灰狐护甲 +3~
+SAY DESC ~这套皮甲既轻便又时尚。其上饰有一只弹奏鲁特琴的狐狸纹章，无疑曾属于某位诗人。它专为衬托诗人的才华而设计，对其他人用处不大。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Spellcasting is not disabled
-– The wearer can memorize two extra 1st and 2nd-level spells, one extra 3rd-level spell and one extra 4th-level spell
+装备能力：
+– 不阻断施法
+– 佩戴者可额外记忆两个 1、2 级法术，一个 3 级法术与一个 4 级法术
 
-Armor Class: 5 (7 vs. piercing and missile)
-Requires:
- 3 Strength
+护甲等级：5（对抗穿刺与远程 7）
+需求：
+  力量 3
 
-Weight: 4~
+重量：4~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWAR1.ITM~ ~OVERRIDE~
@@ -70,19 +70,19 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwar2.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwar2.itm~ ~override~
-SAY NAME1 ~Whispering Links +2~
-SAY NAME2 ~Whispering Links +2~
-SAY DESC ~Despite being made of metal chain, this suit of mail is light and quiet as fabric. According to Leanne, it was created by rogues that stole the secret of forging elven chain mail from the elves of Cormanthor. What became of the thieves, and if the elves ever discovered their theft, is unknown.
+SAY NAME1 ~私语链甲 +2~
+SAY NAME2 ~私语链甲 +2~
+SAY DESC ~这件锁甲虽由金属环链制成，却轻软如布料，安静无声。据莉安所说，它是一群盗贼从科曼瑟的精灵那里偷来精灵锁甲锻造秘术后打造的。盗贼们后来下落如何，精灵是否发觉失窃，则无人知晓。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Casting Speed: +1 (Bards)
-– Spellcasting is not disabled
+装备能力：
+– 施法速度：+1（诗人）
+– 不阻断施法
 
-Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
-Requires:
- 5 Strength~
+护甲等级：3（对抗挥砍 1，对抗钝击 5）
+需求：
+  力量 5~
  
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWAR2.ITM~ ~OVERRIDE~
@@ -91,30 +91,30 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwbo1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwbo1.itm~ ~override~
-SAY NAME1 ~Lament +5~
-SAY NAME2 ~Lament +5~
-SAY DESC ~A deadly weapon, Lament is a weapon well suited for the most legendary of bards. Its creator only ever forged two weapons of its kind, making it truly unique. Each of its wielders has made some form of mark upon the Realms with its aid, whether as a hero or a tyrant.
+SAY NAME1 ~悲叹 +5~
+SAY NAME2 ~悲叹 +5~
+SAY DESC ~悲叹是一件致命武器，最适合传奇诗人。其锻造者一生只铸出两件同类兵器，因此独一无二。每一位持有者都曾借它在诸域留下某种印记，无论身为英雄还是暴君。
 
-This powerful shortbow requires neither arrow nor string, for it fires waves of sound strong enough to break bones.
+这把强力短弓既不需箭矢也不需弓弦，因为它射出的是足以震碎骨骼的声波。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– 3 attacks per round (Bards)
-– Glissando: 1% chance per hit to set attacks per round to 10 and deal maximum damage per hit for the next round
+装备能力：
+– 每回合 3 次攻击（诗人）
+– 滑音：每次命中有 1% 几率使下一轮每回合攻击次数变为 10，且每次命中造成最大伤害
 
-Combat abilities:
-– When no arrows are equipped, the bow fires missiles that are treated as +5 for the purposes of determining what enemies they can damage. The missiles receive +4 to hit including the bonus listed below, and deal a total of 1d4+3 crushing and 1d4+2 magic damage
+战斗能力：
+– 未装备箭矢时，弓射出的弹丸在判定可伤害何种敌人时视为 +5。弹丸命中 +4（含下列加成），共造成 1d4+3 钝击与 1d4+2 魔法伤害
 
-THAC0: +5
-Damage: 1d4+3 (crushing), +1d4+2 magic
-Speed Factor: 2
-Proficiency Type: Shortbow
-Type: Two-handed
-Requires:
- 3 Strength
+THAC0：+5
+伤害：1d4+3（钝击），+1d4+2 魔法
+速度因子：2
+熟练类型：短弓
+类型：双手
+需求：
+  力量 3
 
-Weight: 2~
+重量：2~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWBO1.ITM~ ~OVERRIDE~
@@ -122,24 +122,24 @@ COPY_EXISTING ~C0BWBO1.ITM~ ~OVERRIDE~
 END
 
 COPY ~%MOD_FOLDER%/items/c0bwbo1.spl~ ~override~
-SAY NAME1 ~Glissando!~
-SAY NAME2 ~Glissando!~
+SAY NAME1 ~滑音！~
+SAY NAME2 ~滑音！~
 
 COPY ~%MOD_FOLDER%/items/c0bwbt1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwbt1a.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwbt1.itm~ ~override~
-SAY NAME1 ~Dancing Heels~
-SAY NAME2 ~Dancing Heels~
-SAY DESC ~This pair of dancing slippers are not only comfortable to wear, but bestows upon its wearer fleetness of foot. A powerful enchantment on the soles grants even the clumsiest person masterful dancing skills, and for some strange reason, it improves the wearer's skills further if they sing.
+SAY NAME1 ~舞鞋~
+SAY NAME2 ~舞鞋~
+SAY DESC ~这双舞鞋不仅穿着舒适，还能赋予穿着者轻盈的步履。鞋底的强力附魔即便让最笨拙的人也能掌握精湛舞技；而出于某种奇妙缘由，穿着者歌唱时舞技还会进一步提升。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Free Action: The wearer is immune to all movement-impairing effects, whether magical or otherwise.
-– Dexterity: +2 (Bards), +1 (others)
-– Movement Rate: +1
+装备能力：
+– 自由行动：佩戴者免疫所有妨碍移动的效果，无论魔法与否。
+– 敏捷：+2（诗人），+1（其他人）
+– 移动速率：+1
 
-Weight: 2~
+重量：2~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWBT1.ITM~ ~OVERRIDE~
@@ -148,19 +148,19 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwcl1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwcl1.itm~ ~override~
-SAY NAME1 ~Cloak of the Wild Singer~
-SAY NAME2 ~Cloak of the Wild Singer~
-SAY DESC ~Collin D'mass, the owner of this vibrant cloak, was an eccentric bard who desperately wished to learn and master wild magic. He travelled to a remote forest where wild magic was said to flourish, and practiced spells there for three days and three nights. When others came to his camp, they found this cloak lying next to a fire with a squirrel nesting inside. No one alive knows what became of the bard D'mass.
+SAY NAME1 ~野吟者斗篷~
+SAY NAME2 ~野吟者斗篷~
+SAY DESC ~柯林·达马斯是这件鲜亮斗篷的主人，一位古怪的诗人，极度渴望习得并掌握野法。他远赴一片据传野法繁盛的偏远森林，在那里研习法术三天三夜。待他人来到营地，只见这件斗篷躺在篝火旁，一只松鼠在里面筑了巢。至今无人知晓诗人达马斯下落如何。
 
-STATISTICS:
+属性：
 
-Charge abilities:
-– Nahal's Reckless Dweomer 3x/day
+充能能力：
+– 纳哈尔鲁莽野法，每日 3 次
 
-Equipped abilities:
-– Improved Chaos Shield
+装备能力：
+– 强化混乱护盾
 
-Weight: 3~
+重量：3~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWCL1.ITM~ ~OVERRIDE~
@@ -170,47 +170,47 @@ END
 COPY ~%MOD_FOLDER%/items/c0bwha1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwha1a.spl~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwha1.itm~ ~override~
-SAY NAME1 ~Cacophonic Voice +4~
-SAY NAME2 ~Cacophonic Voice +4~
-SAY DESC ~This terrifying halberd is as heavy as it is colossal, but its most terrifying attribute is the explosive eruptions of sound that burst from the blade whenever it strikes a target. Bystanders of battles involving a wielder of this weapon have claimed that the horrible cacophony from the weapon can enough to pulverize one's foe into a pulp... and sometimes oneself as well. Fortunately for would-be wielders, one of this halberd's former owners had the wisdom to enchant it with a protective enchantment as a safety precaution.
+SAY NAME1 ~嘈杂之声 +4~
+SAY NAME2 ~嘈杂之声 +4~
+SAY DESC ~这件可怖的长戟既重且巨，但其最骇人的属性是：每当劈中目标，刃身便爆发出炸裂般的声响。曾旁观过此兵器持有者战斗的人声称，兵器发出的刺耳喧嚣足以将敌人碾成肉泥……有时连持有者自己也难逃一劫。所幸准持有者不必担忧，此戟的一位旧主明智地为它附上了一道保护性附魔作为保险。
 
-Combat abilities:
-– Deals 1d4 magic damage and deafens target and everyone within range (save vs. spell to avoid deafness)
-– Cacophony: 1% chance to deal 100 crushing damage to the target, the wielder, or both
+战斗能力：
+– 造成 1d4 魔法伤害，并使目标及范围内所有人物失聪（对抗法术豁免可避免失聪）
+– 嘈杂：1% 几率对目标、持有者或双方造成 100 点钝击伤害
 
-Equipped abilities:
-– Immunity to deafness
-– Magic Damage Resistance: 40%
+装备能力：
+– 免疫失聪
+– 魔法伤害抗性：40%
 
-STATISTICS:
+属性：
 
-THAC0: +4
-Damage: 1d10+6 (slashing or piercing, whichever is better)
-Speed Factor: 10
-Proficiency Type: Halberd
-Type: Two-handed
-Requires:
- 17 Strength
+THAC0：+4
+伤害：1d10+6（挥砍或穿刺，取较优者）
+速度因子：10
+熟练类型：长戟
+类型：双手
+需求：
+  力量 17
 
-Weight: 20~
+重量：20~
 
 COPY ~%MOD_FOLDER%/items/c0bwha1b.spl~ ~override~
-SAY NAME1 ~Cacophonic Blast!~
-SAY NAME2 ~Cacophonic Blast!~
+SAY NAME1 ~噪音爆鸣！~
+SAY NAME2 ~噪音爆鸣！~
 
 COPY ~%MOD_FOLDER%/items/c0bwmi1.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwmi1.itm~ ~override~
-SAY NAME1 ~Harp of Tranquility~
-SAY NAME2 ~Harp of Tranquility~
-SAY DESC ~This strange harp makes no sound when played, but in the hands of a musician that knows the correct song it can expel an aromatic mist that soothes those that breathe it. Harps of this kind were created and used by a rare branch of harpists that worshipped Eldath, the goddess of peace.
+SAY NAME1 ~宁静竖琴~
+SAY NAME2 ~宁静竖琴~
+SAY DESC ~这张奇异的竖琴弹奏时发不出声音，但在通晓正确乐曲的乐师手中，它能吐出一缕芳香雾气，抚慰吸入者。此类竖琴由一支罕见的竖琴师分支所造并使用，他们侍奉和平女神伊尔达斯。
 
-STATISTICS:
+属性：
 
-Special Abilities:
-– Eldath's Mist once per day
-  Special: Blankets the area of effect with a silver-blue mist – any creature within the mist will be cured of disease, poison, and healed of 25 points of damage. The user is unaffected by the mist.
+特殊能力：
+– 伊尔达斯迷雾，每日一次
+  特殊：以银蓝色迷雾笼罩作用范围——迷雾内任何生物将治愈疾病与毒素，并回复 25 点伤害。施法者本人不受迷雾影响。
 
-Weight: 3~
+重量：3~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWMI1.ITM~ ~OVERRIDE~
@@ -219,16 +219,16 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwmi2.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwmi2.itm~ ~override~
-SAY NAME1 ~Haven Lute~
-SAY NAME2 ~Haven Lute~
-SAY DESC ~When this lute is played, a protective bubble surrounds the bard that shields it from everything from the outside world. Many adventurers have owed their lives to the magic of this instrument – though those without the knowledge of how to dispel the barrier found themselves meeting a far crueler fate – starvation.
+SAY NAME1 ~避难鲁特琴~
+SAY NAME2 ~避难鲁特琴~
+SAY DESC ~弹奏这把鲁特琴时，一道保护性气泡便环绕诗人，将其与外界万物隔绝。许多冒险者的性命都多亏这件乐器的魔法——不过那些不懂如何驱散屏障的人，最终落得远比这残酷的结局：饿死。
 
-STATISTICS:
+属性：
 
-Special Abilities:
-– Casts Otiluke's Resilient Sphere 3x/day (self only, no save)
+特殊能力：
+– 施放奥提卢克韧性法球，每日 3 次（仅自身，无豁免）
 
-Weight: 3~
+重量：3~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWMI2.ITM~ ~OVERRIDE~
@@ -240,21 +240,21 @@ COPY ~%MOD_FOLDER%/items/c0bwsh1a.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsh1b.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsh1c.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsh1.itm~ ~override~
-SAY NAME1 ~Resonating Shield +3~
-SAY NAME2 ~Resonating Shield +3~
-SAY DESC ~Bearing a noticeable resemblance to a gong, this shield makes a pleasant humming sound when struck lightly. Thanks to the enchantments placed upon it, the shield makes the humming sound of its own accord when in the hands of a singing bard, echoing their song and causing their music to linger.
+SAY NAME1 ~共鸣护盾 +3~
+SAY NAME2 ~共鸣护盾 +3~
+SAY DESC ~这面盾牌与铜锣颇为相似，轻敲时发出悦耳的嗡鸣。得益于其上的附魔，由吟唱的诗人持握时，盾牌会自发发出嗡鸣，应和其歌谣，使乐音久久不散。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Armor Class: +4
-– Lingering Song: Bard Song effects linger on for additional 2 rounds after the bard stops singing
-– No protection against missile and piercing attacks
+装备能力：
+– 护甲等级：+4
+– 余韵之歌：诗人停止歌唱后，歌谣效果额外持续 2 轮
+– 不防护远程与穿刺攻击
 
-Requires:
- 4 Strength
+需求：
+  力量 4
 
-Weight: 2~
+重量：2~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWSH1.ITM~ ~OVERRIDE~
@@ -267,25 +267,25 @@ COPY ~%MOD_FOLDER%/items/c0bwsw1b.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsw1c.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsw1d.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsw1.itm~ ~override~
-SAY NAME1 ~Unseen +4~
-SAY NAME2 ~Unseen +4~
-SAY DESC ~The blade of this short sword shimmers so strangely that you feel as though you are holding a mirage. It has an affinity for rogues, and in the hands of one, it can extend its illusory protection to the wielder, creating a lifelike decoy to fool opponents.
+SAY NAME1 ~无形 +4~
+SAY NAME2 ~无形 +4~
+SAY DESC ~这把短剑的刃身闪烁得如此诡谲，令人觉得仿佛握着一缕海市蜃楼。它对盗贼颇有亲和力；在盗贼手中，它能将幻象防护延伸到持有者身上，制造栩栩如生的诱饵迷惑对手。
 
-STATISTICS:
+属性：
 
-Combat abilities:
-– On a critical hit, cast Mislead on the wielder (Thieves and Bards only)
-– On a critical miss, cast Reflected Image on the wielder (Thieves and Bards only)
+战斗能力：
+– 暴击命中时，对持有者施放误导术（仅限盗贼与诗人）
+– 暴击失误时，对持有者施放残影术（仅限盗贼与诗人）
 
-THAC0: +2, +4 for Thieves and Bards, always strikes as a +4 weapon
-Damage: 1d6+2, +4 for Thieves and Bards (piercing)
-Speed Factor: 1
-Proficiency Type: Short Sword/Ninja-To
-Type: One-handed
-Requires:
- 5 Strength
+THAC0：+2，盗贼与诗人 +4，始终视为 +4 武器命中
+伤害：1d6+2，盗贼与诗人 +4（穿刺）
+速度因子：1
+熟练类型：短剑/忍者刀
+类型：单手
+需求：
+  力量 5
 
-Weight: 2~
+重量：2~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWSW1.ITM~ ~OVERRIDE~
@@ -294,27 +294,27 @@ END
 
 COPY ~%MOD_FOLDER%/items/c0bwsw2.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0bwsw2.itm~ ~override~
-SAY NAME1 ~Dirge +5~
-SAY NAME2 ~Dirge +5~
-SAY DESC ~A deadly weapon, Dirge is a weapon well suited for the most legendary of bards. Its creator only ever forged two weapons of its kind, making it truly unique. Each of its wielders has made some form of mark upon the Realms with its aid, whether as a hero or a tyrant.
+SAY NAME1 ~挽歌 +5~
+SAY NAME2 ~挽歌 +5~
+SAY DESC ~挽歌是一件致命武器，最适合传奇诗人。其锻造者一生只铸出两件同类兵器，因此独一无二。每一位持有者都曾借它在诸域留下某种印记，无论身为英雄还是暴君。
 
-This sword has a keen edge augmented by sound itself, allowing it to strike lethal wounds with terrifying frequency.
+这柄剑的锋刃由声音本身淬炼，使其能以惊人的频率劈出致命伤。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Critical Hit Chance: +10% (this weapon)
-– Crescendo: 1% chance per hit for all attacks to become critical hits and deal maximum damage for the next round
+装备能力：
+– 暴击几率：+10%（此武器）
+– 渐强：每次命中有 1% 几率使下一轮所有攻击变为暴击并造成最大伤害
 
-THAC0: +5
-Damage: 1d8+3 (slashing), +1d4+2 magic
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-Requires:
- 6 Strength
+THAC0：+5
+伤害：1d8+3（挥砍），+1d4+2 魔法
+速度因子：2
+熟练类型：长剑
+类型：单手
+需求：
+  力量 6
 
-Weight: 2~
+重量：2~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BWSW2.ITM~ ~OVERRIDE~
@@ -322,8 +322,8 @@ COPY_EXISTING ~C0BWSW2.ITM~ ~OVERRIDE~
 END
 
 COPY ~%MOD_FOLDER%/items/c0bwsw2.spl~ ~override~
-SAY NAME1 ~Crescendo!~
-SAY NAME2 ~Crescendo!~
+SAY NAME1 ~渐强！~
+SAY NAME2 ~渐强！~
 
 COPY ~%MOD_FOLDER%/items/c0jest1.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0jest2.eff~ ~override~
@@ -331,39 +331,39 @@ COPY ~%MOD_FOLDER%/items/c0jest3.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0jest4.eff~ ~override~
 COPY ~%MOD_FOLDER%/items/c0jest.spl~ ~override~
 COPY ~%MOD_FOLDER%/items/chan10.itm~ ~override~
-SAY DESC ~Friends of Dekirh Fasthands, a bard who insisted on playing the rowdiest towns on the Sword Coast, gave him this suit of magical chain as a gift. The chain mail was given to protect Dekirh from the drunken spectators who often threw rotting produce, chairs, and even knives at Dekirh. The bard appreciated the gift but painted it with wild colors to better fit into his show.
+SAY DESC ~德基尔·快手是位执意要在剑湾最喧闹的镇子上演出的诗人，他的朋友们便送了他这套魔法锁甲作为礼物。锁甲是为了保护德基尔免遭醉酒观众扔来的烂菜、椅子乃至刀子。诗人很领情，却又把它涂成了狂野的色彩，以便更好地融入自己的演出。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Spellcasting is not disabled
-– Armor Class vs. Missiles: +4 (Jesters)
-– Chaos Shield (Jesters)
-– Wild Magic: 5% chance that a spell cast by the wearer will be affected by a wild surge.
+装备能力：
+– 不阻断施法
+– 对抗远程护甲等级：+4（弄臣）
+– 混乱护盾（弄臣）
+– 野法：佩戴者施放的法术有 5% 几率受野法涌动影响。
 
-Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
-Requires:
- 8 Strength~
+护甲等级：1（对抗挥砍 -1，对抗钝击 3）
+需求：
+  力量 8~
  
 COPY ~%MOD_FOLDER%/items/c0bchan1.itm~ ~override~
-SAY NAME1 ~Chain Mail~
-SAY NAME2 ~Isai's Lucky Armor~
-SAY DESC ~Chain Mail +1: Isai's Lucky Armor
-The half-elven blade Isai Halvaryn was said to have been born with the blessing of Tymora. Though neither the most powerful nor the most knowledgable of adventurers, he made his name through countless tales of taking part in suicidally dangerous escapades and living to tell the tale, usually by the skin of his teeth. Whether his luck was imbued upon his favorite suit of magical chain mail is unknown, but those who wear it seem to find the scales tippin in their favor more often than not. Curiously, the armor also changes its color to match its wearer's aesthetic.
+SAY NAME1 ~锁子甲~
+SAY NAME2 ~伊赛的幸运护甲~
+SAY DESC ~锁子甲 +1：伊赛的幸运护甲
+半精灵刀锋伊赛·哈尔维林据说出生时便受泰摩拉祝福。尽管并非最强或最博学的冒险者，他却因无数次参与近乎自杀的冒险并侥幸生还而扬名。他的幸运是否浸染到了他最心爱的这套魔法锁甲上，无人知晓，但穿着它的人似乎多半会发觉天平向自己倾斜。奇妙的是，这套护甲还会变色，以迎合穿着者的审美。
 
-In a touch of irony, Isai was never as fortunate in love as he was in adventuring.
+颇具讽刺意味的是，伊赛在情场上从未像冒险时那般走运。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Luck: +1
-– Spellcasting is not disabled
+装备能力：
+– 幸运：+1
+– 不阻断施法
 
-Armor Class: 5 (3 vs. slashing, 7 vs. crushing)
-Requires: 
- 5 Strength
+护甲等级：5（对抗挥砍 3，对抗钝击 7）
+需求：
+  力量 5
 
-Weight: 7~
+重量：7~
  
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BCHAN1.ITM~ ~OVERRIDE~
@@ -376,18 +376,18 @@ LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 1 STR_VAR item_to_add = c0bchan1
 END
 
 COPY ~%MOD_FOLDER%/items/c0bhelm1.itm~ ~override~
-SAY NAME1 ~Silken Veil~
-SAY NAME2 ~Yvossa's Veil~
-SAY DESC ~Yvossa's Veil
-A famously beautiful Amnian singer with an enrapturing voice, Yvossa was once one of the land's most celebrated artists, and many men of power travelled to the Lucent Aria Theatre to witness her performances. On a fateful day, however, when the theatre was due to perform for a certain noble of power, Yvossa did not step onto the stage. No one knew where she went, and three days later her silk veil was found floating ashore. Those who wear it find their songs being echoed with Yvossa's voice, lingering in the air as though a ghost.
+SAY NAME1 ~丝纱~
+SAY NAME2 ~伊沃莎之纱~
+SAY DESC ~伊沃莎之纱
+伊沃莎是位以摄人心魄的嗓音闻名的阿米尔歌手，曾是这片土地上最负盛名的艺人之一，许多权贵专程前往透亮咏叹剧院观看她的演出。然而在一个命运之日，当剧院要为某位权贵重臣演出时，伊沃莎却没有走上舞台。无人知晓她去了何处；三天后，她的丝纱被人发现漂上了岸。佩戴它的人会发现自己的歌声萦绕着伊沃莎的嗓音，如鬼魂般久久不散。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Magic Resistance: +5% (+15% for Females)
-– Bard song effects linger on for an additional round after the bard stops singing
+装备能力：
+– 魔法抗性：+5%（女性 +15%）
+– 诗人停止歌唱后，歌谣效果额外持续一轮
 
-Weight: 0~
+重量：0~
  
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BHELM1.ITM~ ~OVERRIDE~
@@ -400,18 +400,18 @@ ADD_STORE_ITEM ~c0bhelm1~ #0 #0 #0 ~IDENTIFIED~ #1
 END
 
 COPY ~%MOD_FOLDER%/items/c0bbelt1.itm~ ~override~
-SAY NAME1 ~Belt~
-SAY NAME2 ~Belt of Profane Poise~
-SAY DESC ~Belt of Profane Poise
-The less savory bards know exactly how to exploit their skills for personal benefit. A wandering troupe of seven once wore these belts while travelling throuhgout the Sword Coast, drawing the attention of common folk and nobility alike with their magically-bolstered charm. When their audience was inevitably enthralled by their performances during the day and returned to watch their evening performances, a few members of the troupe would hide among them and cut their purses. The enchantments on this curious belt seem to change its properties based on the time of day, and as the sun sets, the ruby embedded in the belt slowly darkens to a deep violet.
+SAY NAME1 ~腰带~
+SAY NAME2 ~亵渎仪态腰带~
+SAY DESC ~亵渎仪态腰带
+那些品行不那么端正的诗人最懂得如何把自身本事化为私利。曾有一支七人流浪剧团走遍剑湾，人人系着这种腰带，凭魔法加持的魅力引得平民与贵族都注目于他们。白天的观众被演出迷住后，晚上还会回来继续观看；剧团里几名成员便混在人群中，割开他们的钱袋。这条奇异腰带上的附魔似乎会随时辰更替而改变其属性；日落时分，嵌在腰带上的红宝石会缓缓变暗，直至深紫。
 
-STATISTICS
+属性：
 
-Equipped abilities:
-– Pick Pockets: +15%
-– If daytime, Charisma: +1. If nighttime, Dexterity: +1 
+装备能力：
+– 扒窃：+15%
+– 白天：魅力 +1；夜晚：敏捷 +1
 
-Weight: 1~
+重量：1~
  
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BBELT1.ITM~ ~OVERRIDE~
@@ -424,18 +424,18 @@ ADD_CRE_ITEM ~c0bbelt1~ #0 #0 #0 ~NONE~ ~belt~
 END
 
 COPY ~%MOD_FOLDER%/items/c0bring1.itm~ ~override~
-SAY NAME1 ~Ring~
-SAY NAME2 ~The Sylphen Song~
-SAY DESC ~Ring of Protection +3: The Sylphen Song
-The history of this ring exists only in songs and fables. One such tale discerns its origins from Titania, Faerie Queen of the Feywild, who once upon a time gifted this to a mortal bard fortunate enough to gain the favor of the mysterious fey. Wearers are granted the knowledge of an ancient faerie song which brings the ring's hidden powers to life, protecting them from even the most dangerous of adversaries. However, the memory of the song fades as quickly as it is gained when the ring is removed.
+SAY NAME1 ~戒指~
+SAY NAME2 ~希尔芬之歌~
+SAY DESC ~防护戒指 +3：希尔芬之歌
+这枚戒指的历史只存在于歌谣与寓言之中。一则传说追溯其来历：仙灵荒野的仙灵女王缇坦妮亚曾将它赠予一位有幸博得神秘仙灵眷顾的凡人诗人。佩戴者将通晓一首古老仙灵之歌，唤醒戒指潜藏的力量，庇护自己免遭最凶险的敌手伤害。然而一旦摘下戒指，对这首歌的记忆便如获得时一般迅速消散。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Armor Class: +3
-– Saving Throws: +3
+装备能力：
+– 护甲等级：+3
+– 豁免：+3
 
-Weight: 0~
+重量：0~
  
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BRING1.ITM~ ~OVERRIDE~
@@ -448,21 +448,21 @@ LPF ADD_AREA_ITEM INT_VAR container_to_add_to = 36 STR_VAR item_to_add = c0bring
 END
 
 COPY ~%MOD_FOLDER%/items/c0bring2.itm~ ~override~
-SAY NAME1 ~Ring~
-SAY NAME2 ~The Learned~
-SAY DESC ~Ring of Knowledge: The Learned
-The skills of a bard can be surprisingly valuable in the academic field. Priests of Oghma commissions multiple of these rings for bards working in service of their churches and libraries, allowing them to perform their duties more efficently in gathering and memorizing knowledge.
+SAY NAME1 ~戒指~
+SAY NAME2 ~博学者~
+SAY DESC ~知识戒指：博学者
+诗人的技艺在学术领域往往出人意料地有用。奥格马祭司为在其教会与图书馆效力的诗人委托打造了多枚此类戒指，使他们能更高效地收集与铭记知识。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Intelligence: +2
-– Can memorize 2 extra 1st and 2nd level spells.
+装备能力：
+– 智力：+2
+– 可额外记忆两个 1、2 级法术。
 
-Requires:
-  14 Wisdom
+需求：
+  智慧 14
 
-Weight: 0~
+重量：0~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0WL000.SPL~ THEN BEGIN
 COPY_EXISTING ~C0BRING2.ITM~ ~OVERRIDE~
@@ -488,30 +488,30 @@ COPY_EXISTING ~splprot.2da~ ~override~
 
 COPY ~%MOD_FOLDER%/items/c0bswd1.itm~ ~override~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter2 = 138 parameter2 = C0_PHYS_DIS_1 END
-SAY NAME1 ~Long Sword~
-SAY NAME2 ~Cold Moon "Han-po" +3~
-SAY DESC ~"Gujian: Han-po"—Ancient Blade: Cold Moon
-This cold iron blade hails from the distant eastern empire of Shou Lung. It was the companion of the warrior-poet Xuan Lu, a renowned hero who fought injustices, exorcised demons and laid restless spirits to rest. After he passed away from old age, his sword was passed to his eldest son Xuan Jie, also a master poet but with a vice for drinking, who eventually sold it to a wandering trader to pay off his tavern debts. The sword then found its way to Faerûn, where it has traded hands between various bards and artists. One of Xuan Lu's poems, roughly translated, is etched onto the blade.
+SAY NAME1 ~长剑~
+SAY NAME2 ~寒月“寒魄” +3~
+SAY DESC ~古剑：寒魄——寒月
+这柄寒铁之刃来自遥远的东方帝国寿龙。它曾是武诗人玄鹿的佩剑；这位著名英雄抗击不义、驱魔镇灵，使不安的亡魂得以安息。玄鹿年迈辞世后，此剑传给长子玄杰，玄杰同样是诗中高手，却好酒贪杯，最终把剑卖给行商以偿付酒馆酒债。此后剑辗转至费伦，在诗人与艺人之间易手。玄鹿的一首诗被粗略译出，刻于刃上。
 
-"Beyond the city walls, a meter of snow, reflecting moonlight; an illusion of the divine."
+“城墙之外，一尺雪光，倒映月色；乃神性之幻象。”
 
-STATISTICS:
+属性：
 
-Combat abilities:
-– Moonlight: Each successful hit applies a non-cumulative -2 penalty to Save vs. Spells for 2 rounds
-– Execution: Deal an additional 4 unmitigated slashing damage to targets that are held, asleep, silenced, poisoned, diseased, slowed or blinded
+战斗能力：
+– 月光：每次成功命中使目标对抗法术豁免 -2，不叠加，持续 2 轮
+– 处刑：对被定身、睡眠、沉默、中毒、患病、减速或目盲的目标额外造成 4 点不可减免挥砍伤害
 
-Equipped abilities:
-– 1/2 bonus attack per round
+装备能力：
+– 每回合半次额外攻击
 
-THAC0: +3, strikes as a +3 weapon
-Damage: 1d8+1, +4 vs. extraplanar creatures and undead
-Damage type: Slashing
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-Requires:
- 5 Strength
+THAC0：+3，视为 +3 武器命中
+伤害：1d8+1，对抗异界生物与亡灵 +4
+伤害类型：挥砍
+速度因子：2
+熟练类型：长剑
+类型：单手
+需求：
+  力量 5
 
-Weight: 2~
+重量：2~
 */

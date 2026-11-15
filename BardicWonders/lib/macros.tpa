@@ -184,7 +184,7 @@ BEGIN
   copy_header = (copy_header<0) ? 0 : copy_header
 
   PATCH_IF copy_header>hc BEGIN
-    PATCH_WARN ~Unable to copy %copy_header%th header, %SOURCE_FILE% contains only %hc% headers!~
+    PATCH_WARN ~无法复制第 %copy_header% 个头，%SOURCE_FILE% 仅有 %hc% 个头！~
   END ELSE BEGIN
     INSERT_BYTES ho+insert_point*hs hs
     hc+=1
@@ -278,7 +278,7 @@ BEGIN
   copy_header = (copy_header<0) ? 0 : copy_header
 
   PATCH_IF copy_header>hc BEGIN
-    PATCH_WARN ~Unable to copy %copy_header%th header, %SOURCE_FILE% contains only %hc% headers!~
+    PATCH_WARN ~无法复制第 %copy_header% 个头，%SOURCE_FILE% 仅有 %hc% 个头！~
   END ELSE BEGIN
     INSERT_BYTES ho+insert_point*hs hs
     hc+=1

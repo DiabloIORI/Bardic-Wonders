@@ -1,0 +1,377 @@
+COPY ~%MOD_FOLDER%/hlas~ ~override~
+
+COPY_EXISTING ~C0BWHL1.SPL~ ~OVERRIDE~
+SAY NAME1 ~Unchained Voice~
+SAY UNIDENTIFIED_DESC ~Unchained Voice
+The bard's mastery of their voice is without peer and cannot be stifled by any means. Upon learning this permanent ability, the bard gains a +1 bonus to casting speed and immunity to silence effects.
+
+Requires: Prestissimo~
+
+COPY_EXISTING ~C0BWHL2.SPL~ ~OVERRIDE~
+SAY NAME1 ~Resonating Weapon~
+SAY UNIDENTIFIED_DESC ~Resonating Weapon
+The bard imbues the weapons of themselves and all allies with in a 20-ft. radius of them with the power of sound. For the next 5 rounds, all attacks made by affected allies cause all enemies within 10-ft. of the initial target to emanate a harmful wave of sound in a 5-ft. radius, dealing 2d6 magic damage and having a 20% chance to stun them for 1 round on a failed Saving Throw vs. Death at -5. Multiple sound waves that overlap may affect the same target, applying their effects consecutively.~
+
+ADD_PROJECTILE ~override/c0bwhl2r.PRO~ ~C0 Resonating Weapon AoE~
+ADD_PROJECTILE ~override/c0bwhl2p.PRO~ ~C0 Resonating Weapon Wave~
+
+COPY_EXISTING ~C0BWHL2a.SPL~ ~OVERRIDE~
+	LPF ALTER_SPELL_HEADER INT_VAR projectile = c0bwhl2r END
+COPY_EXISTING ~C0BWHL2b.SPL~ ~OVERRIDE~
+	LPF ALTER_SPELL_HEADER INT_VAR projectile = c0bwhl2p END
+
+COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
+SAY NAME1 ~Song of Freedom~
+SAY UNIDENTIFIED_DESC ~Song of Freedom
+Upon using this ability, the bard removes all charm, confusion, fear, feeblemind, hold, sleep, berserk, stun effects from allies in a 25-ft. radius around them and provides immunity to such effects for 1 turn.
+
+Removes effects of Song of Heroism and Legionnaire's March.
+
+This ability may be selected three times.~
+
+COPY_EXISTING ~C0BWHL4.SPL~ ~OVERRIDE~
+SAY NAME1 ~Legionnaire's March~
+SAY UNIDENTIFIED_DESC ~Legionnaire's March
+Upon using this ability, the bard empowers all allies in a 25-ft. radius around them, setting their base THAC0 to 0 and base attacks per round to the equal of a fighter's of the same level, and +4 to damage for 1 turn.
+
+Removes effects of Song of Freedom and Song of Heroism.
+
+This ability may be selected three times.~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~c0bardsx.spl~ THEN BEGIN
+COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL4.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL5.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL8.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 130 END
+END
+
+COPY_EXISTING ~C0BWHL5.SPL~ ~OVERRIDE~
+SAY NAME1 ~Song of Heroism~
+SAY UNIDENTIFIED_DESC ~Song of Heroism
+Upon using this ability, the bard grants temporary hit points equal to +4 per level of the bard and a +6 bonus to Armor Class and Saving Throws for 1 turn to all allies in a 25-ft. radius around them.
+
+Removes effects of Song of Heroism and Legionnaire's March.
+
+This ability may be selected three times.~
+
+COPY_EXISTING ~C0BWHL6.SPL~ ~OVERRIDE~
+SAY NAME1 ~Hymn of Requiem~
+SAY UNIDENTIFIED_DESC ~Hymn of Requiem
+Upon using this ability, the bard instantly deals 60 unmitigated magic damage to enemies and heals 60 hit points to allies within a 25-ft. range of the bard. This song ignores all spell protections and magic resistance.
+
+This ability may be selected once.~
+
+COPY_EXISTING ~C0BWHL7.SPL~ ~OVERRIDE~
+SAY NAME1 ~Prestissimo~
+SAY UNIDENTIFIED_DESC ~Prestissimo
+The bard chants incantations with the ease and fluidity of song or verse. Upon learning this permanent ability, the bard's casting speed is permanently increased by 1.~
+
+COPY_EXISTING ~C0BWHL8.SPL~ ~OVERRIDE~
+SAY NAME1 ~Lingering Song~
+SAY UNIDENTIFIED_DESC ~Lingering Song
+With this permanent skill, the effects of the bard's song remain on all targets for an additional 4 rounds after they stop singing.~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~c0bardsx.spl~ THEN BEGIN
+COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL4.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL5.SPL~ ~OVERRIDE~
+WRITE_BYTE 0x1c 5
+COPY_EXISTING ~C0BWHL8.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 140 END
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~LUC0AURA.2DA~ THEN BEGIN
+COPY_EXISTING ~LUC0AURA.2DA~ ~override/LUC0AURA-backup.2DA~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~LUC0STRA.2DA~ THEN BEGIN
+COPY_EXISTING ~LUC0STRA.2DA~ ~override/LUC0STRA-backup.2DA~
+END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL910
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL911
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL912
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL913
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL914
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL917
+  END
+
+LAF DESTRUCTO_REMOVE_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    remove_ability = GA_SPCL921
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL3
+    ability = GA_C0BWHL3       // New ability being added
+    num_allowed = 3
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL4
+    ability = GA_C0BWHL4       // New ability being added
+    num_allowed = 3
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL5
+    ability = GA_C0BWHL5       // New ability being added
+    num_allowed = 3
+  END
+  
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL7
+    ability = AP_C0BWHL7       // New ability being added
+    num_allowed = 1
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL1
+    ability = AP_C0BWHL1       // New ability being added
+    num_allowed = 1
+	prerequisite = AP_C0BWHL7
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL2
+    ability = GA_C0BWHL2       // New ability being added
+    num_allowed = 16
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL6
+    ability = GA_C0BWHL6       // New ability being added
+    num_allowed = 1
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL8
+    ability = AP_C0BWHL8       // New ability being added
+    num_allowed = 1
+  END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C0ARCAS1.EFF~ THEN BEGIN
+
+COPY_EXISTING ~C0BWHL9.SPL~ ~OVERRIDE~
+SAY NAME1 ~Battle Caster~
+SAY UNIDENTIFIED_DESC ~Battle Caster
+With this permanent skill, the bard's extensive experience has permanently allowed them to cast spells while wearing any armor.
+
+Prerequisite: Not Dancer or Kapellmeister~
+
+COPY_EXISTING ~C0BWHL0.SPL~ ~OVERRIDE~
+SAY NAME1 ~Martial Prowess~
+SAY UNIDENTIFIED_DESC ~Martial Prowess
+Equal parts warrior and poet, the skald's training has given them combat experience near-equivalent to that of a fighter, permanently granting them one bonus attack per round and +100 exceptional bonus to Strength.
+
+Prerequisite: Skald only~
+
+COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_C0BWHLA END // POWER ATTACK
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~bard_kitlist~ 10
+  FOR (row = 1; row < bard_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~bard_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~bard_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~bard_kitlist~ row 8 kit_class
+  
+  PATCH_IF (%kit_class% = 5) BEGIN
+    // Set New Fighter Abilities
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      // Add new abilities to all Fighter kits
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+      PATCH_IF !(
+				("%kit_label%" STRING_EQUAL_CASE "C0WLOCK") OR
+				("%kit_label%" STRING_EQUAL_CASE "C0DANCE") OR
+				("%kit_label%" STRING_EQUAL_CASE "C0_KAPELLMEISTER")
+														 ) BEGIN
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_C0BWHLA END
+        PRETTY_PRINT_2DA
+        END
+	  
+      BUT_ONLY
+      END
+    END
+  END
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL9
+    ability = AP_C0BWHL9       // New ability being added
+    prerequisite = GA_C0BWHLA
+    num_allowed = 1
+  END
+
+LAF SIMPLE_ADD_HLA
+INT_VAR
+  class = 5
+STR_VAR 
+    2da_row = C0BWHL0
+    ability = AP_C0BWHL0       // New ability being added
+    prerequisite = GA_C0BWHLB
+    num_allowed = 1
+  END
+
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~LUC0AURA-backup.2DA~ THEN BEGIN
+COPY_EXISTING ~LUC0AURA-backup.2da~ ~OVERRIDE/LUC0AURA.2DA~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~LUC0STRA-backup.2DA~ THEN BEGIN
+COPY_EXISTING ~LUC0STRA-backup.2da~ ~OVERRIDE/LUC0STRA.2DA~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~LUC0WL.2DA~ BEGIN
+  COPY_EXISTING ~LUC0WL.2DA~ ~OVERRIDE~
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHL1~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~GA_C0BWHL2~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~GA_C0BWHL3~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~GA_C0BWHL4~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~GA_C0BWHL5~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~GA_C0BWHL6~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHL7~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHL8~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHL9~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHL0~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHLA~
+    END
+LPF patch_remove_hla
+  STR_VAR
+    remove_ability = ~AP_C0BWHLB~
+    END
+    
+END
+
+ACTION_IF MOD_IS_INSTALLED ~Setup-BardicWonders/BardicWonders.tp2~ ~1012~ THEN BEGIN
+  
+COPY_EXISTING ~luabbr.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0_GALLANT~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 1 cols ~C0GALL~
+	  END
+	END
+	
+COPY_EXISTING ~LUC0GALL.2DA~ ~OVERRIDE~
+LPF patch_remove_hla STR_VAR remove_ability = ~GA_SPCL901~ END
+LPF patch_remove_hla STR_VAR remove_ability = ~GA_SPCL903~ END
+LPF patch_remove_hla STR_VAR remove_ability = ~GA_SPCL907~ END
+LPF patch_remove_hla STR_VAR remove_ability = ~GA_SPCL909~ END
+LPF patch_remove_hla STR_VAR remove_ability = ~GA_SPCL923~ END
+LPF patch_add_hla STR_VAR 2da_row = ~C0GALL1~ ability = ~GA_C0BWHL3~ num_allowed = 3 END	
+LPF patch_add_hla STR_VAR 2da_row = ~C0GALL2~ ability = ~GA_C0BWHL4~ num_allowed = 3 END	
+LPF patch_add_hla STR_VAR 2da_row = ~C0GALL3~ ability = ~GA_C0BWHL5~ num_allowed = 3 END	
+LPF patch_add_hla STR_VAR 2da_row = ~C0GALL4~ ability = ~GA_C0BWHL2~ num_allowed = 16 END	
+LPF patch_add_hla STR_VAR 2da_row = ~C0GALL5~ ability = ~AP_C0BWHL8~ num_allowed = 1 END	
+
+END

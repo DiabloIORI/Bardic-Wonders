@@ -30,41 +30,41 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Troubadour~)
+    mixed         = RESOLVE_STR_REF(~行吟诗人~)
 	
-    lower         = RESOLVE_STR_REF(~troubadour~)
+    lower         = RESOLVE_STR_REF(~行吟诗人~)
 	
-    help          = RESOLVE_STR_REF(~TROUBADOUR: Troubadours are musicians that specialize in lyric poetry. Their songs are often of chivalry and courtly love. In adventuring, troubadour bards are valuable due to their proficiency in healing spells, including songs of rejuvenation that protect their comrades. Women that choose the profession of the troubadour are usually known as trobairitz.
+    help          = RESOLVE_STR_REF(~行吟诗人：行吟诗人是专精抒情诗的乐师，其歌谣多咏骑士精神与宫廷之爱。在冒险生涯中，行吟诗人因精通治疗法术而颇具价值，包括护佑同伴的复苏之歌。选择行吟诗人这一职业的女性通常称为行吟女诗人（trobairitz）。
 
-Advantages:
-– The troubadour's Bard Song, "Song of Healing", gradually heals <PRO_HISHER> allies and provides them with resistance to any attempts to impair their movement, magical or otherwise.
+优势：
+– 行吟诗人的诗人歌谣“治愈之歌”逐渐治愈 <PRO_HISHER> 盟友，并赋予其抵抗一切妨碍移动效果（无论魔法与否）的抗性。
 
-1st level: allies regenerate 1 hit point per round and are immune to slows.
-9th level: allies regenerate 2 hit points per round and are immune to all movement-impairing effects.
-18th level: allies regenerate 3 hit points per round and are immune to all mind-affecting and movement-impairing effects.
+1 级：盟友每轮回复 1 点生命值，并免疫减速。
+9 级：盟友每轮回复 2 点生命值，并免疫所有妨碍移动的效果。
+18 级：盟友每轮回复 3 点生命值，并免疫所有影响心智与妨碍移动的效果。
 
-– Gains the following priest spells in their spellbook:
-  1st level: Cure Light Wounds
-  2nd level: Aid
-  3rd level: Cure Medium Wounds
-  4th level: Cure Serious Wounds
-  5th level: Mass Cure
-  6th level: Heal
+– 法术书中获得下列牧师法术：
+  1 级：轻伤治愈
+  2 级：援助术
+  3 级：中度伤治愈
+  4 级：重伤治愈
+  5 级：群体治愈
+  6 级：治愈术
 
-– 10th level: May use the Voice of Peace ability once per day.
+– 10 级：每日可使用一次“和平之声”。
 
-VOICE OF PEACE: Chanting a soft melody, the troubadour soothes <PRO_HISHER> allies' spirits and renews their confidence, healing them for 1d6 (+1 per level) hit points. All allies affected also gain 10% physical resistance and immunity to berserk effects for 1 turn. However, allied barbarians and berserkers will find themselves unable to call upon their rage while the aura of calm is in effect.
+和平之声：行吟诗人吟唱柔和旋律，抚慰 <PRO_HISHER> 盟友的心神、重燃其信心，治愈 1d6（每级 +1）点生命值。受影响的所有盟友还获得 10% 物理抗性，并一回合内免疫狂暴效果。但在宁静光环生效期间，盟友中的野蛮人与狂战士将无法发动狂暴。
 
-– 14th level: May use the Sacred Breath ability once per day.
+– 14 级：每日可使用一次“神圣气息”。
 
-SACRED BREATH: This ability functions the same way as the 5th level priest spell Raise Dead, restoring the target to life.
+神圣气息：此能力效果与 5 级牧师法术“死者复生”相同，将目标复活。
 
-Disadvantages:
-– May only be proficient in weapons usable by thieves.
-– Only has one-half Pick Pockets percentage.
-– May only be of Neutral Good, Chaotic Good, True Neutral or Chaotic Neutral alignment.~)
+劣势：
+– 只能熟练使用盗贼可用的武器。
+– 扒窃百分比仅为常人一半。
+– 阵营只能为中立善良、混乱善良、绝对中立或混乱中立。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~ABETTOR OF MASK: Contrary to popular belief, the trickster god Mask's favor extends past those who walk the path of stealthy arts and trickery. The Abettor is a faithful Maskarran, a deceptive agent of the Lord of Shadows whose gall is tested through tasks that typical bards would balk at due to their dark natures.~)
+    briefdesc     = RESOLVE_STR_REF(~行吟诗人：行吟诗人是专精抒情诗的乐师，其歌谣多咏骑士精神与宫廷之爱。在冒险生涯中，行吟诗人因精通治疗法术而颇具价值，包括护佑同伴的复苏之歌。选择行吟诗人这一职业的女性通常称为行吟女诗人（trobairitz）。~)
 	
 	// fallen = 0
 	
@@ -230,16 +230,16 @@ COPY ~%MOD_FOLDER%/troubadour/c0trbso2.spl~ ~override~
   END
 COPY ~%MOD_FOLDER%/troubadour/C0TRBINB.bam~ ~override~
 COPY ~%MOD_FOLDER%/troubadour/c0trbin.spl~ ~override~
-SAY NAME1 ~Voice of Peace~
-SAY NAME2 ~Voice of Peace~
-SAY UNIDENTIFIED_DESC ~Voice of Peace
-Chanting a soft melody, the troubadour soothes <PRO_HISHER> allies' spirits and renews their confidence, healing them for 1d6 (+1 per level) hit points. All allies affected also gain 10% physical resistance and immunity to berserk effects for 1 turn. However, allied barbarians and berserkers will find themselves unable to call upon their rage as a result while the aura of calm is in effect.~
+SAY NAME1 ~和平之声~
+SAY NAME2 ~和平之声~
+SAY UNIDENTIFIED_DESC ~和平之声
+行吟诗人吟唱柔和旋律，抚慰 <PRO_HISHER> 盟友的心神、重燃其信心，治愈 1d6（每级 +1）点生命值。受影响的所有盟友还获得 10% 物理抗性，并一回合内免疫狂暴效果。但在宁静光环生效期间，盟友中的野蛮人与狂战士将无法发动狂暴。~
 
 COPY ~%MOD_FOLDER%/troubadour/c0trbin2.spl~ ~override~
-SAY NAME1 ~Sacred Breath~
-SAY NAME2 ~Sacred Breath~
-SAY UNIDENTIFIED_DESC ~Sacred Breath
-This ability functions the same way as the 5th level priest spell Raise Dead, restoring the target to life.~
+SAY NAME1 ~神圣气息~
+SAY NAME2 ~神圣气息~
+SAY UNIDENTIFIED_DESC ~神圣气息
+此能力效果与 5 级牧师法术死者复生相同，将目标复活。~
 
 COPY_EXISTING ~SPPR103.spl~ ~override/C0TRBS1.spl~
 WRITE_SHORT 0x1C 1
@@ -261,24 +261,24 @@ WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 6
 
 COPY ~%MOD_FOLDER%/troubadour/c0trbhl.spl~ ~override~
-SAY NAME1 ~Holy Hymn of Eldath~
-SAY NAME2 ~Holy Hymn of Eldath~
-SAY UNIDENTIFIED_DESC ~Holy Hymn of Eldath
-This song is a powerful aid to both the Troubadour and to <PRO_HISHER> allies. The Holy Hymn of Eldath causes all recipients to regenerate for five hit points per round and become immune to all movement-impairing and mind-affecting effects, poison, disease, level drain and instant death effects. The party also gains a +4 bonus to Armor Class and Saving Throws, with a +2 extra vs. evil creatures. There is also a 5% chance all recipients will be healed for 40% of their total hit points.
+SAY NAME1 ~伊尔达斯圣咏~
+SAY NAME2 ~伊尔达斯圣咏~
+SAY UNIDENTIFIED_DESC ~伊尔达斯圣咏
+这首歌对行吟诗人及其 <PRO_HISHER> 盟友都是强力助力。伊尔达斯圣咏使所有受者每轮再生 5 点生命值，并免疫所有妨碍移动与影响心智的效果、毒素、疾病、等级吸取与即死效果。队伍还获得护甲等级与豁免 +4，对抗邪恶生物再 +2。此外所有受者有 5% 几率被治愈总生命值的 40%。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~garric.cre~
 THEN BEGIN
-PRINT ~OPTIONAL: Make Garrick a Troubadour?~
+PRINT ~可选：将加里克改为行吟诗人？~
 
-PRINT ~Please choose one of the following:
-[1] Yes
-[2] No~
+PRINT ~请选择下列一项：
+[1] 是
+[2] 否~
 
 OUTER_SPRINT ~kit~ ~placeholder_value~
 OUTER_WHILE (!(IS_AN_INT ~kit~) OR (~kit~ > 0x2) OR (~kit~ < 0x1)) BEGIN
-  PRINT ~Please select 1 or 2 and press Enter.~
+  PRINT ~请选择 1 或 2，然后按回车。~
   ACTION_READLN ~kit~
 END
       ACTION_IF ("kit" = 1) THEN BEGIN

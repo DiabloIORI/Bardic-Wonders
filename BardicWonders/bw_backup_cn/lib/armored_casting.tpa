@@ -1,0 +1,167 @@
+COPY ~%MOD_FOLDER%/armored_casting~ ~override~
+
+LAF DESTRUCTO_REMOVE_HLA INT_VAR class = 5 STR_VAR remove_ability = ~AP_#0HLA_D~ END
+LAF DESTRUCTO_REMOVE_HLA INT_VAR class = 5 STR_VAR remove_ability = ~AP_#0HLA_E~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABBA01.2DA~ BEGIN
+COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_C0AC_00 END // Inspirations
+END
+
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
+  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
+  
+  PATCH_IF (%kit_class% = 5) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_C0AC_00 END
+      PATCH_IF (
+				("%kit_label%" STRING_EQUAL_CASE "C0WLOCK")
+														 ) BEGIN
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = AP_C0SKA00 END
+        PRETTY_PRINT_2DA
+      END
+  END
+END
+END
+END
+
+
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+      READ_SHORT    0x1C type //reads the byte containing item type
+	  READ_SHORT    0x22 appearance //reads the byte containing item appearance
+      PATCH_IF (type = 2) AND (appearance = 16690) BEGIN // if it is leather armor
+		LPF ALTER_EFFECT
+			INT_VAR
+				match_opcode = 145
+				silent = 1
+				opcode = 177
+				target = 1
+				parameter1 = 0
+				parameter2 = 2
+				timing = 2
+				insert_point = (0 - 1)
+			STR_VAR
+				resource = C0ARCAS1
+		END
+		LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+				silent = 1
+				opcode = 318
+				target = 1
+				parameter1 = IDS_OF_SYMBOL (~CLASS~ ~BARD~)
+				parameter2 = 105
+				timing = 2
+			STR_VAR
+				resource = C0ARCAS1
+		END
+      END
+      PATCH_IF (type = 2) AND (appearance = 16691) OR (appearance = 16692) BEGIN // if it is leather armor
+		LPF ALTER_EFFECT
+			INT_VAR
+				match_opcode = 145
+				silent = 1
+				opcode = 177
+				target = 1
+				parameter1 = 0
+				parameter2 = 2
+				timing = 2
+				insert_point = (0 - 1)
+			STR_VAR
+				resource = C0ARCAS2
+		END
+		LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+				silent = 1
+				opcode = 318
+				target = 1
+				parameter1 = IDS_OF_SYMBOL (~KIT~ ~SKALD~)
+				parameter2 = 109
+				timing = 2
+			STR_VAR
+				resource = C0ARCAS2
+		END
+      END
+      END
+BUT_ONLY_IF_IT_CHANGES
+
+ACTION_IF FILE_EXISTS_IN_GAME CLABBA04.2DA BEGIN
+COPY_EXISTING CLABBA04.2DA OVERRIDE
+APPEND ~CLABBA04.2DA~ ~ARMORED     AP_C0SKA00  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****~
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Kit Descriptions                                               //
+///////////////////////////////////////////////////////////////////////////
+ACTION_FOR_EACH description IN 
+    clastext  
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+//bard
+
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "BARD" BEGIN
+          READ_2DA_ENTRY index 4 col_count kit_desc
+          SPRINT old_desc ~(Spells cannot be cast while wearing armor.)~
+          SPRINT new_desc ~（可在穿戴至多镶皮甲时施法。）~
+          GET_STRREF %kit_desc% desc_text
+          INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_desc%~ ~%new_desc%~
+          END
+          SET_2DA_ENTRY index 4 col_count RESOLVE_STR_REF (~%desc_text%~)
+            PRETTY_PRINT_2DA
+		END
+		
+//SKALD
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "SKALD" BEGIN
+          READ_2DA_ENTRY index 4 col_count kit_desc
+          SPRINT old_skald_new ~May Specialize (two slots) in any fighting style.~
+          SPRINT old_skald_vanilla ~+1 bonus to hit and damage rolls.~
+          SPRINT new_skald ~– 战斗施法者：战歌者可在穿戴任意护甲时施法。~
+          GET_STRREF %kit_desc% desc_text
+          INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_skald_vanilla%~ ~%old_skald_vanilla%
+%new_skald%~
+            REPLACE_TEXTUALLY ~%old_skald_new%~ ~%old_skald_new%
+%new_skald%~
+          END
+            SET_2DA_ENTRY index 4 col_count RESOLVE_STR_REF (~%desc_text%~)
+            PRETTY_PRINT_2DA
+		END
+		
+      END
+
+      COPY_EXISTING ~KITLIST.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 1; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 1 col_count row_name
+        READ_2DA_ENTRY index 8 col_count class_id
+//inspiration
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "SKALD" BEGIN
+          READ_2DA_ENTRY index 4 col_count kit_desc
+          GET_STRREF %kit_desc% desc_text
+          INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_skald_vanilla%~ ~%old_skald_vanilla%
+%new_skald%~
+            REPLACE_TEXTUALLY ~%old_skald_new%~ ~%old_skald_new%
+%new_skald%~
+          END
+            SET_2DA_ENTRY index 4 col_count RESOLVE_STR_REF (~%desc_text%~)
+            PRETTY_PRINT_2DA
+		      END
+		  END
+
+      BUT_ONLY
+    END
+  END

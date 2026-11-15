@@ -27,34 +27,34 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Kapellmeister~)
+    mixed         = RESOLVE_STR_REF(~乐长~)
 	
-    lower         = RESOLVE_STR_REF(~kapellmeister~)
+    lower         = RESOLVE_STR_REF(~乐长~)
 	
-    help          = RESOLVE_STR_REF(~KAPELLMEISTER: This bard is a specialist of magical theory, skilled at conducting and supporting other arcanists in the battlefield through empowering their spells. They are often found in command of battalions of wizards, at the lead with their baton in hand, and are no less capable at the use of magic themselves when necessary. 
+    help          = RESOLVE_STR_REF(~乐长：这位诗人是魔法理论的专家，擅长在战场上指挥并支援其他奥术师，强化他们的法术。他们常手持指挥棒，统领成队的法师上阵；必要时，自身施法的本领也毫不逊色。
 
-Advantages:
-– May cast two additional spells per level.
-– The Kapellmeister's Bard Song, "Symphonie", bolsters the memory and concentration of allied mages, enhancing their Intelligence and Casting Level as well as granting a chance to restore their spells. 
-  1st level: +1 to Intelligence and Arcane Casting Level, 15% chance to restore one arcane spell of up to 3rd level each round.
-  10th level: +2 to Intelligence and Arcane Casting Level, 15% chance to restore one arcane spell of up to 5th level each round.
-  15th level: +2 to Intelligence and Arcane Casting Level, +1 to Casting Speed, 30% chance to restore one arcane spell of up to 5th level each round
-  20th level: +3 to Intelligence and Arcane Casting Level, +1 to Casting Speed, 30% chance to restore one arcane spell of up to 8th level each round
+优势：
+– 每级可额外施放两个法术。
+– 乐长的诗人歌谣“交响曲”提振盟友法师的记忆与专注，提升其智力与施法等级，并给予恢复法术的机会。
+  1 级：智力与奥术施法等级 +1，每轮 15% 几率恢复一个至多 3 级的奥术法术。
+  10 级：智力与奥术施法等级 +2，每轮 15% 几率恢复一个至多 5 级的奥术法术。
+  15 级：智力与奥术施法等级 +2，施法速度 +1，每轮 30% 几率恢复一个至多 5 级的奥术法术。
+  20 级：智力与奥术施法等级 +3，施法速度 +1，每轮 30% 几率恢复一个至多 8 级的奥术法术。
 
-– 3rd level: Gains the Magical Cadence passive effect.
+– 3 级：获得“魔法节拍”被动效果。
 
-MAGICAL CADENCE: On every 5th round, the Kapellmeister gains a +4 bonus to casting level, and casting time of spells is reduced to 1, if higher, for one round.
+魔法节拍：每第 5 轮，乐长施法等级 +4；若法术施法时间高于 1，则在一轮内降至 1。
 
-– 9th level: Extend Spell: The Kapellmeister's arcane spells have an increased duration of 20%. Half of this value is granted to allies while singing.
-– 10th level: Magical Cadence now applies on every 4th round.
-– 17th level: Magical Cadence now applies on every 3rd round.
-– 22nd level: Persistent Spell: The Kapellmeister's arcane spells have an increased duration of 50%, replacing the Extend Spell bonus. Half of this value is granted to allies while singing.
+– 9 级：法术延时：乐长的奥术法术持续时间增加 20%。歌唱时将此值的一半赋予盟友。
+– 10 级：魔法节拍改为每第 4 轮生效一次。
+– 17 级：魔法节拍改为每第 3 轮生效一次。
+– 22 级：持久法术：乐长的奥术法术持续时间增加 50%，取代法术延时加成。歌唱时将此值的一半赋予盟友。
 
-Disadvantages:
-– THAC0 progresses as that of a Mage of the same level.
-– Only has one quarter the normal Pick Pockets skill.~)
+劣势：
+– THAC0 按同级法师进度成长。
+– 扒窃技能仅为常人四分之一。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~KAPELLMEISTER: This bard is a specialist of magical theory, skilled at conducting and supporting other arcanists in the battlefield through empowering their spells. They are often found in command of battalions of wizards, at the lead with their baton in hand, and are no less capable at the use of magic themselves when necessary.~)
+    briefdesc     = RESOLVE_STR_REF(~乐长：这位诗人是魔法理论的专家，擅长在战场上指挥并支援其他奥术师，强化他们的法术。他们常手持指挥棒，统领成队的法师上阵；必要时，自身施法的本领也毫不逊色。~)
 	
 	// fallen = 0
 	
@@ -158,38 +158,38 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
 
 END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Magical Cadence (Active)~) STR_VAR bam_file = C0KM#01I RET C0KM#01I = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Magical Cadence (Inactive)~) STR_VAR bam_file = C0KM#01N RET C0KM#01N = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~魔法节拍（开启）~) STR_VAR bam_file = C0KM#01I RET C0KM#01I = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~魔法节拍（关闭）~) STR_VAR bam_file = C0KM#01N RET C0KM#01N = icon END
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#S0.spl~ ~override~
-SAY NAME1 ~Symphonie~
+SAY NAME1 ~交响曲~
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#SO3.spl~ ~override~
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~One Spell Restored~) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~已恢复一个法术~) END
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#SO4.spl~ ~override~
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Two Spells Restored~) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~已恢复两个法术~) END
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#01A.spl~ ~override~
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_timing = 0 parameter2 = C0KM#01I END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_timing = 4 parameter2 = C0KM#01N END
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#H1.spl~ ~override~
-SAY NAME1 ~Extra Level 1-3 Spell~
-SAY UNIDENTIFIED_DESC ~Choosing this ability allows the Kapellmeister to cast one additional Level 1, 2 and 3 spell.~
+SAY NAME1 ~额外 1-3 级法术~
+SAY UNIDENTIFIED_DESC ~选择此能力后，乐长可额外施放一个 1、2、3 级法术。~
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#H2.spl~ ~override~
-SAY NAME1 ~Extra Level 4-6 Spell~
-SAY UNIDENTIFIED_DESC ~Choosing this ability allows the Kapellmeister to cast one additional Level 4, 5 and 6 spell.~
+SAY NAME1 ~额外 4-6 级法术~
+SAY UNIDENTIFIED_DESC ~选择此能力后，乐长可额外施放一个 4、5、6 级法术。~
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#H3.spl~ ~override~
-SAY NAME1 ~Song of Universal Harmony~
-SAY UNIDENTIFIED_DESC ~This ability allows the Kapellmeister to cast any 1st to 9th level arcane spell of their choosing. After using the ability, any spell may be selected and cast as though a mage spell of the Kapellmeister's level. However, upon starting the song, the Kapellmeister becomes unable to sing, cast spells or use special abilities for the following two rounds.
+SAY NAME1 ~普世和谐之歌~
+SAY UNIDENTIFIED_DESC ~此能力使乐长可任选一个 1 至 9 级奥术法术。使用后，可选择任意法术，并以乐长当前等级的法师法术施放。然而歌谣一旦开始，乐长随后两轮内便无法歌唱、施法或使用特殊能力。
 
-Song of Universal Harmony may be selected up to five times.~
+普世和谐之歌最多可选五次。~
 
 COPY ~%MOD_FOLDER%/Kapellmeister/spells/C0KM#H4.spl~ ~override~
-SAY NAME1 ~Die Aufklärung~
-SAY UNIDENTIFIED_DESC ~This song is a powerful aid to the Kapellmeister and to any of their allied spellcasters. Die Aufklärung grants the Kapellmeister themselves a 10-point bonus to Saving Throws vs. Spells and a 50% bonus to Magic Resistance due to the power of the song. The song also gives the Kapellmeister's allies a +4 bonus to Intelligence and Arcane Casting Level, +2 bonus to Casting Speed, and two rolls for a 30% chance to restore an arcane spell of up to 8th level each round.
+SAY NAME1 ~启示之歌~
+SAY UNIDENTIFIED_DESC ~这首歌对乐长及其任何友方法师都是强力助力。启示之歌凭借歌谣之力，赋予乐长本人对抗法术豁免 +10、魔法抗性 +50%。歌谣还赋予乐长盟友智力与奥术施法等级 +4、施法速度 +2，每轮两次掷骰，有 30% 几率恢复一个至多 8 级的奥术法术。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~

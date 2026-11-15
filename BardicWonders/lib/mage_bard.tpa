@@ -40,15 +40,15 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 13
 	
-    mixed         = RESOLVE_STR_REF(~Mage / Bard~)
+    mixed         = RESOLVE_STR_REF(~法师/诗人~)
 	
-    lower         = RESOLVE_STR_REF(~mage / bard~)
+    lower         = RESOLVE_STR_REF(~法师/诗人~)
 	
-    help          = RESOLVE_STR_REF(~MAGE/BARD: This character can use the abilities of a Mage and a Bard, though Mage spells cannot be cast while wearing armor.
-    
-Gnomes can choose this multi-class, but become Illusionist/Bards by default. Gnomes are the only race that can combine a specialist Mage class in a multi-class.~)
+    help          = RESOLVE_STR_REF(~法师/诗人：该角色能使用法师与诗人的能力，但身着护甲时无法施放法师法术。
+
+地精可选择此兼职，但默认成为幻术师/诗人。地精是唯一能在兼职中兼修专精法师职业的种族。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~MAGE/BARD: This character can use the abilities of a Mage and a Bard, though Mage spells cannot be cast while wearing armor.~)
+    briefdesc     = RESOLVE_STR_REF(~法师/诗人：该角色能使用法师与诗人的能力，但身着护甲时无法施放法师法术。~)
 	
 	// fallen = 0
 	
@@ -162,15 +162,15 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 13
 	
-    mixed         = RESOLVE_STR_REF(~Illusionist / Bard~)
+    mixed         = RESOLVE_STR_REF(~幻术师/诗人~)
 	
-    lower         = RESOLVE_STR_REF(~illusionist / bard~)
+    lower         = RESOLVE_STR_REF(~幻术师/诗人~)
 	
-    help          = RESOLVE_STR_REF(~MAGE/BARD: This character can use the abilities of a Mage and a Bard, though Mage spells cannot be cast while wearing armor.
-    
-Gnomes can choose this multi-class, but become Illusionist/Bards by default. Gnomes are the only race that can combine a specialist Mage class in a multi-class.~)
+    help          = RESOLVE_STR_REF(~幻术师/诗人：该角色能使用法师与诗人的能力，但身着护甲时无法施放法师法术。
+
+地精可选择此兼职，但默认成为幻术师/诗人。地精是唯一能在兼职中兼修专精法师职业的种族。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~MAGE/BARD: This character can use the abilities of a Mage and a Bard, though Mage spells cannot be cast while wearing armor.~)
+    briefdesc     = RESOLVE_STR_REF(~幻术师/诗人：该角色能使用法师与诗人的能力，但身着护甲时无法施放法师法术。~)
 	
 	// fallen = 0
 	
@@ -284,13 +284,13 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 10
 	
-    mixed         = RESOLVE_STR_REF(~Fighter / Mage / Bard~)
+    mixed         = RESOLVE_STR_REF(~战士/法师/诗人~)
 	
-    lower         = RESOLVE_STR_REF(~fighter / mage / bard~)
+    lower         = RESOLVE_STR_REF(~战士/法师/诗人~)
 	
-    help          = RESOLVE_STR_REF(~FIGHTER/MAGE/BARD: This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
+    help          = RESOLVE_STR_REF(~战士/法师/诗人：该角色能使用战士、法师与诗人的能力，但身着超过皮甲的护甲时无法行窃，身着任何护甲时无法施法。可在其可用武器中专精，但无法达到大师级。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~FIGHTER/MAGE/BARD: This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
+    briefdesc     = RESOLVE_STR_REF(~战士/法师/诗人：该角色能使用战士、法师与诗人的能力，但身着超过皮甲的护甲时无法行窃，身着任何护甲时无法施法。可在其可用武器中专精，但无法达到大师级。~)
 	
 	// fallen = 0
 	
@@ -404,15 +404,15 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 10
 	
-    mixed         = RESOLVE_STR_REF(~Fighter / Illusionist / Bard~)
+    mixed         = RESOLVE_STR_REF(~战士/幻术师/诗人~)
 	
-    lower         = RESOLVE_STR_REF(~fighter / illusionist / bard~)
+    lower         = RESOLVE_STR_REF(~战士/幻术师/诗人~)
 	
-    help          = RESOLVE_STR_REF(~FIGHTER/MAGE/BARD: This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.
-    
-Gnomes can choose this multi-class, but become Fighter/Illusionist/Bards by default. Gnomes are the only race that can combine a specialist Mage class in a multi-class.~)
+    help          = RESOLVE_STR_REF(~战士/幻术师/诗人：该角色能使用战士、法师与诗人的能力，但身着超过镶皮甲的护甲时无法行窃，身着任何护甲时无法施法。可在其可用武器中专精，但无法达到大师级。
+
+地精可选择此兼职，但默认成为战士/幻术师/诗人。地精是唯一能在兼职中兼修专精法师职业的种族。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~FIGHTER/MAGE/BARD: This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
+    briefdesc     = RESOLVE_STR_REF(~战士/幻术师/诗人：该角色能使用战士、法师与诗人的能力，但身着超过皮甲的护甲时无法行窃，身着任何护甲时无法施法。可在其可用武器中专精，但无法达到大师级。~)
 	
 	// fallen = 0
 	
@@ -632,7 +632,7 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
 	  parameter1 = (IDS_OF_SYMBOL (~KIT~ ~C0_MAGE_BARD~))
 	  parameter2 = 9
 	  power = 0
-	  special = RESOLVE_STR_REF (~Mage / Bard~)
+	  special = RESOLVE_STR_REF (~法师/诗人~)
       END
           LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -642,7 +642,7 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
 	  parameter1 = (IDS_OF_SYMBOL (~KIT~ ~C0_FIGHTER_MAGE_BARD~))
 	  parameter2 = 9
 	  power = 0
-	  special = RESOLVE_STR_REF (~Fighter / Mage / Bard~)
+	  special = RESOLVE_STR_REF (~战士/法师/诗人~)
       END
     END
     END
@@ -803,7 +803,7 @@ ACTION_FOR_EACH description IN
                  ("%row_name%" STRING_EQUAL_CASE "C0_ILLUSIONIST_BARD" ) BEGIN
           READ_2DA_ENTRY index 4 col_count bard_desc
           SPRINT old_bard ~This character can use the abilities of a Mage and a Bard, though Mage spells cannot be cast while wearing armor.~
-          SPRINT new_bard ~This character can use the abilities of a Mage and a Bard. (Spells may be cast while wearing armor.)~
+          SPRINT new_bard ~该角色能使用法师与诗人的能力。（可在穿戴护甲时施法。）~
           GET_STRREF %bard_desc% bard_text
           INNER_PATCH_SAVE bard_text %bard_text% BEGIN
             REPLACE_TEXTUALLY ~%old_bard%~ ~%new_bard%~
@@ -815,7 +815,7 @@ ACTION_FOR_EACH description IN
                  ("%row_name%" STRING_EQUAL_CASE "C0_FIGHTER_ILLUSIONIST_BARD" ) BEGIN
           READ_2DA_ENTRY index 4 col_count bard_desc
           SPRINT old_bard ~This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~
-          SPRINT new_bard ~This character can use the abilities of a Fighter, Mage, and Bard, though they cannot use Pick Pockets or cast spells while wearing more than studded leather armor. They may Specialize in, but not Master, any weapon they can use.~
+          SPRINT new_bard ~该角色能使用战士、法师与诗人的能力，但身着超过镶皮甲的护甲时无法行窃或施法。可在其可用武器中专精，但无法达到大师级。~
           GET_STRREF %bard_desc% bard_text
           INNER_PATCH_SAVE bard_text %bard_text% BEGIN
             REPLACE_TEXTUALLY ~%old_bard%~ ~%new_bard%~

@@ -28,45 +28,45 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Strategist~)
+    mixed         = RESOLVE_STR_REF(~军师~)
 	
-    lower         = RESOLVE_STR_REF(~strategist~)
+    lower         = RESOLVE_STR_REF(~军师~)
 	
-    help          = RESOLVE_STR_REF(~STRATEGIST: Masters of battlefield control, strategists regard combat the way most people would consider a puzzle to be solved. Relying on guile and cunning to outwit their enemies and best aid their allies, the greatest strength of the strategist is in their tactical thinking. They are the champions of plots and ploys, of gambits and fianchettos, of pronged attacks and of victories won through sacrifice. With planning and preparation they are granted unparalleled versatility on the battlefield, able to turn even certain failure to success.
+    help          = RESOLVE_STR_REF(~军师：战场控制的大师，军师把战斗当作众人眼中待解的谜题。依靠智谋与算计智取敌人、全力辅佐盟友，军师最大的长处在于战术思维。他们是阴谋与计策、弃子与布局、多路进攻与以牺牲换取胜利的豪杰。凭借筹划与准备，他们在战场上拥有无与伦比的应变力，甚至能将必败之局转为胜势。
 
-Advantages:
-– May Specialize (two slots) in any weapon or style.
-– Tactical Coordination: The strategist passively grants all allies within visual range (excluding <PRO_HIMHER>self) a +1 bonus to hit, which increases to +2 at 19 Intelligence, +3 at 22 Intelligence and +4 at 25 Intelligence.
-– Instead of a regular Bard Song, the Strategist may use Battle Tactics, granting all allies a +2 bonus to their minimum damage modifier. From 9th level onwards, Battle Tactics also grants the strategist's Combat Prowess bonus to all non-warrior allies.
+优势：
+– 可在任意武器或风格上专精（两个熟练度点）。
+– 战术协同：军师被动赋予视觉范围内所有盟友（不含 <PRO_HIMHER> 本人）命中 +1；智力 19 时增至 +2，22 时 +3，25 时 +4。
+– 军师不以常规诗人歌谣取而代之，而是运用“战斗谋略”，赋予所有盟友最低伤害修正 +2。9 级起，战斗谋略还将军师的“战斗勇武”加成赋予所有非战士盟友。
 
-– May use the Analyze ability at will.
+– 可随意使用“分析”能力。
 
-ANALYZE: With this ability, the user carefully observes the target and identifies their strengths and weaknesses, revealing their Hit Die, THAC0, Saving Throws, Magic Resistance, Damage Resistance and vulnerability to Poison and Backstabs. This ability may be used an unlimited number of times.
+分析：借此能力，使用者仔细观察目标，辨识其强弱，揭示其生命骰、THAC0、豁免、魔法抗性、伤害抗性以及对毒素与背刺的薄弱之处。此能力可无限次使用。
 
-– 9th level: Combat Prowess: The strategist gains an additional half attack per round, which increases to a full attack per round at 18th level.
-– 9th level: May use Tactical Casting once per day.
+– 9 级：战斗勇武：军师每回合额外获得半次攻击，18 级时增至每回合一次完整攻击。
+– 9 级：每日可使用一次“战术施法”。
 
-TACTICAL CASTING: The strategist is a versatile party member capable of adapting to the group's needs. This ability may be activated while outside of combat to change to Tactical Casting mode, removing their casting level penalty and granting one bonus spell slot per level, but also removes their own Combat Prowess bonus until the effect is deactivated via using the ability again.
+战术施法：军师是全能的队伍成员，能够适应团队需求。此能力可在战斗外激活，切换到战术施法模式，移除施法等级惩罚并每级额外给予一个法术位，但在再次使用该能力停用效果前，自身的战斗勇武加成也会被移除。
 
-– 10th level: Ambush Awareness: The strategist permanently becomes immune to backstabs and gains an innate 10% chance to detect traps around them.
-– 14th level: May use the Combination Tactics ability three times per day.
+– 10 级：伏击警觉：军师永久免疫背刺，并天生有 10% 几率侦测周围陷阱。
+– 14 级：每日可使用三次“协同战术”。
 
-COMBINATION TACTICS: The strategist coordinates their attacks with a targeted ally, granting <PRO_HIMHER>self and the ally a +4 bonus to movement rate, +2 to critical hit rate and one bonus attack per round for a number of seconds equal to the individual target's Intelligence, with a minimum of 12 seconds. Combination Tactics will have no effect if not used on an ally.
+协同战术：军师与指定盟友协同进攻，赋予 <PRO_HIMHER> 本人与该盟友移动速率 +4、暴击率 +2，以及每回合一次额外攻击，持续秒数等于目标个体的智力，至少 12 秒。若未对盟友使用，协同战术无效。
 
-– 16th level: Gains the Counterattack Gambit passive effect.
+– 16 级：获得“反击弈局”被动效果。
 
-COUNTERATTACK GAMBIT: When the strategist falls below half of their maximum hit points, they grant the closest ally a +2 bonus to their melee critical hit modifier. The ally will also never critically miss while under the effects.
+反击弈局：当军师生命值低于最大生命一半时，赋予最近的盟友近战暴击修正 +2。该盟友在此效果下也绝不会暴击失误。
 
-– From 20th level onwards, may use the Checkmate ability once per day.
+– 20 级起，每日可使用一次“将杀”。
 
-CHECKMATE: The strategist changes the tides of battle with a spectacular tactical maneuver, forcing all enemies within their visual range to make a Saving Throw vs. Death (-1 modifier per point of the strategist's Intelligence above 16) or become Stunned for two rounds, while all of the strategist's allies gain the effects of Improved Haste for the same duration. Enemy creatures with Intelligence equal to or greater than the strategist are unaffected by the Stun effect.
+将杀：军师以一场精彩的战术机动扭转战局，迫使视觉范围内所有敌人进行对抗死亡豁免（军师智力每超过 16 一点，修正值 -1），否则眩晕两轮；同时军师的所有盟友在相同时长内获得改善加速效果。智力等于或高于军师的敌方生物不受眩晕影响。
+
+劣势：
+– 战斗谋略不随等级提升。
+– 军师施法时视为比同级常规诗人低 1 级。
+– 扒窃技能仅为常人一半。~)
 	
-Disadvantages:
-– Battle Tactics does not improve with level.
-– The strategist's spells are cast as though a level lower than a normal Bard of the same level.
-– Only has one half the normal Pick Pockets skill.~)
-	
-    briefdesc     = RESOLVE_STR_REF(~STRATEGIST: Masters of battlefield control, strategists regard combat the way most people would consider a puzzle to be solved. Relying on guile and cunning to outwit their enemies and best aid their allies, the greatest strength of the strategist is in their tactical thinking. They are the champions of plots and ploys, of gambits and fianchettos, of pronged attacks and of victories won through sacrifice. With planning and preparation they are granted unparalleled versatility on the battlefield, able to turn even certain failure to success.~)
+    briefdesc     = RESOLVE_STR_REF(~军师：战场控制的大师，军师把战斗当作众人眼中待解的谜题。依靠智谋与算计智取敌人、全力辅佐盟友，军师最大的长处在于战术思维。他们是阴谋与计策、弃子与布局、多路进攻与以牺牲换取胜利的豪杰。凭借筹划与准备，他们在战场上拥有无与伦比的应变力，甚至能将必败之局转为胜势。~)
 	
 	// fallen = 0
 	
@@ -182,9 +182,9 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
 
 END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Battle Tactics~) STR_VAR bam_file = C0STRASI RET C0STRASI = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Combination Tactics~) STR_VAR bam_file = C0STRA4I RET C0STRA4I = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Counterattack Gambit~) STR_VAR bam_file = C0STRA5I RET C0STRA5I = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~战斗谋略~) STR_VAR bam_file = C0STRASI RET C0STRASI = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~协同战术~) STR_VAR bam_file = C0STRA4I RET C0STRA4I = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~反击弈局~) STR_VAR bam_file = C0STRA5I RET C0STRA5I = icon END
 
 ADD_PROJECTILE ~%MOD_FOLDER%/strategist/spells/c0strapr.PRO~ ~C0 STRATEGIST PROJECTILE~
   
@@ -197,14 +197,14 @@ COPY_EXISTING ~C0STRA0A.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter2 = 0 parameter2 = C0HTINT END
 
 COPY_EXISTING ~C0STRA2.SPL~ OVERRIDE
-SAY NAME1 ~Tactical Casting~
-SAY UNIDENTIFIED_DESC ~Tactical Casting
-The strategist is a versatile party member capable of adapting to the group's needs. This ability may be activated while outside of combat to change to Tactical Casting mode, removing the strategist's penalties to spellcasting and grants an additional spell slot per level, but also removes their own Combat Prowess bonus until the effect is deactivated via using the ability again.~
+SAY NAME1 ~战术施法~
+SAY UNIDENTIFIED_DESC ~战术施法
+军师是全能的队伍成员，能够适应团队需求。此能力可在战斗外激活，切换到战术施法模式，移除军师的施法惩罚并每级额外给予一个法术位，但也会移除自身的战斗勇武加成，直到再次使用该能力停用效果为止。~
 
 COPY_EXISTING ~C0STRA4.SPL~ OVERRIDE
-SAY NAME1 ~Combination Tactics~
-SAY UNIDENTIFIED_DESC ~Combination Tactics
-The strategist coordinates their attacks with a targeted ally, granting <PRO_HIMHER>self and the ally a +4 bonus to movement rate, +2 to critical hit rate and one bonus attack per round for a number of seconds equal to their Intelligence. Combination Tactics will have no effect if not used on an ally.~
+SAY NAME1 ~协同战术~
+SAY UNIDENTIFIED_DESC ~协同战术
+军师与指定盟友协同进攻，赋予 <PRO_HIMHER> 本人与该盟友移动速率 +4、暴击率 +2，以及每回合一次额外攻击，持续秒数等于其智力。若未对盟友使用，协同战术无效。~
 
 COPY_EXISTING ~C0STRA4A.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter2 = 0 parameter2 = C0HTINT END
@@ -243,9 +243,9 @@ COPY_EXISTING ~C0STRA5A.SPL~ OVERRIDE
   LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = C0STRA5I END
 
 COPY_EXISTING ~C0STRA6.SPL~ OVERRIDE
-SAY NAME1 ~Checkmate~
-SAY UNIDENTIFIED_DESC ~Checkmate
-The strategist changes the tides of battle with a spectacular tactical maneuver, forcing all enemies within their visual range to make a Saving Throw vs. Death (-1 modifier per point of the strategist's Intelligence above 16) or become Stunned for one round, while all of the strategist's allies gain the effects of Improved Haste for the same duration. Enemy creatures with Intelligence equal to or greater than the strategist are unaffected by the Stun effect.~
+SAY NAME1 ~将杀~
+SAY UNIDENTIFIED_DESC ~将杀
+军师以一场精彩的战术机动扭转战局，迫使视觉范围内所有敌人进行对抗死亡豁免（军师智力每超过 16 一点，修正值 -1），否则眩晕一轮；同时军师的所有盟友在相同时长内获得改善加速效果。智力等于或高于军师的敌方生物不受眩晕影响。~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter2 = 0 parameter2 = C0HTINT END
 
 COPY_EXISTING ~C0STRA6A.SPL~ ~OVERRIDE/C0STRA6B.SPL~
@@ -277,11 +277,11 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 324 parameter1 = 25 STR_VAR resource = C
 LPF ALTER_EFFECT INT_VAR match_savebonus = 0 savebonus = (0 - 9) END
 
 COPY_EXISTING ~C0STRH1.SPL~ OVERRIDE
-SAY NAME1 ~Peerless Strategy~
-SAY UNIDENTIFIED_DESC ~Peerless Strategy
-Once learned, this ability improves the effects of Battle Tactics, increasing the minimum damage modifier to +4 and granting all allies a +1 bonus to casting speed. Additionally, allies with backstab modifiers are able to backstab targets from any direction while under the effect of Battle Tactics.~
+SAY NAME1 ~无双谋略~
+SAY UNIDENTIFIED_DESC ~无双谋略
+习得后，此能力强化战斗谋略的效果：最低伤害修正增至 +4，并赋予所有盟友施法速度 +1。此外，具备背刺修正的盟友在战斗谋略效果下，可从任意方向背刺目标。~
 
 COPY_EXISTING ~C0STRH2.SPL~ OVERRIDE
-SAY NAME1 ~Tactical Acumen~
-SAY UNIDENTIFIED_DESC ~Tactical Acumen
-Using this ability, the strategist maximizes their efficiency in forming and executing field tactics, gaining Aura Cleansing for the next two rounds. However, after the duration has expired, the strategist is unable to attack, cast spells, use items or abilities, or use Battle Tactics for another two rounds.~
+SAY NAME1 ~战术敏锐~
+SAY UNIDENTIFIED_DESC ~战术敏锐
+使用此能力后，军师在拟定与执行战场谋略上将效率拉满，接下来两轮获得光环净化。然而持续结束后，军师另有两轮无法攻击、施法、使用物品或能力，也无法使用战斗谋略。~

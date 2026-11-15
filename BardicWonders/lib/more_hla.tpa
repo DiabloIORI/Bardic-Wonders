@@ -21,7 +21,7 @@ DEFINE_ACTION_FUNCTION DESTRUCTO_REMOVE_HLA
   PATCH_IF (%class% > 0) AND (%class% < rows) BEGIN
     READ_2DA_ENTRY class 1 2 class_name
   END ELSE BEGIN
-    PATCH_PRINT ~The selected class number, %class%, is out of bounds.~
+    PATCH_PRINT ~所选职业编号 %class% 超出范围。~
   END
 
   // Find class in luabbr.2da
@@ -126,7 +126,7 @@ DEFINE_ACTION_FUNCTION SIMPLE_REPLACE_HLA
   PATCH_IF (%class% > 0) AND (%class% < rows) BEGIN
     READ_2DA_ENTRY class 1 2 class_name
   END ELSE BEGIN
-    PATCH_PRINT ~The selected class number, %class%, is out of bounds.~
+    PATCH_PRINT ~所选职业编号 %class% 超出范围。~
   END
 
   // Find class in luabbr.2da
@@ -230,7 +230,7 @@ DEFINE_ACTION_FUNCTION SIMPLE_ADD_HLA
   PATCH_IF (%class% > 0) AND (%class% < rows) BEGIN
     READ_2DA_ENTRY class 1 2 class_name
   END ELSE BEGIN
-    PATCH_PRINT ~The selected class number, %class%, is out of bounds.~
+    PATCH_PRINT ~所选职业编号 %class% 超出范围。~
   END
 
   // Find class in luabbr.2da

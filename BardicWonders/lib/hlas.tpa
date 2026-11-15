@@ -1,16 +1,16 @@
 COPY ~%MOD_FOLDER%/hlas~ ~override~
 
 COPY_EXISTING ~C0BWHL1.SPL~ ~OVERRIDE~
-SAY NAME1 ~Unchained Voice~
-SAY UNIDENTIFIED_DESC ~Unchained Voice
-The bard's mastery of their voice is without peer and cannot be stifled by any means. Upon learning this permanent ability, the bard gains a +1 bonus to casting speed and immunity to silence effects.
+SAY NAME1 ~不羁嗓音~
+SAY UNIDENTIFIED_DESC ~不羁嗓音
+诗人对嗓音的掌握无可匹敌，不受任何方式压制。习得此永久能力后，诗人施法速度 +1，并免疫沉默效果。
 
-Requires: Prestissimo~
+需求：最急板~
 
 COPY_EXISTING ~C0BWHL2.SPL~ ~OVERRIDE~
-SAY NAME1 ~Resonating Weapon~
-SAY UNIDENTIFIED_DESC ~Resonating Weapon
-The bard imbues the weapons of themselves and all allies with in a 20-ft. radius of them with the power of sound. For the next 5 rounds, all attacks made by affected allies cause all enemies within 10-ft. of the initial target to emanate a harmful wave of sound in a 5-ft. radius, dealing 2d6 magic damage and having a 20% chance to stun them for 1 round on a failed Saving Throw vs. Death at -5. Multiple sound waves that overlap may affect the same target, applying their effects consecutively.~
+SAY NAME1 ~共鸣武器~
+SAY UNIDENTIFIED_DESC ~共鸣武器
+诗人以声音之力为自身及 20 尺半径内所有盟友的武器注能。接下来 5 轮内，受影响盟友的所有攻击都会从初始目标 10 尺内的敌人身上激起一道 5 尺半径的有害声波，造成 2d6 魔法伤害；未通过 -5 对抗死亡豁免者有 20% 几率眩晕 1 轮。重叠的多道声波可影响同一目标，效果依次叠加。~
 
 ADD_PROJECTILE ~override/c0bwhl2r.PRO~ ~C0 Resonating Weapon AoE~
 ADD_PROJECTILE ~override/c0bwhl2p.PRO~ ~C0 Resonating Weapon Wave~
@@ -21,22 +21,22 @@ COPY_EXISTING ~C0BWHL2b.SPL~ ~OVERRIDE~
 	LPF ALTER_SPELL_HEADER INT_VAR projectile = c0bwhl2p END
 
 COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
-SAY NAME1 ~Song of Freedom~
-SAY UNIDENTIFIED_DESC ~Song of Freedom
-Upon using this ability, the bard removes all charm, confusion, fear, feeblemind, hold, sleep, berserk, stun effects from allies in a 25-ft. radius around them and provides immunity to such effects for 1 turn.
+SAY NAME1 ~自由之歌~
+SAY UNIDENTIFIED_DESC ~自由之歌
+使用此能力后，诗人移除自身周围 25 尺内盟友身上的所有魅惑、混乱、恐惧、痴呆、定身、睡眠、狂暴、眩晕效果，并在 1 回合内免疫此类效果。
 
-Removes effects of Song of Heroism and Legionnaire's March.
+移除英雄之歌与军团行军曲的效果。
 
-This ability may be selected three times.~
+此能力可选三次。~
 
 COPY_EXISTING ~C0BWHL4.SPL~ ~OVERRIDE~
-SAY NAME1 ~Legionnaire's March~
-SAY UNIDENTIFIED_DESC ~Legionnaire's March
-Upon using this ability, the bard empowers all allies in a 25-ft. radius around them, setting their base THAC0 to 0 and base attacks per round to the equal of a fighter's of the same level, and +4 to damage for 1 turn.
+SAY NAME1 ~军团行军曲~
+SAY UNIDENTIFIED_DESC ~军团行军曲
+使用此能力后，诗人赋能自身周围 25 尺内所有盟友，使其基础 THAC0 归零，基础每回合攻击次数等同于同级战士，并在 1 回合内伤害 +4。
 
-Removes effects of Song of Freedom and Song of Heroism.
+移除自由之歌与英雄之歌的效果。
 
-This ability may be selected three times.~
+此能力可选三次。~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0bardsx.spl~ THEN BEGIN
 COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
@@ -50,30 +50,30 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 130 END
 END
 
 COPY_EXISTING ~C0BWHL5.SPL~ ~OVERRIDE~
-SAY NAME1 ~Song of Heroism~
-SAY UNIDENTIFIED_DESC ~Song of Heroism
-Upon using this ability, the bard grants temporary hit points equal to +4 per level of the bard and a +6 bonus to Armor Class and Saving Throws for 1 turn to all allies in a 25-ft. radius around them.
+SAY NAME1 ~英雄之歌~
+SAY UNIDENTIFIED_DESC ~英雄之歌
+使用此能力后，诗人为自身周围 25 尺内所有盟友授予诗人每级 +4 的临时生命值，护甲等级与豁免 +6，持续 1 回合。
 
-Removes effects of Song of Heroism and Legionnaire's March.
+移除英雄之歌与军团行军曲的效果。
 
-This ability may be selected three times.~
+此能力可选三次。~
 
 COPY_EXISTING ~C0BWHL6.SPL~ ~OVERRIDE~
-SAY NAME1 ~Hymn of Requiem~
-SAY UNIDENTIFIED_DESC ~Hymn of Requiem
-Upon using this ability, the bard instantly deals 60 unmitigated magic damage to enemies and heals 60 hit points to allies within a 25-ft. range of the bard. This song ignores all spell protections and magic resistance.
+SAY NAME1 ~安魂挽歌~
+SAY UNIDENTIFIED_DESC ~安魂挽歌
+使用此能力后，诗人对敌人立即造成 60 点不可减免的魔法伤害，并为 25 尺范围内的盟友回复 60 点生命值。此歌谣无视一切法术防护与魔法抗性。
 
-This ability may be selected once.~
+此能力可选一次。~
 
 COPY_EXISTING ~C0BWHL7.SPL~ ~OVERRIDE~
-SAY NAME1 ~Prestissimo~
-SAY UNIDENTIFIED_DESC ~Prestissimo
-The bard chants incantations with the ease and fluidity of song or verse. Upon learning this permanent ability, the bard's casting speed is permanently increased by 1.~
+SAY NAME1 ~最急板~
+SAY UNIDENTIFIED_DESC ~最急板
+诗人以歌谣与诗句般的从容流畅吟诵咒文。习得此永久能力后，诗人施法速度永久 +1。~
 
 COPY_EXISTING ~C0BWHL8.SPL~ ~OVERRIDE~
-SAY NAME1 ~Lingering Song~
-SAY UNIDENTIFIED_DESC ~Lingering Song
-With this permanent skill, the effects of the bard's song remain on all targets for an additional 4 rounds after they stop singing.~
+SAY NAME1 ~余韵之歌~
+SAY UNIDENTIFIED_DESC ~余韵之歌
+习得此永久技能后，诗人停止歌唱后，歌谣效果在所有目标身上额外持续 4 轮。~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0bardsx.spl~ THEN BEGIN
 COPY_EXISTING ~C0BWHL3.SPL~ ~OVERRIDE~
@@ -219,18 +219,18 @@ STR_VAR
 ACTION_IF FILE_EXISTS_IN_GAME ~C0ARCAS1.EFF~ THEN BEGIN
 
 COPY_EXISTING ~C0BWHL9.SPL~ ~OVERRIDE~
-SAY NAME1 ~Battle Caster~
-SAY UNIDENTIFIED_DESC ~Battle Caster
-With this permanent skill, the bard's extensive experience has permanently allowed them to cast spells while wearing any armor.
+SAY NAME1 ~战斗施法者~
+SAY UNIDENTIFIED_DESC ~战斗施法者
+习得此永久技能后，诗人凭借丰富经验，可永久在穿戴任意护甲时施法。
 
-Prerequisite: Not Dancer or Kapellmeister~
+前提条件：非舞者或乐长~
 
 COPY_EXISTING ~C0BWHL0.SPL~ ~OVERRIDE~
-SAY NAME1 ~Martial Prowess~
-SAY UNIDENTIFIED_DESC ~Martial Prowess
-Equal parts warrior and poet, the skald's training has given them combat experience near-equivalent to that of a fighter, permanently granting them one bonus attack per round and +100 exceptional bonus to Strength.
+SAY NAME1 ~战斗勇武~
+SAY UNIDENTIFIED_DESC ~战斗勇武
+既是战士又是诗人，战歌者的训练赋予其近乎战士的战斗经验，永久获得每回合一次额外攻击与 100 点特殊力量加成。
 
-Prerequisite: Skald only~
+前提条件：仅限战歌者~
 
 COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
   // Borrowed from Rogue Rebalancing

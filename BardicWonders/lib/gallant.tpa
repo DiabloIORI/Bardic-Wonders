@@ -49,22 +49,22 @@ COPY_EXISTING ~C0GALLAN.2DA~ ~OVERRIDE~
 
 END
 
-OUTER_SPRINT kit_description ~GALLANT: Equal parts poet and chivalrous knight, the gallant is a heroic warrior with a romantic heart, as devoted to pursuing love and beauty as defeating great evil. The gallant excels at inspiring heroes and capturing the hearts of youths, making them ideal leaders.
+OUTER_SPRINT kit_description ~豪情骑士：兼具诗人气质与骑士风度，豪情骑士是心怀浪漫的英雄战士，既倾心追求爱与美，也致力于击败大奸大恶。豪情骑士擅长鼓舞英雄、赢得年轻人的倾心，是理想的领袖。
 
-Advantages:
-– May be of any good alignment.
-– Gains a +4 additional Lore per level.
-– Gains a +2 to Saving Throws vs. Enchantment Spells, with a further +1 bonus for every 8th level.
-– May use Bard Song ability. While active, the Bard Song makes all nearby allies immune to fear, and increases their Luck modifier by +1, increasing to +2 at 15th level and +3 at 20th level.<BARDIC_SPELLS><BARDIC_INSPIRATIONS>
+优势：
+– 可选择任意善良阵营。
+– 每级额外获得 +4 知识。
+– 对抗附魔法术的豁免 +2，且每 8 等级再额外 +1。
+– 可使用诗人歌谣。歌谣生效时，使附近所有盟友免疫恐惧，幸运调整值 +1，15 级时升至 +2，20 级时升至 +3。<BARDIC_SPELLS><BARDIC_INSPIRATIONS>
 
-Disadvantages:
-– May not use Turn Undead.NO_AURANO_SMITE_EVIL~
+劣势：
+– 无法使用超度亡灵。NO_AURANO_SMITE_EVIL~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0PAL01.SPL~ THEN BEGIN
 
 OUTER_PATCH_SAVE kit_description ~%kit_description%~ BEGIN
   REPLACE_TEXTUALLY ~NO_AURA~ ~
-– Does not gain Divine Grace or Aura of Courage.~
+– 无法获得神恩或勇气光环。~
 
 END
 
@@ -80,7 +80,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~C0PAL02.SPL~ OR FILE_EXISTS_IN_GAME ~SPCL122.SPL~
 
 OUTER_PATCH_SAVE kit_description ~%kit_description%~ BEGIN
   REPLACE_TEXTUALLY ~NO_SMITE_EVIL~ ~
-– May not use Smite Evil.~
+– 无法使用斩杀邪恶。~
 
 END
 
@@ -117,13 +117,13 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 6
 	
-    mixed         = RESOLVE_STR_REF(~Gallant~)
+    mixed         = RESOLVE_STR_REF(~豪情骑士~)
 	
-    lower         = RESOLVE_STR_REF(~gallant~)
+    lower         = RESOLVE_STR_REF(~豪情骑士~)
 	
     help          = RESOLVE_STR_REF(~%kit_description%~)
 	
-    briefdesc     = RESOLVE_STR_REF(~GALLANT: Equal parts poet and chivalrous knight, the gallant is a heroic warrior with a romantic heart, as devoted to pursuing love and beauty as defeating great evil. The gallant excels at inspiring heroes and capturing the hearts of youths, making them ideal leaders.~)
+    briefdesc     = RESOLVE_STR_REF(~豪情骑士：既是诗人又是侠义骑士，豪情骑士是拥有浪漫心怀的英雄武士，既倾心于追寻爱与美，也致力于击败大恶。豪情骑士擅长激励英雄、打动年轻人的心，是理想的领袖。~)
 	
 	// fallen = 0
 	

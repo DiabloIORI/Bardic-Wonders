@@ -31,37 +31,37 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Abettor of Mask~)
+    mixed         = RESOLVE_STR_REF(~面具侍从~)
 	
-    lower         = RESOLVE_STR_REF(~abettor of Mask~)
+    lower         = RESOLVE_STR_REF(~面具侍从~)
 	
-    help          = RESOLVE_STR_REF(~ABETTOR OF MASK: Contrary to popular belief, the trickster god Mask's favor extends past those who walk the path of stealthy arts and trickery. The Abettor is a faithful Maskarran, a deceptive agent of the Lord of Shadows whose gall is tested through tasks that typical bards would balk at due to their dark natures.
+    help          = RESOLVE_STR_REF(~面具侍从：与普遍的看法不同，诡诈之神面具的眷顾并不只属于潜行与诡计之道。侍从是虔诚的面具信徒，暗影之主的诡诈代理人，其胆识要通过那些让寻常诗人因性质黑暗而却步的考验来锤炼。
 
-ADVANTAGES:
+优势：
 
-– Receives a +5% bonus to Pick Pockets per level.
-– Gains a backstab multiplier of x2.
-– The Abettor's song, "One's Loss, Another's Gain", provides thieving and stealth bonuses to the party. The song grants +15% to all thieving skills, increasing by 5% per rank and grants the following effects:
-	3rd level: Party members passively detect traps
-	6th level: Party members gain Blur (+3 to AC, +1 to all saving throws)
-	9th level: The singer has a 50% chance to gain Improved Invisibility for one round
-	12th level: Party members gain Non-Detection
-	15th level: The singer has a 100% chance to gain Improved Invisibility for one round
+– 每级扒窃 +5%。
+– 背刺倍率 x2。
+– 侍从的歌谣“一家之失，另一家之得”为队伍提供偷窃与潜行加成。歌谣赋予所有偷窃技能 +15%，每头衔再 +5%，并带来下列效果：
+	3 级：队员被动侦测陷阱
+	6 级：队员获得模糊术（护甲等级 +3，所有豁免 +1）
+	9 级：歌者有 50% 几率获得改善隐身，持续一轮
+	12 级：队员获得反侦测
+	15 级：歌者有 100% 几率获得改善隐身，持续一轮
 
-– From 10th level onwards, the Abettor passively has a 1% chance upon taking damage to turn invisible for one turn.
-– From 12th level onwards, gains one use of Shadowstep.
+– 10 级起，侍从受击时有 1% 几率被动隐身一回合。
+– 12 级起，获得一次“暗影步”使用次数。
 
-SHADOWSTEP: The character steps into the Shadow Plane and may move for 7 seconds while others are frozen in time. The caster cannot attack or cast spells while in the Shadow Plane.
+暗影步：角色踏入暗影位面，可在他人时间凝滞时移动 7 秒。在暗影位面中无法攻击或施法。
 
-– May learn the Assassination high level ability upon reaching 24th level.
+– 24 级时可习得“刺杀”高阶能力。
 
-DISADVANTAGES:
-– Must be of True Neutral, Chaotic Neutral, Neutral Evil or Chaotic Evil alignment.
-– Only has one-half normal Lore value.
-– May not learn the Magic Flute high level ability.
-– May only be proficient in weapons usable by thieves.~)
+劣势：
+– 阵营必须为绝对中立、混乱中立、中立邪恶或混乱邪恶。
+– 学识值仅为常人一半。
+– 不得习得“魔法长笛”高阶能力。
+– 只能熟练使用盗贼可用的武器。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~ABETTOR OF MASK: Contrary to popular belief, the trickster god Mask's favor extends past those who walk the path of stealthy arts and trickery. The Abettor is a faithful Maskarran, a deceptive agent of the Lord of Shadows whose gall is tested through tasks that typical bards would balk at due to their dark natures.~)
+    briefdesc     = RESOLVE_STR_REF(~面具侍从：与普遍的看法不同，诡诈之神面具的眷顾并不只属于潜行与诡计之道。侍从是虔诚的面具信徒，暗影之主的诡诈代理人，其胆识要通过那些让寻常诗人因性质黑暗而却步的考验来锤炼。~)
 	
 	// fallen = 0
 	
@@ -188,15 +188,15 @@ COPY ~%MOD_FOLDER%/abettor/c0abetso.spl~ ~override~
   END
 
 COPY ~%MOD_FOLDER%/abettor/c0abett5.spl~ ~override~
-SAY NAME1 ~Embrace the Shadow~
-SAY NAME2 ~Embrace the Shadow~
-SAY UNIDENTIFIED_DESC ~Embrace the Shadow
-Gaining the favor of the Lord of Shadows has its advantages. The Abettor of Mask permanently gains a +1 bonus to Dexterity and Luck and becomes immune to poison and backstabs. <PRO_HISHER> backstab multiplier is also increased by one point.~
+SAY NAME1 ~拥抱暗影~
+SAY NAME2 ~拥抱暗影~
+SAY UNIDENTIFIED_DESC ~拥抱暗影
+获得暗影之主的眷顾自有其益处。面具侍从永久获得敏捷与幸运 +1，并免疫毒素与背刺。<PRO_HISHER> 背刺倍率也提高 1 点。~
 
 COPY ~%MOD_FOLDER%/abettor/c0abethl.spl~ ~override~
-SAY NAME1 ~Symphony of the Dark Children~
-SAY NAME2 ~Symphony of the Dark Children~
-SAY UNIDENTIFIED_DESC ~Symphony of the Dark Children
-This song is a powerful aid to both the Abettor and to <PRO_HISHER> allies. In addition to all existing effects, the song now provides +70% to all thieving skills, +6 to Luck, +4 to Armor Class (+8 vs. missile weapons) with an additional +2 vs. good-aligned creatures, +4 to all saving throws, immunity to backstab and a 20% chance for all party members to turn invisible for two rounds. The Abettor also has a 5% chance to stop time for one round, but <PRO_HESHE> is unable to take any action for the duration.
+SAY NAME1 ~暗子交响~
+SAY NAME2 ~暗子交响~
+SAY UNIDENTIFIED_DESC ~暗子交响
+这首歌对侍从及其 <PRO_HISHER> 盟友都是强力助力。除原有全部效果外，歌谣还提供：所有偷窃技能 +70%，幸运 +6，护甲等级 +4（对抗远程武器 +8），对抗善良生物再 +2，所有豁免 +4，免疫背刺，所有队员有 20% 几率隐身两轮。侍从自身有 5% 几率暂停时间一轮，但持续期间 <PRO_HESHE> 无法采取任何行动。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~

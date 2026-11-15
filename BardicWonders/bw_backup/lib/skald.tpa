@@ -1,0 +1,164 @@
+COPY ~%MOD_FOLDER%/Skald/2da~ ~override~
+COPY ~%MOD_FOLDER%/Skald/spells~ ~override~
+
+COPY_EXISTING ~luabbr.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SKALD~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 1 cols ~BA3~
+	  END
+	END
+	
+COPY_EXISTING ~LUBA0.2DA~ ~OVERRIDE/LUBA3.2DA~
+  REPLACE_TEXTUALLY ~AP_SPCL920~ ~AP_C0SKD02~
+
+LAF ~GET_KIT_STRREF~ STR_VAR kit_name = ~SKALD~ RET kit_strref END
+STRING_SET_EVALUATE kit_strref ~SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
+
+Advantages:
+– May Specialize (two slots) in any weapon.
+– May Specialize (two slots) in any fighting style.
+
+– The Skald's Bard Song, "Battle Song of Valor", empowers their allies' and bolsters their will to battle, granting them combat bonuses.
+ 1st level: +2 bonus to hit rolls, Armor Class and Morale.
+ 10th level: +2 bonus to hit and damage rolls, Armor Class and Morale, +10% to all resistances.
+ 15th level: +3 bonus to hit and damage rolls, Armor Class, +10% to all resistances, immunity to fear.
+ 20th level: +3 bonus to hit and damage rolls, Armor Class, +10% to all resistances, immunity to fear, stun, and confusion. 
+ 
+– 8th level: Combat Casting: The skald is skilled at casting spells in the midst of combat. If there is an enemy within 5-ft. of the skald, they gain an increased casting speed of 2.
+
+– 12th level: Gains Heroic Inspiration.
+
+HEROIC INSPIRATION: When the skald's maximum hit points falls below 50%, all allies (except the skald) within visual range gain an additional +1 bonus to hit, damage and saving throws.
+
+Disadvantages:
+– Gains the ability to cast spells at 3rd level instead of 2nd level. The Skald's spells are cast as though a level lower than a normal Bard of the same level.
+– May not Pick Pockets.~
+
+COPY_EXISTING ~thiefscl.2da~ ~override~
+  REPLACE_TEXTUALLY ~^\([ %TAB%]*MAGE\)~ ~CD_DELETE_ME \1~ // adding column to header column
+  COUNT_2DA_COLS col_count
+  FOR (col = 1 ; col < col_count ; ++col) BEGIN
+    READ_2DA_ENTRY 0 col col_count kit
+    PATCH_IF ("%kit%" STRING_COMPARE_CASE "SKALD" = 0) BEGIN
+      SET_2DA_ENTRY  1 col col_count 0
+      SET col = col_count // kill loop
+    END
+  END  
+  REPLACE_TEXTUALLY ~CD_DELETE_ME ~ ~~ // removing it
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// SKALD PROFICIENCIES
+ACTION_CLEAR_ARRAY weapprof_cols_skald
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("SKALD" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_skald BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_skald AS column => foo BEGIN
+    FOR (row = 0; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 8 column col_count 2
+        SET_2DA_ENTRY 9 column col_count 2
+        SET_2DA_ENTRY 10 column col_count 2
+        SET_2DA_ENTRY 11 column col_count 2
+        SET_2DA_ENTRY 12 column col_count 2
+        SET_2DA_ENTRY 13 column col_count 2
+        SET_2DA_ENTRY 14 column col_count 2
+        SET_2DA_ENTRY 15 column col_count 2
+        SET_2DA_ENTRY 16 column col_count 2
+        SET_2DA_ENTRY 17 column col_count 2
+        SET_2DA_ENTRY 18 column col_count 2
+        SET_2DA_ENTRY 19 column col_count 2
+        SET_2DA_ENTRY 20 column col_count 2
+        SET_2DA_ENTRY 21 column col_count 2
+        SET_2DA_ENTRY 22 column col_count 2
+        SET_2DA_ENTRY 23 column col_count 2
+        SET_2DA_ENTRY 24 column col_count 2
+        SET_2DA_ENTRY 25 column col_count 2
+        SET_2DA_ENTRY 26 column col_count 2
+        SET_2DA_ENTRY 27 column col_count 2
+        SET_2DA_ENTRY 28 column col_count 2
+        SET_2DA_ENTRY 29 column col_count 2
+        SET_2DA_ENTRY 30 column col_count 2
+        SET_2DA_ENTRY 31 column col_count 2
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// ICONS
+
+DEFINE_ACTION_FUNCTION cd_new_portrait_icon
+  INT_VAR string = 0
+  STR_VAR bam_file = "****"
+  RET     icon
+  BEGIN
+
+  COPY_EXISTING ~statdesc.2da~ ~override~
+    COUNT_2DA_ROWS 3 count
+    READ_2DA_ENTRY (count - 1) 0 3 icon
+    SET icon += 1
+
+  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~ UNLESS ~%bam_file%~
+
+END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Heroic Inspiration~) STR_VAR bam_file = c0cav02i RET c0cav02i = icon END
+
+COPY_EXISTING ~C0CAV02.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 139
+	  parameter1 = RESOLVE_STR_REF (~Gained Passive Ability: Heroic Inspiration~)
+END
+
+COPY_EXISTING ~C0CAV02A.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 139
+	  parameter1 = RESOLVE_STR_REF (~Heroic Inspiration: +1 to THAC0, Damage and Saving Throws to all allies~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 267
+	  parameter1 = RESOLVE_STR_REF (~Heroic Inspiration: +1 to THAC0, Damage and Saving Throws to all allies~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 142
+	  parameter2 = c0cav02i
+END
+
+COPY_EXISTING ~c0skd02.spl~ ~override~
+SAY NAME1 ~Warsong of the Undying~
+SAY NAME2 ~Warsong of the Undying~
+SAY UNIDENTIFIED_DESC ~Warsong of the Undying
+This is a powerful aid to both the Skald and to <PRO_HISHER> allies. The song gives the Skald <PRO_HIMHER>self a 10-point bonus to <PRO_HISHER> Armor Class and a 25% bonus to physical resistances. The song also gives <PRO_HISHER> allies a +5 bonus to hit and damage rolls, Armor Class, +15% to all resistances, immunity to fear, stun, and confusion, and Haste while the song is active.
+
+This ability replaces the current Bard Song.~
+
+INCLUDE ~%MOD_FOLDER%/effects/combat_casting.tpa~
+
+COPY_EXISTING ~CLABBA04.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 8 f_MaxLevel = 8 STR_VAR f_Entry = AP_C0EKCC END // COMBAT CASTING
+  PRETTY_PRINT_2DA
+
+COPY_EXISTING ~C0EKCC1A.SPL~ OVERRIDE
+  LPF CLONE_EFFECT INT_VAR match_opcode = 189 opcode = 177 parameter2 = 9 parameter1 = IDS_OF_SYMBOL (~KIT~ ~SKALD~) STR_VAR resource = C0EKCC3 END
+
+COPY_EXISTING ~C0EKCC1B.SPL~ OVERRIDE
+  LPF CLONE_EFFECT INT_VAR match_opcode = 189 opcode = 177 parameter2 = 9 parameter1 = IDS_OF_SYMBOL (~KIT~ ~SKALD~) STR_VAR resource = C0EKCC3 END

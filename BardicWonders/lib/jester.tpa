@@ -16,40 +16,40 @@ COPY_EXISTING ~LUBA0.2DA~ ~OVERRIDE/LUBA2.2DA~
   REPLACE_TEXTUALLY ~AP_SPCL920~ ~AP_C0JES03~
 
 LAF ~GET_KIT_STRREF~ STR_VAR kit_name = ~JESTER~ RET kit_strref END
-STRING_SET_EVALUATE kit_strref ~JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses <PRO_HISHER> abilities to distract and confuse <PRO_HISHER> enemies, cavorting madly during combat. Do not mistake <PRO_HIMHER> for a true fool, however, as <PRO_HESHE> can also be quite deadly.
+STRING_SET_EVALUATE kit_strref ~弄臣：这位诗人精通嘲讽与戏谑之术，在战斗中疯狂腾跃，运用 <PRO_HISHER> 的本事分散、迷惑 <PRO_HISHER> 敌人。但切勿把 <PRO_HIMHER> 当成真正的傻瓜——<PRO_HESHE> 同样可能相当致命。
 
-Advantages:
-– The Jester's Song, "Piercing Mockery", does not help allies. Instead, every opponent within 30 feet must save once per round to avoid falling under its effects:
- 1st level: Enemies receive a -2 penalty to Armor Class and a 25% chance to miscast their spells.
- 10th level: Enemies receive a -2 penalty to Armor Class, a 40% chance to miscast spells, and an increased critical miss modifier of 1.
- 15th level: Enemies receive a -4 penalty to Armor Class, a 55% chance to miscast spells, and an increased critical miss modifier of 1.
- 20th level: Enemies receive a -6 penalty to Armor Class, a 55% chance to miscast spells, and an increased critical miss modifier of 2.
- 
-– May use Heckle once per level.
+优势：
+– 弄臣之歌“刺骨嘲弄”并不扶助盟友。相反，30 尺内的每个对手每轮都须豁免，否则受其影响：
+  1 级：敌人护甲等级 -2，有 25% 几率施法失败。
+  10 级：敌人护甲等级 -2，40% 几率施法失败，失误修正值 +1。
+  15 级：敌人护甲等级 -4，55% 几率施法失败，失误修正值 +1。
+  20 级：敌人护甲等级 -6，55% 几率施法失败，失误修正值 +2。
 
-HECKLE: The Jester uses every trick imaginable to taunt a single target, increasing their critical miss modifier by 4 and inflicting a 75% chance for spell failure for the next round. The target must also make a Saving vs. Breath (-1 to modifier per 6 levels) or go berserk for 3 rounds.
+– 每级可使用一次“当众讥讽”。
 
-– 6th level May use Mad Ramble once per day. Gains an additional use at 10th and 14th level.
+当众讥讽：弄臣使出浑身解数嘲讽单一目标，使其失误修正值 +4，并在接下来一轮内有 75% 几率施法失败。目标还须通过对抗吐息的豁免（每 6 级修正值 -1），否则狂暴 3 轮。
 
-MAD RAMBLE: The Jester forces all enemies within a 15-ft. radius to make a Save vs. Spell with a -4 penalty or become confused for 5 rounds + 1 round/6 levels, as per a Chaos spell. Unlike Chaos, this ability is not affected by Magic Resistance.
+– 6 级起，每日可使用一次“胡言乱语”。10 级与 14 级各增加一次使用次数。
 
-Disadvantages:
-– May not use regular Bard Song.~
+胡言乱语：弄臣迫使 15 尺半径内所有敌人以 -4 惩罚进行对抗法术豁免，否则混乱 5 轮 + 每 6 级 1 轮，效果如同“混乱术”。与混乱术不同，此能力不受魔法抗性影响。
+
+劣势：
+– 不得使用常规诗人歌谣。~
 
 COPY_EXISTING ~C0JES01.SPL~ ~OVERRIDE~
-SAY NAME1 ~Heckle~
-SAY UNIDENTIFIED_DESC ~Heckle
-The Jester uses every trick imaginable to taunt a single target, increasing their critical miss modifier by 4 and inflicting a 75% chance for spell failure for the next round. The target must also make a Saving vs. Breath (-1 to modifier per 6 levels) or go berserk for 3 rounds.~
+SAY NAME1 ~当众讥讽~
+SAY UNIDENTIFIED_DESC ~当众讥讽
+弄臣使出浑身解数嘲讽单一目标，使其暴击失误修正 +4，并在下一轮有 75% 几率施法失败。目标还须进行对抗吐息豁免（每 6 级修正值 -1），否则狂暴 3 轮。~
 
 COPY_EXISTING ~C0JES02.SPL~ ~OVERRIDE~
-SAY NAME1 ~Mad Ramble~
-SAY UNIDENTIFIED_DESC ~Mad Ramble
-The Jester forces all enemies within a 15-ft. radius to make a Save vs. Spell with a -4 penalty or become confused for 5 rounds + 1 round/6 levels, as per a Chaos spell. Unlike Chaos, this ability is not affected by Magic Resistance.~
+SAY NAME1 ~胡言乱语~
+SAY UNIDENTIFIED_DESC ~胡言乱语
+弄臣迫使 15 尺半径内所有敌人以 -4 进行对抗法术豁免，否则混乱 5 轮 + 每 6 级 1 轮，效果如同混乱术。与混乱术不同，此能力不受魔法抗性影响。~
 
 COPY_EXISTING ~C0JES03.SPL~ ~OVERRIDE~
-SAY NAME1 ~The Fool's Journey~
-SAY NAME2 ~The Fool's Journey~
-SAY UNIDENTIFIED_DESC ~The Fool's Journey
-This powerful song greatly enhances the Jester's influence over their foes. The Fool's Journey reduces all enemies' Armor Class by 10, induces a 70% chance to miscast spells, and an increased critical miss modifier of 5. Enemies are also unable to critically hit while under the effects. Additionally, while the Jester is singing, they gain a bonus of 10 to Armor Class, which is doubled against ranged attacks.
+SAY NAME1 ~愚人之旅~
+SAY NAME2 ~愚人之旅~
+SAY UNIDENTIFIED_DESC ~愚人之旅
+这首强力歌谣大幅增强弄臣对敌人的影响。愚人之旅使所有敌人护甲等级 -10，70% 几率施法失败，暴击失误修正 +5。受影响期间敌人也无法暴击命中。此外，弄臣歌唱时自身护甲等级 +10，对抗远程攻击翻倍。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~

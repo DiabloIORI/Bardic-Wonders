@@ -45,7 +45,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BARD" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_desc ~– May use Bard Song ability~
-          SPRINT new_desc ~– May use Bardic Inspirations. Inspirations provide various benefits that persist so long as they are within visual range of the bard.~
+          SPRINT new_desc ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_desc%~ ~%new_desc%
@@ -61,10 +61,10 @@ ACTION_FOR_EACH description IN
 														 )) 
                               BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
-          SPRINT old_inspiration ~Disadvantages:~
-          SPRINT new_inspiration ~– May not use Inspirations.~
+          SPRINT old_inspiration ~劣势：~
+          SPRINT new_inspiration ~– 无法使用感召。~
           SPRINT disadvantages_none ~
-– None.~
+– 无。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_inspiration%~ ~%old_inspiration%
@@ -104,91 +104,91 @@ ACTION_FOR_EACH description IN
     END
   END
   
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Courage~) STR_VAR bam_file = C0BDI0IA RET C0BDI0IA = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Competence~) STR_VAR bam_file = C0BDI0IB RET C0BDI0IB = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Defense~) STR_VAR bam_file = C0BDI0IC RET C0BDI0IC = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Regeneration~) STR_VAR bam_file = C0BDI0ID RET C0BDI0ID = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Toughness~) STR_VAR bam_file = C0BDI0IE RET C0BDI0IE = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Alacrity~) STR_VAR bam_file = C0BDI0IF RET C0BDI0IF = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励勇气~) STR_VAR bam_file = C0BDI0IA RET C0BDI0IA = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励干练~) STR_VAR bam_file = C0BDI0IB RET C0BDI0IB = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励防御~) STR_VAR bam_file = C0BDI0IC RET C0BDI0IC = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励再生~) STR_VAR bam_file = C0BDI0ID RET C0BDI0ID = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励坚韧~) STR_VAR bam_file = C0BDI0IE RET C0BDI0IE = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励迅捷~) STR_VAR bam_file = C0BDI0IF RET C0BDI0IF = icon END
 
 COPY_EXISTING C0BDI00.SPL OVERRIDE
-SAY NAME1 ~Bardic Inspiration~
-SAY UNIDENTIFIED_DESC ~The bard's presence inspires their companions, providing various benefits that persist so long as they are within visual range of the bard. Only one inspiration may be active at any given time.
+SAY NAME1 ~诗人感召~
+SAY UNIDENTIFIED_DESC ~诗人的存在感召同伴，提供多种加成，只要同伴处于诗人视觉范围内即持续生效。同一时间只能激活一种感召。
 
-Inspire Courage (1st level): Allies gain +1 to hit rolls and increased morale. Bonuses to hit increase to +2 at 8th level, +3 at 15th level and +4 at 22nd level.
+激励勇气（1 级）：盟友命中检定 +1，士气提升。命中加成 8 级时增至 +2，15 级 +3，22 级 +4。
 
-Inspire Competence (3rd level): Allies gain +10 to Lore and Thieving Skills. Bonuses increase to +20 at 10th level and +30 at 17th level.
+激励干练（3 级）：盟友学识与偷窃技能 +10。10 级增至 +20，17 级 +30。
 
-Inspire Defense (6th level): Allies gain +2 to Armor Class vs. all weapon types. Bonuses increase to +3 at 14th level, +4 at 22nd level.
+激励防御（6 级）：盟友对抗所有武器类型护甲等级 +2。14 级增至 +3，22 级 +4。
 
-Inspire Regeneration (10th level): Allies regenerate for 1 hit point per 2 rounds. Regeneration increases to 2 hit points at 18th level and 3 hit points at 26th level.
+激励再生（10 级）：盟友每 2 轮再生 1 点生命值。18 级增至 2 点，26 级 3 点。
 
-Inspire Toughness (12th level): Allies gain +2 to all Saving Throws. Bonuses increase to +3 at 21st level and +4 at 30th level.
+激励坚韧（12 级）：盟友所有豁免 +2。21 级增至 +3，30 级 +4。
 
-Inspire Alacrity (20th level): Allies gain +1 to casting speed. Bonuses increases to +2 to casting speed at 40th level.~
+激励迅捷（20 级）：盟友施法速度 +1。40 级施法速度加成增至 +2。~
 
 COPY_EXISTING C0BDIT1.SPL OVERRIDE
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Competence: allies gain bonuses to Lore and all Thieving Skills~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励干练：盟友获得学识与所有偷窃技能加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT2.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Defense: allies gain bonuses to Armor Class~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励防御：盟友获得护甲等级加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT3.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Regeneration: allies regenerate Hit Points~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励再生：盟友再生生命值~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT4.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Toughness: allies gain bonuses to Saving Throws~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励坚韧：盟友获得豁免加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT5.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Alacrity: allies gain bonuses to casting speed~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励迅捷：盟友获得施法速度加成~ [GAM_11])
       END
 
 COPY_EXISTING C0BDI01.SPL OVERRIDE
-SAY NAME1 ~Inspire Courage~
-SAY UNIDENTIFIED_DESC ~Inspire Courage
-Allies gain +1 to hit rolls and increased morale. Bonuses to hit increase to +2 at 8th level, +3 at 15th level and +4 at 22nd level.~
+SAY NAME1 ~激励勇气~
+SAY UNIDENTIFIED_DESC ~激励勇气
+盟友命中检定 +1，士气提升。命中加成 8 级时增至 +2，15 级 +3，22 级 +4。~
       LPF ALTER_EFFECT
       INT_VAR
       header = 0
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Courage—allies gain +1 to hit rolls and morale~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励勇气——盟友命中检定与士气 +1~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 1
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Courage—allies gain +2 to hit rolls and morale~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励勇气——盟友命中检定与士气 +2~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 2
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Courage—allies gain +3 to hit rolls and morale~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励勇气——盟友命中检定与士气 +3~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 0
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Courage—allies gain +4 to hit rolls and morale~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励勇气——盟友命中检定与士气 +4~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI01a.spl~ ~override~
@@ -205,26 +205,26 @@ COPY_EXISTING ~C0BDI01b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDI02.SPL OVERRIDE
-SAY NAME1 ~Inspire Competence~
-SAY UNIDENTIFIED_DESC ~Inspire Competence
-Allies gain +10 to Lore and Thieving Skills. Bonuses increase to +20 at 10th level and +30 at 17th level.~
+SAY NAME1 ~激励干练~
+SAY UNIDENTIFIED_DESC ~激励干练
+盟友学识与偷窃技能 +10。10 级增至 +20，17 级 +30。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Competence—allies gain +10 to Lore and all Thieving Skills~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励干练——盟友学识与所有偷窃技能 +10~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Competence—allies gain +20 to Lore and all Thieving Skills~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励干练——盟友学识与所有偷窃技能 +20~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Competence—allies gain +30 to Lore and all Thieving Skills~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励干练——盟友学识与所有偷窃技能 +30~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI02a.spl~ ~override~
@@ -241,26 +241,26 @@ COPY_EXISTING ~C0BDI02b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDI03.SPL OVERRIDE
-SAY NAME1 ~Inspire Defense~
-SAY UNIDENTIFIED_DESC ~Inspire Defense
-Allies gain +2 to Armor Class vs. all weapon types. Bonuses increase to +3 at 14th level, +4 at 22nd level.~
+SAY NAME1 ~激励防御~
+SAY UNIDENTIFIED_DESC ~激励防御
+盟友对抗所有武器类型护甲等级 +2。14 级增至 +3，22 级 +4。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Defense—allies gain +2 to Armor Class vs. all weapons~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +2~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Defense—allies gain +3 to Armor Class vs. all weapons~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +3~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Defense—allies gain +4 to Armor Class vs. all weapons~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +4~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI03a.spl~ ~override~
@@ -277,26 +277,26 @@ COPY_EXISTING ~C0BDI03b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDI04.SPL OVERRIDE
-SAY NAME1 ~Inspire Regeneration~
-SAY UNIDENTIFIED_DESC ~Inspire Regeneration
-Allies regenerate for 1 hit point per 2 rounds. Regeneration increases to 2 hit points at 17th level and 3 hit points at 24th level.~
+SAY NAME1 ~激励再生~
+SAY UNIDENTIFIED_DESC ~激励再生
+盟友每 2 轮再生 1 点生命值。17 级增至 2 点，24 级 3 点。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Regeneration—allies regenerate 1 hit point per 2 rounds~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励再生——盟友每 2 轮再生 1 点生命值~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Regeneration—allies regenerate 2 hit points per 2 rounds~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励再生——盟友每 2 轮再生 2 点生命值~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Regeneration—allies regenerate 3 hit points per 2 rounds~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励再生——盟友每 2 轮再生 3 点生命值~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI04a.spl~ ~override~
@@ -313,26 +313,26 @@ COPY_EXISTING ~C0BDI04b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDI05.SPL OVERRIDE
-SAY NAME1 ~Inspire Toughness~
-SAY UNIDENTIFIED_DESC ~Inspire Toughness
-Allies gain +2 to all Saving Throws. Bonuses increase to +3 at 21st level and +4 at 30th level.~
+SAY NAME1 ~激励坚韧~
+SAY UNIDENTIFIED_DESC ~激励坚韧
+盟友所有豁免 +2。21 级增至 +3，30 级 +4。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Toughness—allies gain +2 to all Saving Throws~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励坚韧——盟友所有豁免 +2~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Toughness—allies gain +3 to all Saving Throws~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励坚韧——盟友所有豁免 +3~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Toughness—allies gain +4 to all Saving Throws~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励坚韧——盟友所有豁免 +4~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI05a.spl~ ~override~
@@ -349,20 +349,20 @@ COPY_EXISTING ~C0BDI05b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDI06.SPL OVERRIDE
-SAY NAME1 ~Inspire Alacrity~
-SAY UNIDENTIFIED_DESC ~Inspire Alacrity
-Allies gain +1 to casting speed. Bonuses increases to +2 to casting speed at 40th level.~
+SAY NAME1 ~激励迅捷~
+SAY UNIDENTIFIED_DESC ~激励迅捷
+盟友施法速度 +1。40 级施法速度加成增至 +2。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Alacrity—allies gain +1 to spellcasting speed~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励迅捷——盟友施法速度 +1~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Alacrity—allies gain +2 to spellcasting speed~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励迅捷——盟友施法速度 +2~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI06a.spl~ ~override~
@@ -381,7 +381,7 @@ COPY_EXISTING ~C0BDI06b.spl~ ~override~
 	  
 OUTER_SPRINT old_bard ~– May use Bard Song ability.~ //old text
 
-OUTER_SPRINT new_bard ~– May use Bardic Inspirations. Inspirations provide various benefits that persist so long as they are within visual range of the bard.~ //new text
+OUTER_SPRINT new_bard ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~ //new text
 
 INCLUDE ~BardicWonders\lib\dark_inspirations.tpa~
 
@@ -401,7 +401,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "C0_GALLANT" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_inspiration ~<BARDIC_INSPIRATIONS>~
-          SPRINT new_inspiration ~– May use Bardic Inspirations. Inspirations provide various benefits that persist so long as they are within visual range of the bard.~
+          SPRINT new_inspiration ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_inspiration%~ ~

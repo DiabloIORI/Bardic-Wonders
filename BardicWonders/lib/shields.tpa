@@ -41,11 +41,12 @@ ACTION_FOR_EACH description IN
 
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BARD" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
-          SPRINT old_desc ~– May not equip shields larger than bucklers.~
-          SPRINT new_desc ~– May equip shields up to medium size.~
+          SPRINT old_desc ~熟练：简易武器。也熟用轻甲、中甲和盾牌。~
+          SPRINT new_desc ~– 可装备至多中型盾牌。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
-            REPLACE_TEXTUALLY ~%old_desc%~ ~%new_desc%~
+            REPLACE_TEXTUALLY ~%old_desc%~ ~%old_desc%
+%new_desc%~
           END
           SET_2DA_ENTRY index 4 col_count RESOLVE_STR_REF (~%desc_text%~)
             PRETTY_PRINT_2DA

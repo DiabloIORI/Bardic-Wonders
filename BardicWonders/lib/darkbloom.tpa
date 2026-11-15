@@ -29,36 +29,36 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Darkbloom Bard~)
+    mixed         = RESOLVE_STR_REF(~暗华诗人~)
 	
-    lower         = RESOLVE_STR_REF(~darkbloom bard~)
+    lower         = RESOLVE_STR_REF(~暗华诗人~)
 	
-    help          = RESOLVE_STR_REF(~DARKBLOOM BARD: Rarely seen in the Realms, Darkbloom Bards are recognized for their skills in using the powers of nature. Unlike druids, however, Darkbloom Bards appear to twist the beauty of flora and fauna into wicked and twisted visions—the stuff of eldritch dreams and nightmares. While some believe these are borne of the alien fantasies of practitioners, others fear that Darkbloom Bards are, in fact, drawing upon pieces of otherworldly aberrations that are attempting to infiltrate the waking world.
+    help          = RESOLVE_STR_REF(~暗华诗人：在诸域罕有见闻，暗华诗人以驾驭自然力量的技艺著称。然而与德鲁伊不同，暗华诗人似乎把动植物之美扭曲成邪恶而怪诞的幻象——那是诡异梦境与噩梦的产物。有人认为这些源于修习者异质的幻想，另一些人则担心暗华诗人实则在汲取异界畸变生物的碎片，那些生物正试图潜入醒世。
 
-ADVANTAGES: 
+优势：
 
-– +15 bonus to Lore.
-– +5% bonus to Magic Resistance.
-– Receives one additional spell slot per spell level.
-– +2 bonus to Armor Class vs Spectral Undead, Shadows, Myconids, Shambling Mounds, Shriekers, Slimes and Spectres.
-– Receives the following druidic spells, which are automatically scribed into their spellbook: Curse, Beast Claw, Mold Touch, Thorn Spray, Insect Plague, Fire Seeds, Mist of Eldath.
+– 学识 +15。
+– 魔法抗性 +5%。
+– 每个法术等级额外获得一个法术位。
+– 对抗幽灵亡灵、影怪、蕈人、蹒跚怪、尖叫菇、史莱姆与鬼魂时，护甲等级 +2。
+– 获得下列德鲁伊法术，并自动抄入法术书：诅咒、兽爪、霉菌触须、荆棘喷吐、虫群术、火焰种子、伊尔达斯迷雾。
 
-– The Darkbloom Bard's song, "Silence of Dreamrealm's Bog", inflicts Silence upon all surrounding creatures, both friendly and hostile, as well as reducing Magic Resistance by 10% plus an additional 2% per two levels, up to a maximum of 50%. All creatures may make a Saving Throw vs. Spells at +2 (-1 modifier per 6 levels) to avoid being Silenced.
+– 暗华诗人的歌谣“梦沼寂静”对周围所有生物（无论敌我）施加沉默，并使魔法抗性降低 10%，每 2 级再降 2%，上限 50%。所有生物可进行对抗法术豁免，+2（每 6 级修正值 -1）以避免沉默。
 
-– 6th level: May use Dark Entanglement once per day.
+– 6 级：每日可使用一次“黑暗纠缠”。
 
-DARK ENTANGLEMENT: By means of this spell, the caster is able to cause dark plants and roots in the area of effect to entangle creatures within the area. Once per round, a creature can attempt to make a Saving Throw vs. Spell with a +3 bonus to avoid entanglement. An entangled creature can still attack but receives a -2 penalty to its Armor Class and -10% to Magic Resistance. There is 10% chance upon entanglement that the creature will be poisoned and suffer 1 damage per second for 5 seconds.
+黑暗纠缠：借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物。生物每轮可进行一次对抗法术豁免，+3 以避免被缠绕。被缠绕的生物仍可攻击，但护甲等级 -2，魔法抗性 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。
 
-– 12th level: May Backstab at x2 damage, additionally dealing 2d8 acid damage. There is also a 50% chance that the victim will be Entangled by dark vines for one round.
+– 12 级：可背刺，伤害 x2，额外造成 2d8 酸蚀伤害。另有 50% 几率使受害者被黑暗藤蔓缠绕一轮。
 
-DISADVANTAGES:
+劣势：
 
-– Incurs a -2 penalty to Strength and Constitution and a -4 penalty to Charisma.
-– Incurs a -1 penalty to all Saving Throws.
-– Only has one-quarter Pick Pockets percentage.
-– May only be of True Neutral and Neutral Evil alignment.~)
+– 力量与体质 -2，魅力 -4。
+– 所有豁免 -1。
+– 扒窃百分比仅为常人四分之一。
+– 阵营只能为绝对中立或中立邪恶。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~DARKBLOOM BARD: Rarely seen in the Realms, Darkbloom Bards are recognized for their skills in using the powers of nature. Unlike druids, however, Darkbloom Bards appear to twist the beauty of flora and fauna into wicked and twisted visions—the stuff of eldritch dreams and nightmares. While some believe these are borne of the alien fantasies of practitioners, others fear that Darkbloom Bards are, in fact, drawing upon pieces of otherworldly aberrations that are attempting to infiltrate the waking world.~)
+    briefdesc     = RESOLVE_STR_REF(~暗华诗人：在诸域罕有见闻，暗华诗人以驾驭自然力量的技艺著称。然而与德鲁伊不同，暗华诗人似乎把动植物之美扭曲成邪恶而怪诞的幻象——那是诡异梦境与噩梦的产物。有人认为这些源于修习者异质的幻想，另一些人则担心暗华诗人实则在汲取异界畸变生物的碎片，那些生物正试图潜入醒世。~)
 	
 	// fallen = 0
 	
@@ -148,14 +148,14 @@ DISADVANTAGES:
 END
 
 COPY_EXISTING ~C0BDDHL.spl~ ~override~
-SAY NAME1 ~Millenia of Deathly Stillness~
-SAY UNIDENTIFIED_DESC ~Millenia of Deathly Stillness
-This is a powerful aid to both the Darkbloom Bard and to <PRO_HISHER> allies. This song gives the Darkbloom Bard <PRO_HIMHER>self regeneration for 10% of <PRO_HISHER> maximum hit points per round and increases <PRO_HISHER> allies' casting level by 6 and casting speed by 2. Enemies within range have their Magic Resistance and must make a Save vs. Spell at -6 or be Silenced.
+SAY NAME1 ~死寂千年~
+SAY UNIDENTIFIED_DESC ~死寂千年
+此歌谣对暗华诗人及其 <PRO_HISHER> 盟友都是强力助力。歌谣使暗华诗人每轮再生相当于 <PRO_HISHER> 最大生命值 10% 的生命，并使 <PRO_HISHER> 盟友施法等级 +6、施法速度 +2。范围内敌人须以 -6 进行对抗法术豁免，否则被沉默。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~
 
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#1.PRO~ ~Dark Entanglement~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#SO.PRO~ ~Bard Song Ignore Caster~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#1.PRO~ ~黑暗纠缠~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#SO.PRO~ ~歌谣忽略施法者~
 COPY ~%MOD_FOLDER%/darkbloom/C0BDD#SO.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -170,9 +170,9 @@ SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%C0BDD#1%~
 END
-SAY NAME1 ~Dark Entanglement~
-SAY UNIDENTIFIED_DESC ~Dark Entanglement
-By means of this spell, the caster is able to cause dark plants and roots in the area of effect to entangle creatures within the area for five rounds. An entangled creature can still attack but receives a -2 penalty to its Armor Class and -10% to Magic Resistance. There is 10% chance upon entanglement that the creature will be poisoned and suffer 1 damage per second for 5 seconds.~
+SAY NAME1 ~黑暗纠缠~
+SAY UNIDENTIFIED_DESC ~黑暗纠缠
+借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物，持续五轮。被缠绕的生物仍可攻击，但护甲等级 -2，魔法抗性 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。~
 
 // Curse
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR112.SPL~ THEN BEGIN
@@ -185,7 +185,7 @@ COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112C.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/AREA1X.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/#BLESS.VVC~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDPRO237.PRO~ ~Thorn Spray~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDPRO237.PRO~ ~荆棘喷吐~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112.SPL~ ~override/C0BDDS1.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 1
@@ -200,19 +200,19 @@ END
       match_opcode = 139 // display string
  parameter1 = RESOLVE_STR_REF (~Cursed~)
 END
-SAY NAME1 ~Curse~
-SAY UNIDENTIFIED_DESC ~Curse
-(Conjuration/Summoning)
+SAY NAME1 ~诅咒~
+SAY UNIDENTIFIED_DESC ~诅咒
+（召唤系）
 
-Level: 1
-Sphere: All
-Range: Visual range of the caster
-Duration: 6 rounds
-Casting Time: 9
-Area of Effect: 15-ft. radius
-Saving Throw: None
+等级：1
+领域：所有
+射程：施法者视觉范围
+持续时间：6 轮
+施法时间：9
+作用范围：15 尺半径
+豁免：无
 
-When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
+施放诅咒法术时，施法者降低敌方生物的士气，以及其所做的任何豁免与攻击检定 1 点。法术完成瞬间，影响以施法者所选点为中心、15 尺半径内的所有生物。离开范围的受影响生物仍受法术作用；施法完成后进入范围的生物不受影响。~
 END
 // Beast Claw
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR219.SPL~ THEN BEGIN
@@ -228,19 +228,19 @@ COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR219C.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR219.spl~ ~override/C0BDDS2.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 2
-SAY NAME1 ~Beast Claw~
-SAY UNIDENTIFIED_DESC ~Beast Claw
-(Alteration)
+SAY NAME1 ~兽爪~
+SAY UNIDENTIFIED_DESC ~兽爪
+（变化系）
 
-Level: 2
-Sphere: Combat
-Range: 0
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: The caster
-Saving Throw: None
+等级：2
+领域：战斗
+射程：0
+持续时间：1 回合
+施法时间：5
+作用范围：施法者
+豁免：无
 
-This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 18/72 Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
+此法术将施法者的双臂化为巨兽之爪，赋予 18/72 力量，并能以兽爪挥击对手，造成 2d4（外加力量加成）点挥砍伤害。施法者每轮可攻击两次，兽爪命中 +2。~
 END
 // Mold Touch
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR326.SPL~ THEN BEGIN
@@ -253,7 +253,7 @@ COPY ~%MOD_FOLDER%/darkbloom/BGEE/MTOUCHH.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/MTOUCHH.VVC~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326C.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDMOLD.PRO~ ~Thorn Spray~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDMOLD.PRO~ ~荆棘喷吐~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326B.spl~ ~override~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 3
@@ -264,32 +264,32 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%IDMOLD%~
 END
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326.spl~ ~override/C0BDDS3.spl~
-SAY NAME1 ~Mold Touch~
-SAY UNIDENTIFIED_DESC ~Mold Touch
-(Alteration)
+SAY NAME1 ~霉菌触须~
+SAY UNIDENTIFIED_DESC ~霉菌触须
+（变化系）
 
-Level: 3
-Sphere: Plant
-Range: Touch
-Duration: Special
-Casting Time: 6
-Area of Effect: 10-ft. radius
-Saving Throw: Special
+等级：3
+领域：植物
+射程：触碰
+持续时间：特殊
+施法时间：6
+作用范围：10 尺半径
+豁免：特殊
 
-This spell infects the creature the caster touches with a rapidly spreading brown mold. If the infected creature fails a Save vs. Spell, the infection is severe and the creature takes magic damage as follows:
+此法术使施法者触碰的生物感染上迅速蔓延的褐色霉菌。若受感染生物对抗法术豁免失败，则感染严重，按如下受到魔法伤害：
 
-1st round: 4d6 damage
-2nd round: 3d6 damage
-3rd round: 2d6 damage
-4th round: 1d6 damage
+第 1 轮：4d6 伤害
+第 2 轮：3d6 伤害
+第 3 轮：2d6 伤害
+第 4 轮：1d6 伤害
 
-If the Saving Throw is successful, the damage is reduced as follows:
+若豁免成功，伤害削减如下：
 
-1st round: 2d6 damage
-2nd round: 1d6 damage
-3rd round: 1d6 damage
+第 1 轮：2d6 伤害
+第 2 轮：1d6 伤害
+第 3 轮：1d6 伤害
 
-Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again. The brown mold quickly dies once the spell expires.~
+首轮之后，每轮受害者 10 尺内最近的生物须进行对抗法术豁免，否则被霉菌以最强强度感染。此过程持续，直到霉菌未能及时感染合适宿主为止。已受霉菌影响的生物不会再次感染。法术结束后褐色霉菌很快死亡。~
 END
 // Thorn Spray
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR427.SPL~ THEN BEGIN
@@ -301,7 +301,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~SPPR427.SPL~ THEN BEGIN
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427C.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/tsprayt.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro303.PRO~ ~Thorn Spray~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro303.PRO~ ~荆棘喷吐~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427.spl~ ~override/C0BDDS4.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 4
@@ -311,19 +311,19 @@ SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%idpro303%~
 END
-SAY NAME1 ~Thorn Spray~
-SAY UNIDENTIFIED_DESC ~Thorn Spray
-(Alteration)
+SAY NAME1 ~荆棘喷吐~
+SAY UNIDENTIFIED_DESC ~荆棘喷吐
+（变化系）
 
-Level: 4
-Sphere: Plant
-Range: 30 ft.
-Duration: Instant
-Casting Time: 3
-Area of Effect: 17-ft. cone with 90-deg. arc
-Saving Throw: 1/2
+等级：4
+领域：植物
+射程：30 尺
+持续时间：瞬发
+施法时间：3
+作用范围：90 度扇形、长 17 尺
+豁免：减半
 
-By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, inflicting 2d10 points of piercing damage to all creatures within the area of effect, or 1d10 points of damage if a Save vs. Death is successful.~
+借此法术，施法者可使一簇芒刺、尖钉、荆棘与硬刺自 <PRO_HISHER> 手中喷涌而出。荆棘喷吐覆盖长 17 尺的扇形，对作用范围内所有生物造成 2d10 点穿刺伤害；通过对抗死亡豁免则仅受 1d10 点伤害。~
 END
 // Insect Plague
 COPY_EXISTING ~SPPR517.spl~ ~override/C0BDDS5.spl~
@@ -342,7 +342,7 @@ END
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~SPPR736.SPL~ THEN BEGIN
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736C.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro307.PRO~ ~Mist of Eldath~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro307.PRO~ ~伊尔达斯迷雾~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736.spl~ ~override/C0BDDS7.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 7
@@ -352,17 +352,17 @@ SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%idpro307%~
 END
-SAY NAME1 ~Mist of Eldath~
-SAY UNIDENTIFIED_DESC ~Mist of Eldath
-(Invocation)
+SAY NAME1 ~伊尔达斯迷雾~
+SAY UNIDENTIFIED_DESC ~伊尔达斯迷雾
+（祈求系）
 
-Level: 7
-Sphere: Elemental
-Range: Visual range of the caster
-Duration: Instant
-Casting Time: 9
-Area of Effect: 7-ft. radius
-Saving Throw: None
+等级：7
+领域：元素
+射程：施法者视觉范围
+持续时间：瞬发
+施法时间：9
+作用范围：7 尺半径
+豁免：无
 
-This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 25 Hit Points.~
+此法术以银蓝色迷雾笼罩作用范围——迷雾内的任何生物都将治愈疾病与毒素，并回复 25 点生命值。~
 END

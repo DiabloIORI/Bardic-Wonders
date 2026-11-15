@@ -15,110 +15,110 @@ END
 LANGUAGE ~English~
          ~English~
 
-BEGIN ~Bardic Wonders: Blade Overhaul~ DESIGNATED 1001
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：刀锋改版~ DESIGNATED 1001
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/blade.tpa~
 
-BEGIN ~Bardic Wonders: Jester Overhaul~ DESIGNATED 1002
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：弄臣改版~ DESIGNATED 1002
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/jester.tpa~
 
-BEGIN ~Bardic Wonders: Skald Overhaul~ DESIGNATED 1003
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：战歌者改版~ DESIGNATED 1003
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/skald.tpa~
 
-BEGIN ~Bardic Wonders: Abettor of Mask Kit~ DESIGNATED 1004
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：面具侍从职业~ DESIGNATED 1004
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/abettor.tpa~
 
-BEGIN ~Bardic Wonders: Dancer Kit~ DESIGNATED 1005
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：舞者职业~ DESIGNATED 1005
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/dancer.tpa~
 
-BEGIN ~Bardic Wonders: Darkbloom Bard Kit~ DESIGNATED 1006
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：暗华诗人职业~ DESIGNATED 1006
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/darkbloom.tpa~
 
-BEGIN ~Bardic Wonders: Storm Drummer Kit~ DESIGNATED 1007
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：雷霆鼓手职业~ DESIGNATED 1007
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/stormdrummer.tpa~
 
-BEGIN ~Bardic Wonders: Troubadour Kit~ DESIGNATED 1008
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：行吟诗人职业~ DESIGNATED 1008
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/troubadour.tpa~
 
-BEGIN ~Bardic Wonders: Deathsinger Kit~ DESIGNATED 1009
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：亡歌者职业~ DESIGNATED 1009
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/deathsinger.tpa~
 
-BEGIN ~Bardic Wonders: Strategist Kit~ DESIGNATED 1010
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：军师职业~ DESIGNATED 1010
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/strategist.tpa~
 
-BEGIN ~Bardic Wonders: Kapellmeister Kit~ DESIGNATED 1011
-GROUP ~Kits~
+BEGIN ~Bardic Wonders：乐长职业~ DESIGNATED 1011
+GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/kapellmeister.tpa~
 
-BEGIN ~Bardic Wonders: Gallant Paladin Kit~ DESIGNATED 1012
-GROUP ~Kits~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) ~Requires EEex.~
+BEGIN ~Bardic Wonders：豪情圣骑士职业~ DESIGNATED 1012
+GROUP ~职业~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) ~需要安装 EEex。~
 INCLUDE ~%MOD_FOLDER%/LIB/gallant.tpa~
 
-BEGIN ~Bardic Wonders: Items~ DESIGNATED 2001
-GROUP ~Items & Abilities~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ ~This component must be played on BG:EE or BG2:EE.~
+BEGIN ~Bardic Wonders：物品~ DESIGNATED 2001
+GROUP ~物品与能力~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ ~本组件须在 BG:EE 或 BG2:EE 中运行。~
 INCLUDE ~%MOD_FOLDER%/LIB/itempack.tpa~
 
-BEGIN ~Bardic Wonders: Inspirations~ DESIGNATED 2002
-GROUP ~Items & Abilities~
+BEGIN ~Bardic Wonders：灵感激励~ DESIGNATED 2002
+GROUP ~物品与能力~
 INCLUDE ~%MOD_FOLDER%/LIB/inspirations.tpa~
 
-BEGIN ~Bardic Wonders: High Level Abilities~ DESIGNATED 2007
-GROUP ~Items & Abilities~
+BEGIN ~Bardic Wonders：高阶能力~ DESIGNATED 2007
+GROUP ~物品与能力~
 INCLUDE ~%MOD_FOLDER%/LIB/hlas.tpa~
 
-BEGIN ~Bardic Wonders: New Bard Spells~ DESIGNATED 2008
-GROUP ~Items & Abilities~
+BEGIN ~Bardic Wonders：新增诗人法术~ DESIGNATED 2008
+GROUP ~物品与能力~
 INCLUDE ~%MOD_FOLDER%/LIB/new_spells.tpa~
 
-BEGIN ~Bardic Wonders: Armored Casting for Bards~ DESIGNATED 2003
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：诗人着甲施法~ DESIGNATED 2003
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/armored_casting.tpa~
 
-BEGIN ~Bardic Wonders: Bard Song Mechanics Tweak~ DESIGNATED 2004
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：诗人歌谣机制调整~ DESIGNATED 2004
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/bardsongtweaks.tpa~
 
-BEGIN ~Bardic Wonders: Item Restriction Tweaks—Bards may use mage items and priest scrolls~ DESIGNATED 2005
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：物品限制调整——诗人可使用法师物品与牧师卷轴~ DESIGNATED 2005
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/mage_items.tpa~
 
-BEGIN ~Bardic Wonders: Item Restriction Tweaks—Bards may use Small and Medium Shields~ DESIGNATED 2012
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：物品限制调整——诗人可使用小型与中型盾牌~ DESIGNATED 2012
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/shields.tpa~
 
-BEGIN ~Bardic Wonders: Item Restriction Tweaks—Bards may use Helmets~ DESIGNATED 2013
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：物品限制调整——诗人可使用头盔~ DESIGNATED 2013
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/helmets.tpa~
 
-BEGIN ~Bardic Wonders: Bard Song Overhead Visual Effect~ DESIGNATED 2006
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：诗人歌谣头顶视觉特效~ DESIGNATED 2006
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/bardsongvisual.tpa~
 
-BEGIN ~Bardic Wonders: Mage/Bard and Fighter/Mage/Bard multi-class (EEex, under thief multis)~ DESIGNATED 2009
-GROUP ~Tweaks & Patches~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) ~EEex must be installed.~ //EEX required!
+BEGIN ~Bardic Wonders：法师/诗人、战士/法师/诗人兼职（EEex，置于盗贼兼职之下）~ DESIGNATED 2009
+GROUP ~调整与补丁~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) ~必须先安装 EEex。~ //EEX required!
 INCLUDE ~%MOD_FOLDER%/LIB/mage_bard.tpa~
 
-BEGIN ~Bardic Wonders: 3e Alignment for Bards (any non-lawful)~ DESIGNATED 2010
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：诗人 3e 阵营规则（任意非守序阵营）~ DESIGNATED 2010
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/alignment.tpa~
 
-BEGIN ~Bardic Wonders: Bard Casting Level Begins from 2nd level~ DESIGNATED 2011
-GROUP ~Tweaks & Patches~
+BEGIN ~Bardic Wonders：诗人施法等级从 2 级起算~ DESIGNATED 2011
+GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/spell_level.tpa~
 
-BEGIN ~Bardic Wonders: Patch Dialogue Class Checks for: Gallant, Mage/Bard and Fighter/Mage/Bard (install late)~ DESIGNATED 3001
-GROUP ~Tweaks & Patches~
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~2009~) OR (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~1012~) ~Mage/Bard and Fighter/Mage/Bard component must be installed.~
+BEGIN ~Bardic Wonders：修补对话职业判定：豪情圣骑士、法师/诗人与战士/法师/诗人（最后安装）~ DESIGNATED 3001
+GROUP ~调整与补丁~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~2009~) OR (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~1012~) ~必须先安装法师/诗人与战士/法师/诗人组件。~
 INCLUDE ~%MOD_FOLDER%/LIB/mage_bard_dlg.tpa~

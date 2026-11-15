@@ -11,90 +11,90 @@ COPY_EXISTING ~C0SABARD.2DA~ OVERRIDE
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 20 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0BDST5 END // Inspirations
 
 COPY_EXISTING C0BDS00.SPL OVERRIDE
-SAY NAME1 ~Dark Inspiration~
-SAY UNIDENTIFIED_DESC ~The Nightsinger's presence inspires their companions, providing various benefits that persist so long as they are within visual range of the Nightsinger. Only one inspiration may be active at any given time.
+SAY NAME1 ~黑暗感召~
+SAY UNIDENTIFIED_DESC ~夜歌者的存在感召同伴，提供多种加成，只要同伴处于夜歌者视觉范围内即持续生效。同一时间只能激活一种感召。
 
-Inspire Wrath (1st level): Allies gain a +2 bonus to minimum damage rolls, but a -1 penalty to Armor Class. Bonuses and penalties increase to +3/-1 at 8th level, +4/-2 at 15th level and +5/-2 at 22nd level.
+激励暴怒（1 级）：盟友最低伤害检定 +2，但护甲等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。
 
-Inspire Ambition (3rd level): Allies gain +1 to Casting Level and +10% to Spell Duration. Bonuses increase to +2 and +20% respectively at 10th level and +3 and +30% respectively at 17th level.
+激励雄心（3 级）：盟友施法等级 +1，法术持续时间 +10%。10 级时分别提升至 +2 与 +20%，17 级 +3 与 +30%。
 
-Inspire Preservation (6th level): Allies gain +2% Magic Resistance. Bonuses increase to +5% at 11th level, +7% at 16th level and +10% at 21st level.
+激励护佑（6 级）：盟友魔法抗性 +2%。11 级提升至 +5%，16 级 +7%，21 级 +10%。
 
-Inspire Voracity (10th level): Allies' attacks drain targets for 1 hit point. Drain amount increases to 2 hit points at 18th level and 3 hit points at 26th level.
+激励贪噬（10 级）：盟友攻击从目标吸取 1 点生命值。18 级吸取量增至 2 点，26 级 3 点。
 
-Inspire Audacity (12th level): Allies gain +1 to Backstab and Critical Hit Modifiers. Bonuses increase to +2 at 36th level.
+激励胆识（12 级）：盟友背刺与暴击修正 +1。36 级提升至 +2。
 
-Inspire Dominance (20th level): Allies gain a +15% bonus to damage dealt from all sources. Bonuses increase to +25% at 40th level.~
+激励统御（20 级）：盟友所有来源伤害 +15%。40 级提升至 +25%。~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Wrath~) STR_VAR bam_file = C0BDS0IA RET C0BDS0IA = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Ambition~) STR_VAR bam_file = C0BDS0IB RET C0BDS0IB = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Preservation~) STR_VAR bam_file = C0BDS0IC RET C0BDS0IC = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Voracity~) STR_VAR bam_file = C0BDS0ID RET C0BDS0ID = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Audacity~) STR_VAR bam_file = C0BDS0IE RET C0BDS0IE = icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Dominance~) STR_VAR bam_file = C0BDS0IF RET C0BDS0IF = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励暴怒~) STR_VAR bam_file = C0BDS0IA RET C0BDS0IA = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励雄心~) STR_VAR bam_file = C0BDS0IB RET C0BDS0IB = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励护佑~) STR_VAR bam_file = C0BDS0IC RET C0BDS0IC = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励贪噬~) STR_VAR bam_file = C0BDS0ID RET C0BDS0ID = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励胆识~) STR_VAR bam_file = C0BDS0IE RET C0BDS0IE = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励统御~) STR_VAR bam_file = C0BDS0IF RET C0BDS0IF = icon END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS1.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Ambition: allies gain bonuses to Casting Level and Spell Duration~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励雄心：盟友获得施法等级与法术持续时间加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS2.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Preservation: allies gain bonuses to Magic Resistance~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励护佑：盟友获得魔法抗性加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS3.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Voracity: allies' attacks drain Hit Points~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励贪噬：盟友攻击吸取生命值~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS4.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Audacity: allies gain bonuses Backstab and Critical Hit Modifiers~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励胆识：盟友获得背刺与暴击修正加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS5.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Gained Inspire Dominance: allies gain percentage bonuses to all damage~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励统御：盟友所有伤害获得百分比加成~ [GAM_11])
       END
 
 COPY_EXISTING C0BDS01.SPL OVERRIDE
-SAY NAME1 ~Inspire Wrath~
-SAY UNIDENTIFIED_DESC ~Inspire Wrath
-Allies gain a +2 bonus to minimum damage rolls, but a -1 penalty to Armor Class. Bonuses and penalties increase to +3/-1 at 8th level, +4/-2 at 15th level and +5/-2 at 22nd level.~
+SAY NAME1 ~激励暴怒~
+SAY UNIDENTIFIED_DESC ~激励暴怒
+盟友最低伤害检定 +2，但护甲等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。~
       LPF ALTER_EFFECT
       INT_VAR
       header = 0
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +2 to minimum damage rolls, -1 penalty to Armor Class~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +2，护甲等级 -1~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 1
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +3 to minimum damage rolls, -1 penalty to Armor Class~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +3，护甲等级 -1~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 2
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +4 to minimum damage rolls, -2 penalty to Armor Class~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +4，护甲等级 -2~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 3
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +5 to minimum damage rolls, -2 penalty to Armor Class~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +5，护甲等级 -2~)
       END
 	  
 COPY_EXISTING ~C0BDS01a.spl~ ~override~
@@ -111,26 +111,26 @@ COPY_EXISTING ~C0BDS01b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDS02.SPL OVERRIDE
-SAY NAME1 ~Inspire Ambition~
-SAY UNIDENTIFIED_DESC ~Inspire Ambition
-Allies gain +1 to Casting Level and +10% to Spell Duration. Bonuses increase to +2 and +20% respectively at 10th level and +3 and +30% respectively at 17th level.~
+SAY NAME1 ~激励雄心~
+SAY UNIDENTIFIED_DESC ~激励雄心
+盟友施法等级 +1，法术持续时间 +10%。10 级时分别提升至 +2 与 +20%，17 级 +3 与 +30%。~
       LPF ALTER_EFFECT
       INT_VAR
       header = 0
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +1 Casting Level and +10% Spell Duration~)
+		parameter1 = RESOLVE_STR_REF (~激励雄心——盟友施法等级 +1，法术持续时间 +10%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 1
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +2 Casting Level and +20% Spell Duration~)
+		parameter1 = RESOLVE_STR_REF (~激励雄心——盟友施法等级 +2，法术持续时间 +20%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 2
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +3 Casting Level and +30% Spell Duration~)
+		parameter1 = RESOLVE_STR_REF (~激励雄心——盟友施法等级 +3，法术持续时间 +30%~)
       END
 	  
 COPY_EXISTING ~C0BDS02a.spl~ ~override~
@@ -147,32 +147,32 @@ COPY_EXISTING ~C0BDS02b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDS03.SPL OVERRIDE
-SAY NAME1 ~Inspire Preservation~
-SAY UNIDENTIFIED_DESC ~Inspire Preservation
-Allies gain +3% Magic Resistance. Bonuses increase to +7% at 11th level, +11% at 16th level and +15% at 21st level.~
+SAY NAME1 ~激励护佑~
+SAY UNIDENTIFIED_DESC ~激励护佑
+盟友魔法抗性 +3%。11 级提升至 +7%，16 级 +11%，21 级 +15%。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +3% Magic Resistance~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +3%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +7% Magic Resistance~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +7%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +11% Magic Resistance~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +11%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 3
-		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +15% Magic Resistance~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +15%~)
       END
 	  
 COPY_EXISTING ~C0BDS03a.spl~ ~override~
@@ -189,26 +189,26 @@ COPY_EXISTING ~C0BDS03b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDS04.SPL OVERRIDE
-SAY NAME1 ~Inspire Voracity~
-SAY UNIDENTIFIED_DESC ~Inspire Voracity
-Allies' attacks drain targets for 1 hit point. Drain amount increases to 2 hit points at 18th level and 3 hit points at 26th level.~
+SAY NAME1 ~激励贪噬~
+SAY UNIDENTIFIED_DESC ~激励贪噬
+盟友攻击从目标吸取 1 点生命值。18 级吸取量增至 2 点，26 级 3 点。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 1 hit point~)
+		parameter1 = RESOLVE_STR_REF (~激励贪噬——盟友攻击从目标吸取 1 点生命值~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 2 hit points~)
+		parameter1 = RESOLVE_STR_REF (~激励贪噬——盟友攻击从目标吸取 2 点生命值~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 3 hit points~)
+		parameter1 = RESOLVE_STR_REF (~激励贪噬——盟友攻击从目标吸取 3 点生命值~)
       END
 	  
 COPY_EXISTING ~C0BDS04a.spl~ ~override~
@@ -222,19 +222,19 @@ COPY_EXISTING ~C0BDS04B.spl~ ~override~
   INT_VAR
     header = 0
     match_opcode = 139
-    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 1 Hit Point^-~)
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777吸取 1 点生命值^-~)
 END
   LPF ALTER_EFFECT
   INT_VAR
     header = 1
     match_opcode = 139
-    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 2 Hit Points^-~)
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777吸取 2 点生命值^-~)
 END
   LPF ALTER_EFFECT
   INT_VAR
     header = 2
     match_opcode = 139
-    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 3 Hit Points^-~)
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777吸取 3 点生命值^-~)
 END
 
 // CURRENT HP CHECK
@@ -264,20 +264,20 @@ COPY_EXISTING ~C0BDS04E.spl~ ~override~
       END
 
 COPY_EXISTING C0BDS05.SPL OVERRIDE
-SAY NAME1 ~Inspire Audacity~
-SAY UNIDENTIFIED_DESC ~Inspire Audacity
-Allies gain +1 to Backstab and Critical Hit Modifiers. Bonuses increase to +2 at 36th level.~
+SAY NAME1 ~激励胆识~
+SAY UNIDENTIFIED_DESC ~激励胆识
+盟友背刺与暴击修正 +1。36 级提升至 +2。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Audacity—allies gain +1 to Backstab and Critical Hit Modifiers.~)
+		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与暴击修正 +1。~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Audacity—allies gain +2 to Backstab and Critical Hit Modifiers.~)
+		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与暴击修正 +2。~)
       END
 	  
 COPY_EXISTING ~C0BDS05a.spl~ ~override~
@@ -294,20 +294,20 @@ COPY_EXISTING ~C0BDS05b.spl~ ~override~
       END
 
 COPY_EXISTING C0BDS06.SPL OVERRIDE
-SAY NAME1 ~Inspire Dominance~
-SAY UNIDENTIFIED_DESC ~Inspire Dominance
-Allies gain a +15% bonus to damage dealt from all sources. Bonuses increase to +25% at 40th level.~
+SAY NAME1 ~激励统御~
+SAY UNIDENTIFIED_DESC ~激励统御
+盟友所有来源伤害 +15%。40 级提升至 +25%。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~Inspiring Dominance—allies gain +15% to all damage dealt~)
+		parameter1 = RESOLVE_STR_REF (~激励统御——盟友所有伤害 +15%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~Inspiring Dominance—allies gain +25% to all damage dealt~)
+		parameter1 = RESOLVE_STR_REF (~激励统御——盟友所有伤害 +25%~)
       END
 	  
 COPY_EXISTING ~C0BDS06a.spl~ ~override~

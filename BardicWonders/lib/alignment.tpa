@@ -51,8 +51,8 @@ ACTION_FOR_EACH description IN
 
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BARD" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
-          SPRINT old_desc ~– Alignment restricted to any neutral.~
-          SPRINT new_desc ~– Alignment restricted to any non-lawful. Bards are wanderers, guided by whim and intuition.~
+          SPRINT old_desc ~阵营限制：任何非守序的。~
+          SPRINT new_desc ~– 阵营限制为任意非守序。诗人是漫游者，凭兴致与直觉行事。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_desc%~ ~%new_desc%~

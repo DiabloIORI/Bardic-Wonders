@@ -25,13 +25,13 @@ ACTION_FOR_EACH invisible_area IN INAREANP INAREA INAREASM BIGNAREA INAREAPA BEG
 
 COPY ~%MOD_FOLDER%/bardsong/c0bardx.spl~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0bardsx.spl~ OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Bard Song Ready~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~诗人歌谣就绪~) END
 COPY ~%MOD_FOLDER%/bardsong/c0brdef1.bam~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0brdef1.vvc~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0bardso.wav~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0singin.eff~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0singin.spl~ OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Singing Bard Song~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~正在吟唱诗人歌谣~) END
 COPY ~%MOD_FOLDER%/bardsong/c0singi2.eff~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0singi2.spl~ OVERRIDE
 COPY ~%MOD_FOLDER%/bardsong/c0singi2.spl~ OVERRIDE
@@ -156,13 +156,13 @@ ACTION_FOR_EACH description IN
   Restore morale to its average value
   Remove Fear
   Protection From Fear~
-          SPRINT new_BARD_eff ~While active, the Bard Song has the following effects, improving with level:
-  1st level: +1 Luck, immunity to fear and morale failure
-  15th level: +2 Luck, immunity to fear and morale failure
-  20th level: +3 Luck, immunity to fear and morale failure
+          SPRINT new_BARD_eff ~歌谣生效期间，具有以下效果，并随等级提升：
+  1 级：幸运 +1，免疫恐惧与士气崩溃
+  15 级：幸运 +2，免疫恐惧与士气崩溃
+  20 级：幸运 +3，免疫恐惧与士气崩溃
 ~
           SPRINT old_BARD ~– May use Bard Song ability.~
-          SPRINT new_BARD ~BARD SONG: The Bard's Song may be used an unlimited number of times, and lasts for 6 rounds + 1 round per 5 levels gained. The Bard Song has a cooldown of 1 turn before it may be used again.~
+          SPRINT new_BARD ~诗人歌谣：歌谣可无限次使用，持续 6 轮 + 每 5 等级 1 轮。歌谣有 1 回合冷却，之后方可再次使用。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_BARD_eff%~ ~%new_BARD_eff%~

@@ -1,0 +1,326 @@
+// NIGHTSINGER - DARK INSPIRATIONS
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C0SABARD.2DA~ BEGIN
+COPY ~BardicWonders/inspirations/nightsinger~ OVERRIDE
+COPY_EXISTING ~C0SABARD.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 STR_VAR f_Entry = GA_C0BDS00 END // Inspirations
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 3 f_MaxLevel = 3 STR_VAR f_Entry = AP_C0BDST1 END // Inspirations
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 6 STR_VAR f_Entry = AP_C0BDST2 END // Inspirations
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0BDST3 END // Inspirations
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 12 f_MaxLevel = 12 STR_VAR f_Entry = AP_C0BDST4 END // Inspirations
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 20 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0BDST5 END // Inspirations
+
+COPY_EXISTING C0BDS00.SPL OVERRIDE
+SAY NAME1 ~Dark Inspiration~
+SAY UNIDENTIFIED_DESC ~The Nightsinger's presence inspires their companions, providing various benefits that persist so long as they are within visual range of the Nightsinger. Only one inspiration may be active at any given time.
+
+Inspire Wrath (1st level): Allies gain a +2 bonus to minimum damage rolls, but a -1 penalty to Armor Class. Bonuses and penalties increase to +3/-1 at 8th level, +4/-2 at 15th level and +5/-2 at 22nd level.
+
+Inspire Ambition (3rd level): Allies gain +1 to Casting Level and +10% to Spell Duration. Bonuses increase to +2 and +20% respectively at 10th level and +3 and +30% respectively at 17th level.
+
+Inspire Preservation (6th level): Allies gain +2% Magic Resistance. Bonuses increase to +5% at 11th level, +7% at 16th level and +10% at 21st level.
+
+Inspire Voracity (10th level): Allies' attacks drain targets for 1 hit point. Drain amount increases to 2 hit points at 18th level and 3 hit points at 26th level.
+
+Inspire Audacity (12th level): Allies gain +1 to Backstab and Critical Hit Modifiers. Bonuses increase to +2 at 36th level.
+
+Inspire Dominance (20th level): Allies gain a +15% bonus to damage dealt from all sources. Bonuses increase to +25% at 40th level.~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Wrath~) STR_VAR bam_file = C0BDS0IA RET C0BDS0IA = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Ambition~) STR_VAR bam_file = C0BDS0IB RET C0BDS0IB = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Preservation~) STR_VAR bam_file = C0BDS0IC RET C0BDS0IC = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Voracity~) STR_VAR bam_file = C0BDS0ID RET C0BDS0ID = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Audacity~) STR_VAR bam_file = C0BDS0IE RET C0BDS0IE = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Inspire Dominance~) STR_VAR bam_file = C0BDS0IF RET C0BDS0IF = icon END
+
+COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS1.SPL~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Gained Inspire Ambition: allies gain bonuses to Casting Level and Spell Duration~ [GAM_11])
+      END
+
+COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS2.SPL~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Gained Inspire Preservation: allies gain bonuses to Magic Resistance~ [GAM_11])
+      END
+
+COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS3.SPL~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Gained Inspire Voracity: allies' attacks drain Hit Points~ [GAM_11])
+      END
+
+COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS4.SPL~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Gained Inspire Audacity: allies gain bonuses Backstab and Critical Hit Modifiers~ [GAM_11])
+      END
+
+COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS5.SPL~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Gained Inspire Dominance: allies gain percentage bonuses to all damage~ [GAM_11])
+      END
+
+COPY_EXISTING C0BDS01.SPL OVERRIDE
+SAY NAME1 ~Inspire Wrath~
+SAY UNIDENTIFIED_DESC ~Inspire Wrath
+Allies gain a +2 bonus to minimum damage rolls, but a -1 penalty to Armor Class. Bonuses and penalties increase to +3/-1 at 8th level, +4/-2 at 15th level and +5/-2 at 22nd level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 0
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +2 to minimum damage rolls, -1 penalty to Armor Class~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 1
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +3 to minimum damage rolls, -1 penalty to Armor Class~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 2
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +4 to minimum damage rolls, -2 penalty to Armor Class~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 3
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Wrath—allies gain +5 to minimum damage rolls, -2 penalty to Armor Class~)
+      END
+	  
+COPY_EXISTING ~C0BDS01a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS01b.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0IA
+      END
+
+COPY_EXISTING C0BDS02.SPL OVERRIDE
+SAY NAME1 ~Inspire Ambition~
+SAY UNIDENTIFIED_DESC ~Inspire Ambition
+Allies gain +1 to Casting Level and +10% to Spell Duration. Bonuses increase to +2 and +20% respectively at 10th level and +3 and +30% respectively at 17th level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 0
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +1 Casting Level and +10% Spell Duration~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 1
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +2 Casting Level and +20% Spell Duration~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+      header = 2
+	    match_opcode = 139
+		parameter1 = RESOLVE_STR_REF (~Inspiring Ambition—allies gain +3 Casting Level and +30% Spell Duration~)
+      END
+	  
+COPY_EXISTING ~C0BDS02a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS02b.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0IB
+      END
+
+COPY_EXISTING C0BDS03.SPL OVERRIDE
+SAY NAME1 ~Inspire Preservation~
+SAY UNIDENTIFIED_DESC ~Inspire Preservation
+Allies gain +3% Magic Resistance. Bonuses increase to +7% at 11th level, +11% at 16th level and +15% at 21st level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 0
+		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +3% Magic Resistance~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 1
+		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +7% Magic Resistance~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 2
+		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +11% Magic Resistance~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 3
+		parameter1 = RESOLVE_STR_REF (~Inspiring Preservation—allies gain +15% Magic Resistance~)
+      END
+	  
+COPY_EXISTING ~C0BDS03a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS03b.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0IC
+      END
+
+COPY_EXISTING C0BDS04.SPL OVERRIDE
+SAY NAME1 ~Inspire Voracity~
+SAY UNIDENTIFIED_DESC ~Inspire Voracity
+Allies' attacks drain targets for 1 hit point. Drain amount increases to 2 hit points at 18th level and 3 hit points at 26th level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 0
+		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 1 hit point~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 1
+		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 2 hit points~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 2
+		parameter1 = RESOLVE_STR_REF (~Inspiring Voracity—allies' attacks drain targets for 3 hit points~)
+      END
+	  
+COPY_EXISTING ~C0BDS04a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS04B.spl~ ~override~
+  LPF ALTER_EFFECT
+  INT_VAR
+    header = 0
+    match_opcode = 139
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 1 Hit Point^-~)
+END
+  LPF ALTER_EFFECT
+  INT_VAR
+    header = 1
+    match_opcode = 139
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 2 Hit Points^-~)
+END
+  LPF ALTER_EFFECT
+  INT_VAR
+    header = 2
+    match_opcode = 139
+    parameter1 = RESOLVE_STR_REF (~^0xFFC76777Drained 3 Hit Points^-~)
+END
+
+// CURRENT HP CHECK
+APPEND ~splprot.2da~ ~C0CURHP 0 -1 0~ UNLESS ~C0CURHP 0 -1 0~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0CURHP~ BEGIN
+	    SET C0CURHP = %row%
+	  END
+	END
+	
+COPY_EXISTING ~C0BDS04C.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 326
+			parameter2 = C0CURHP
+	END
+
+COPY_EXISTING ~C0BDS04E.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0ID
+      END
+
+COPY_EXISTING C0BDS05.SPL OVERRIDE
+SAY NAME1 ~Inspire Audacity~
+SAY UNIDENTIFIED_DESC ~Inspire Audacity
+Allies gain +1 to Backstab and Critical Hit Modifiers. Bonuses increase to +2 at 36th level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 0
+		parameter1 = RESOLVE_STR_REF (~Inspiring Audacity—allies gain +1 to Backstab and Critical Hit Modifiers.~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 1
+		parameter1 = RESOLVE_STR_REF (~Inspiring Audacity—allies gain +2 to Backstab and Critical Hit Modifiers.~)
+      END
+	  
+COPY_EXISTING ~C0BDS05a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS05b.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0IE
+      END
+
+COPY_EXISTING C0BDS06.SPL OVERRIDE
+SAY NAME1 ~Inspire Dominance~
+SAY UNIDENTIFIED_DESC ~Inspire Dominance
+Allies gain a +15% bonus to damage dealt from all sources. Bonuses increase to +25% at 40th level.~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 0
+		parameter1 = RESOLVE_STR_REF (~Inspiring Dominance—allies gain +15% to all damage dealt~)
+      END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 139
+      header = 1
+		parameter1 = RESOLVE_STR_REF (~Inspiring Dominance—allies gain +25% to all damage dealt~)
+      END
+	  
+COPY_EXISTING ~C0BDS06a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = (IDS_OF_SYMBOL (~PROJECTL~ ~C0BDIPR~) + 1 )
+END
+
+COPY_EXISTING ~C0BDS06b.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 142
+        parameter2 = C0BDS0IF
+      END
+
+END

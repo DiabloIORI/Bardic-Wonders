@@ -72,8 +72,8 @@ COPY_EXISTING ~splprot.2da~ OVERRIDE
 
 // Resistances
 DEFINE_ACTION_FUNCTION	ADD_SPLPROT	INT_VAR	stat = 0	value = 0	relation = 0	RET	new_row		BEGIN
-	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA - Stat out of Bounds.~	END
-	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA - Relation out of Bounds.~	END
+	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA — 属性超出范围。~	END
+	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA — 关系码超出范围。~	END
 	COPY_EXISTING ~SPLPROT.2DA~	OVERRIDE
 		COUNT_2DA_COLS	cols
 		COUNT_2DA_ROWS cols rows
@@ -225,9 +225,9 @@ ACTION_PHP_EACH	DMG_ARRAY_100 AS one => two	BEGIN
 END
 
 COPY_EXISTING ~C0A_A01.SPL~ OVERRIDE
-SAY NAME1 ~Analyze~
-SAY UNIDENTIFIED_DESC ~Analyze
-With this ability, the user carefully observes the target and identifies their strengths and weaknesses, revealing their attributes, Hit Die, Saving Throws, Magic Resistance, Damage Resistance and vulnerability to Poison and Backstabs. This ability may be used an unlimited number of times, but only one target may be analyzed at once.~
+SAY NAME1 ~分析~
+SAY UNIDENTIFIED_DESC ~分析
+借此能力，使用者仔细观察目标，辨识其强弱，揭示其属性、生命骰、豁免、魔法抗性、伤害抗性以及对毒素与背刺的薄弱之处。此能力可无限次使用，但一次只能分析一个目标。~
 
 COPY_EXISTING ~C0A_A000.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = ANALYZE_LEVEL END

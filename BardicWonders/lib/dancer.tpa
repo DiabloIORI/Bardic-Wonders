@@ -30,35 +30,35 @@ LAF ADD_KIT_EX
 	// Shaman = 21
     kit_class     = 5
 	
-    mixed         = RESOLVE_STR_REF(~Dancer~)
+    mixed         = RESOLVE_STR_REF(~舞者~)
 	
-    lower         = RESOLVE_STR_REF(~dancer~)
+    lower         = RESOLVE_STR_REF(~舞者~)
 	
-    help          = RESOLVE_STR_REF(~DANCER: The dancer is an entertainer, an acrobat and a surprisingly dangerous combatant when drawn to battle, emphasizing speed and agility to confuse and unnerve <PRO_HISHER> opponents while inspiring allies to fight with increased confidence.
+    help          = RESOLVE_STR_REF(~舞者：舞者既是表演者、杂技演员，一旦投入战斗又是出人意料的危险斗士，以速度与灵巧迷惑、震慑 <PRO_HISHER> 对手，同时激励盟友更有信心地作战。
 
-ADVANTAGES:
-– May place 3 slots in Two-Weapon Style.
-– +2 bonus to base Armor Class at 1st level. Gains an additional +1 bonus at 10th level and every 10 levels thereafter.
-– +1 bonus to Armor Class vs. missile weapons at 1st level. Gains an additional +1 bonus to Armor Class every 5 levels.
-– +2 to movement rate.
-– The Dancer's Bard Song, "Dance of the Floating Lily", immobilizes the dancer while inspiring <PRO_HISHER> allies, providing immunity to fear and morale failure and grants the following bonuses:
-	1st level: +1 to hit and damage, +1/2 attack per round, dancer gains +2 to Armor Class
-	6th level: +2 to hit and damage, +1/2 attack per round, dancer gains +4 to Armor Class
-	11th level: +3 to hit and damage, +1/2 attack per round, dancer gains +6 to Armor Class
-	16th level: +4 to hit and damage, +1 attack per round, dancer gains +8 to Armor Class
-	21st level: +5 to hit and damage, +1 attack per round, dancer gains +10 to Armor Class
+优势：
+– 双武器风格可投入 3 个熟练度点。
+– 1 级基础护甲等级 +2。10 级时再 +1，此后每 10 级再 +1。
+– 1 级对抗远程武器护甲等级 +1。此后每 5 级护甲等级再 +1。
+– 移动速率 +2。
+– 舞者的诗人歌谣“浮莲之舞”在激励 <PRO_HISHER> 盟友的同时定住舞者自身，赋予对恐惧与士气崩溃的免疫，并提供下列加成：
+	1 级：命中与伤害 +1，每回合 1/2 次额外攻击，舞者护甲等级 +2
+	6 级：命中与伤害 +2，每回合 1/2 次额外攻击，舞者护甲等级 +4
+	11 级：命中与伤害 +3，每回合 1/2 次额外攻击，舞者护甲等级 +6
+	16 级：命中与伤害 +4，每回合 1 次额外攻击，舞者护甲等级 +8
+	21 级：命中与伤害 +5，每回合 1 次额外攻击，舞者护甲等级 +10
 
-– From 4th level onwards, may use the Adrenaline Rush ability once per day. Gains an additional use at 8th and 12th level.
+– 4 级起，每日可使用一次“肾上腺素迸发”。8 级与 12 级各增加一次使用次数。
 
-ADRENALINE RUSH: The dancer temporarily gains a huge boost in power for three rounds, gaining +1 to hit and damage for every four levels. Attacks per round are also doubled. However, <PRO_HISHER> Armor Class is reduced by four points and <PRO_HESHE> is unable to use <PRO_HISHER> Bard Song, and after the duration ends, <PRO_HESHE> becomes winded, suffering a huge penalty to fatigue and inability to use <PRO_HISHER> Bard Song for one turn. From 18th level onwards, the dancer is no longer fatigued after the effect expires.
+肾上腺素迸发：舞者在 3 轮内暂时获得巨大力量提升，每 4 级命中与伤害 +1。每回合攻击次数也翻倍。但 <PRO_HISHER> 护甲等级降低 4 点，<PRO_HESHE> 无法使用 <PRO_HISHER> 诗人歌谣；持续结束后，<PRO_HESHE> 脱力，疲劳受到重罚，且一回合内无法使用 <PRO_HISHER> 诗人歌谣。18 级起，效果结束后舞者不再疲劳。
 
-DISADVANTAGES:
-– May not wear any armor.
-– May not use shields.
-– May memorize one less spell per level.
-– Only has one-half normal Lore value.~)
+劣势：
+– 不得穿戴任何护甲。
+– 不得使用盾牌。
+– 每级可记忆的法术少一个。
+– 学识值仅为常人一半。~)
 	
-    briefdesc     = RESOLVE_STR_REF(~DANCER: The dancer is an entertainer, an acrobat and a surprisingly dangerous combatant when drawn to battle, emphasizing speed and agility to confuse and unnerve <PRO_HISHER> opponents while inspiring allies to fight with increased confidence.~)
+    briefdesc     = RESOLVE_STR_REF(~舞者：舞者既是表演者、杂技演员，一旦投入战斗又是出人意料的危险斗士，以速度与灵巧迷惑、震慑对手，同时激励盟友更有信心地作战。~)
 	
 	// fallen = 0
 	
@@ -150,29 +150,29 @@ END
 ACTION_IF MOD_IS_INSTALLED ~RR/SETUP-RR.TP2~ ~0~ BEGIN
 
 LAF ~GET_KIT_STRREF~ STR_VAR kit_name = ~C0DANCE~ RET kit_strref END
-STRING_SET_EVALUATE kit_strref ~DANCER: The dancer is an entertainer, an acrobat and a surprisingly dangerous combatant when drawn to battle, emphasizing speed and agility to confuse and unnerve <PRO_HISHER> opponents while inspiring allies to fight with increased confidence.
+STRING_SET_EVALUATE kit_strref ~舞者：舞者既是表演者、杂技演员，一旦投入战斗又是出人意料的危险斗士，以速度与灵巧迷惑、震慑 <PRO_HISHER> 对手，同时激励盟友更有信心地作战。
 
-ADVANTAGES:
-– Gains 3 points in Two-Weapon Style at 1st level.
-– +2 bonus to base Armor Class at 1st level. Gains an additional +1 bonus at 10th level and every 10 levels thereafter.
-– +1 bonus to Armor Class vs. missile weapons at 1st level. Gains an additional +1 bonus to Armor Class every 5 levels.
-– +2 to movement rate.
-– The Dancer's Bard Song, "Dance of the Floating Lily", immobilizes the dancer while inspiring <PRO_HISHER> allies, providing immunity to fear and morale failure and grants the following bonuses:
-	1st level: +1 to hit and damage, +1/2 attack per round, dancer gains +2 to Armor Class
-	6th level: +2 to hit and damage, +1/2 attack per round, dancer gains +4 to Armor Class
-	11th level: +3 to hit and damage, +1/2 attack per round, dancer gains +6 to Armor Class
-	16th level: +4 to hit and damage, +1 attack per round, dancer gains +8 to Armor Class
-	21st level: +5 to hit and damage, +1 attack per round, dancer gains +10 to Armor Class
+优势：
+– 1 级时双武器风格投入 3 个熟练度点。
+– 1 级基础护甲等级 +2。10 级时再 +1，此后每 10 级再 +1。
+– 1 级对抗远程武器护甲等级 +1。此后每 5 级护甲等级再 +1。
+– 移动速率 +2。
+– 舞者的诗人歌谣“浮莲之舞”在激励 <PRO_HISHER> 盟友的同时定住舞者自身，赋予对恐惧与士气崩溃的免疫，并提供下列加成：
+	1 级：命中与伤害 +1，每回合 1/2 次额外攻击，舞者护甲等级 +2
+	6 级：命中与伤害 +2，每回合 1/2 次额外攻击，舞者护甲等级 +4
+	11 级：命中与伤害 +3，每回合 1/2 次额外攻击，舞者护甲等级 +6
+	16 级：命中与伤害 +4，每回合 1 次额外攻击，舞者护甲等级 +8
+	21 级：命中与伤害 +5，每回合 1 次额外攻击，舞者护甲等级 +10
 
-– From 4th level onwards, may use the Adrenaline Rush ability once per day.
+– 4 级起，每日可使用一次“肾上腺素迸发”。
 
-ADRENALINE RUSH: The dancer temporarily gains a huge boost in power for three rounds, gaining +1 to hit and damage for every four levels. Attacks per round are also doubled. However, <PRO_HISHER> Armor Class is reduced by four points and <PRO_HESHE> is unable to use <PRO_HISHER> Bard Song, and after the duration ends, <PRO_HESHE> becomes winded, suffering a huge penalty to fatigue and inability to use <PRO_HISHER> Bard Song for one turn. From 18th level onwards, the dancer is no longer fatigued after the effect expires.
+肾上腺素迸发：舞者在 3 轮内暂时获得巨大力量提升，每 4 级命中与伤害 +1。每回合攻击次数也翻倍。但 <PRO_HISHER> 护甲等级降低 4 点，<PRO_HESHE> 无法使用 <PRO_HISHER> 诗人歌谣；持续结束后，<PRO_HESHE> 脱力，疲劳受到重罚，且一回合内无法使用 <PRO_HISHER> 诗人歌谣。18 级起，效果结束后舞者不再疲劳。
 
-DISADVANTAGES:
-– May not wear any armor.
-– May not use shields.
-– May memorize one less spell per level.
-– Only has one-half normal Lore value.~
+劣势：
+– 不得穿戴任何护甲。
+– 不得使用盾牌。
+– 每级可记忆的法术少一个。
+– 学识值仅为常人一半。~
 
 // 2 WEAPON STYLE
 ACTION_CLEAR_ARRAY weapprof_cols_blade
@@ -216,15 +216,15 @@ COPY ~%MOD_FOLDER%/dancer/rr~ ~override~
 END
     
 COPY ~%MOD_FOLDER%/dancer/c0dance3.spl~ ~override~
-SAY NAME1 ~Adrenaline Rush~
-SAY NAME2 ~Adrenaline Rush~
-SAY UNIDENTIFIED_DESC ~Adrenaline Rush
-The dancer temporarily gains a huge boost in power for three rounds, gaining +1 to hit and damage for every four levels. Attacks per round are also doubled. However, <PRO_HISHER> Armor Class is reduced by four points and <PRO_HESHE> is unable to use <PRO_HISHER> Bard Song, and after the duration ends, <PRO_HESHE> becomes winded, suffering a huge penalty to fatigue and inability to use <PRO_HISHER> Bard Song for one turn. From 18th level onwards, the dancer is no longer fatigued after the effect expires.~
+SAY NAME1 ~肾上腺素迸发~
+SAY NAME2 ~肾上腺素迸发~
+SAY UNIDENTIFIED_DESC ~肾上腺素迸发
+舞者在 3 轮内暂时获得巨大力量提升，每 4 级命中与伤害 +1。每回合攻击次数也翻倍。但 <PRO_HISHER> 护甲等级降低 4 点，<PRO_HESHE> 无法使用 <PRO_HISHER> 诗人歌谣；持续结束后，<PRO_HESHE> 脱力，疲劳受到重罚，且一回合内无法使用 <PRO_HISHER> 诗人歌谣。18 级起，效果结束后舞者不再疲劳。~
 
 COPY ~%MOD_FOLDER%/dancer/c0danchl.spl~ ~override~
-SAY NAME1 ~Swift-As-Flowing-Water~
-SAY NAME2 ~Swift-As-Flowing-Water~
-SAY UNIDENTIFIED_DESC ~Swift-As-Flowing-Water
-This oriental dance is a powerful aid to both the Dancer and to <PRO_HISHER> allies. The song gives the Dancer a +20 bonus to Armor Class as well as the ability to move at a reduced pace. The song also gives <PRO_HISHER> allies +8 to hit and damage as well as one extra attack per round and increased movement rate. There is also a 5% chance each round that any affected party member may gain the effects of Adrenaline Rush.
+SAY NAME1 ~流水疾影~
+SAY NAME2 ~流水疾影~
+SAY UNIDENTIFIED_DESC ~流水疾影
+这支东方舞蹈对舞者及其 <PRO_HISHER> 盟友都是强力助力。歌谣赋予舞者护甲等级 +20，以及减速移动的能力。歌谣还赋予 <PRO_HISHER> 盟友命中与伤害 +8，每回合一次额外攻击，并提升移动速率。每轮还有 5% 几率使任一受影响队员获得肾上腺素迸发效果。
 
-This ability replaces the current Bard Song.~
+此能力取代当前的诗人歌谣。~

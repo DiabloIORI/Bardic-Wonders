@@ -2,148 +2,148 @@ COPY ~%MOD_FOLDER%/NEW_SPELLS/BAM~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/NEW_SPELLS/ITM~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/NEW_SPELLS/SPL~ ~OVERRIDE~
 
-OUTER_SPRINT C0BW101_NAME1 ~Balagarn's Iron Horn~
-OUTER_SPRINT C0BW101_DESC ~Balagarn's Iron Horn
-(Alteration)
+OUTER_SPRINT C0BW101_NAME1 ~巴拉加恩铁号角~
+OUTER_SPRINT C0BW101_DESC ~巴拉加恩铁号角
+（变化系）
 
-Level: 1
-Range: 0
-Duration: Instant
-Casting Time: 1
-Area of Effect: 10-ft. cone with 120-deg. arc
-Saving Throw: Neg.
+等级：1
+射程：0
+持续时间：瞬发
+施法时间：1
+作用范围：120 度扇形、长 10 尺
+豁免：无效
 
-With this spell, the bard raises both hands and creates a powerful, resonant vibration which shakes all creatures in a 10-ft. cone from their palms, dealing 1d4 crushing + 1 magical damage per level (maximum of 5 damage) to all targets and knocking them off their feet for one round if a Saving Throw vs. Breath is failed. From 7th level, targets must save at a -1 penalty, increasing to -2 at 13th level and -3 at 18th level.~
+借此法术，诗人举起双手，激起一道强劲共鸣的震波，自掌面扫过 10 尺扇形内所有生物，对所有目标造成每级 1d4 钝击 +1 点魔法伤害（伤害上限 5 点）；未通过对抗吐息豁免者被击倒一轮。7 级起，目标豁免以 -1 惩罚进行，13 级增至 -2，18 级 -3。~
 
-OUTER_SPRINT C0BW102_NAME1 ~Courage~
-OUTER_SPRINT C0BW102_DESC ~Courage
-(Abjuration)
+OUTER_SPRINT C0BW102_NAME1 ~勇气~
+OUTER_SPRINT C0BW102_DESC ~勇气
+（防护系）
 
-Level: 1
-Range: Touch
-Duration: 1 round + 1 round per level
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
+等级：1
+射程：触碰
+持续时间：1 轮 + 每级 1 轮
+施法时间：1
+作用范围：1 个生物
+豁免：无
 
-Using this spell, the bard bolsters the courage of the targeted ally, granting them a non-cumulative +1 bonus to THAC0 and damage. The target is also purged of all fear and morale failure effects, and is immune to such effects for the duration.~
+施用此法术，诗人提振目标盟友的勇气，赋予其不叠加的 THAC0 与伤害 +1。目标还被清除所有恐惧与士气崩溃效果，并在持续期间免疫此类效果。~
 
-OUTER_SPRINT C0BW103_NAME1 ~Mischance~
-OUTER_SPRINT C0BW103_DESC ~Mischance
-(Enchantment/Charm)
+OUTER_SPRINT C0BW103_NAME1 ~厄运~
+OUTER_SPRINT C0BW103_DESC ~厄运
+（附魔/魅惑系）
 
-Level: 1
-Range: Visual range of the caster
-Duration: 4 rounds
-Casting Time: 1
-Area of Effect: 1 person
-Saving Throw: None
+等级：1
+射程：施法者视觉范围
+持续时间：4 轮
+施法时间：1
+作用范围：1 个人
+豁免：无
 
-The bard afflicts an unfortunate target with a malicious hex, causing all sorts of misfortune to befall them. For the next four rounds, the target's Saving Throws and morale are reduced by 2 points, they cannot critically hit on any roll, and their critical miss modifier is increased by one (a roll of 2, for example, would result in a critical miss). From 16th level, the critical miss modifier is further increased to two.~
+诗人给不幸的目标下一道恶毒咒诅，使其遭遇种种不幸。接下来四轮内，目标豁免与士气降低 2 点，任何掷骰都无法暴击命中，暴击失误修正提高 1（例如掷出 2 点即为暴击失误）。16 级起，暴击失误修正进一步提高至 2。~
 
-OUTER_SPRINT C0BW201_NAME1 ~Cleansing Aria~
-OUTER_SPRINT C0BW201_DESC ~Cleansing Aria
-(Conjuration)
+OUTER_SPRINT C0BW201_NAME1 ~净化咏叹~
+OUTER_SPRINT C0BW201_DESC ~净化咏叹
+（召唤系）
 
-Level: 2
-Range: Visual range of the caster
-Duration: Instant
-Casting Time: 1
-Area of Effect: Special
-Saving Throw: None
+等级：2
+射程：施法者视觉范围
+持续时间：瞬发
+施法时间：1
+作用范围：特殊
+豁免：无
 
-The bard chants a magical tune to soothe the target, restoring their hit points by 1d8 points and curing most ailments or diseases that afflict them, as well as the effects of blindness, deafness, and feeblemind. From 9th and 13th levels, an additional target may be chosen respectively—the same target may also be chosen multiple times for additional healing.~
+诗人吟诵一段魔法曲调抚慰目标，回复其 1d8 点生命值，并治愈侵扰它的多数病痛或疾病，以及失明、失聪与痴呆效果。9 级与 13 级时可分别多选择一个目标；同一目标也可重复选择以获得额外治疗。~
 
-OUTER_SPRINT C0BW202_NAME1 ~Heroism~
-OUTER_SPRINT C0BW202_DESC ~Heroism
-(Enchantment/Charm)
+OUTER_SPRINT C0BW202_NAME1 ~英雄术~
+OUTER_SPRINT C0BW202_DESC ~英雄术
+（附魔/魅惑系）
 
-Level: 2
-Range: Visual range of the caster
-Duration: 2 hours
-Casting Time: 2
-Area of Effect: Special
-Saving Throw: None
+等级：2
+射程：施法者视觉范围
+持续时间：2 小时
+施法时间：2
+作用范围：特殊
+豁免：无
 
-For the next two hours, the targeted creature is blessed with an enchantment which increases their competence, granting them a +10% bonus to their Hit Points, and setting their THAC0 to 90% of their base.~
+接下来两小时内，目标生物受一道增益附魔护佑，能力提升：生命值 +10%，THAC0 设为基础值的 90%。~
 
-OUTER_SPRINT C0BW203_NAME1 ~Sound Burst~
-OUTER_SPRINT C0BW203_DESC ~Sound Burst
-(Evocation)
+OUTER_SPRINT C0BW203_NAME1 ~声波爆裂~
+OUTER_SPRINT C0BW203_DESC ~声波爆裂
+（塑能系）
 
-Level: 2
-Range: Visual range of the caster
-Duration: 2 hours
-Casting Time: 2
-Area of Effect: Special
-Saving Throw: Neg.
+等级：2
+射程：施法者视觉范围
+持续时间：2 小时
+施法时间：2
+作用范围：特殊
+豁免：无效
 
-An ear-splitting sound erupts from a targeted location of the bard's choosing, dealing 1d4 crushing and 2d4 magic damage to all creatures within a 10-ft. radius and stunning them for two rounds on a failed Saving Throw vs. Death. Due to the special nature of this spell, the sound emitted is natural rather than magical and is thus not affected by Magic Resistance.~
+一声刺耳巨响自诗人所选目标地点迸发，对 10 尺半径内所有生物造成 1d4 钝击与 2d4 魔法伤害；未通过对抗死亡豁免者眩晕两轮。由于此法术的特殊性质，发出的声波属于自然而非魔法，因此不受魔法抗性影响。~
 
-OUTER_SPRINT C0BW301_NAME1 ~Crushing Despair~
-OUTER_SPRINT C0BW301_DESC ~Crushing Despair
-(Enchantment/Charm)
+OUTER_SPRINT C0BW301_NAME1 ~绝望重压~
+OUTER_SPRINT C0BW301_DESC ~绝望重压
+（附魔/魅惑系）
 
-Level: 3
-Range: Visual range of the caster
-Duration: 1 turn
-Casting Time: 2
-Area of Effect: 25-ft. cone with 60-deg. arc
-Saving Throw: None
+等级：3
+射程：施法者视觉范围
+持续时间：1 回合
+施法时间：2
+作用范围：60 度扇形、长 25 尺
+豁免：无
 
-An invisible cone of energy induces great despair and sadness upon unfortunate targets within the area of effect, penalizing their THAC0, damage, Saving Throws, Morale and Armor Class by two points for the next turn. This spell only affects the caster's enemies.~
+一道无形的能量扇形使作用范围内不幸目标陷入深重绝望与哀伤，使其 THAC0、伤害、豁免、士气与护甲等级在接下来一回合内降低 2 点。此法术只影响施法者的敌人。~
 
-OUTER_SPRINT C0BW302_NAME1 ~Battleluck~
-OUTER_SPRINT C0BW302_DESC ~Battleluck
-(Enchantment/Charm)
+OUTER_SPRINT C0BW302_NAME1 ~战斗好运~
+OUTER_SPRINT C0BW302_DESC ~战斗好运
+（附魔/魅惑系）
 
-Level: 3
-Range: Visual range of the caster
-Duration: 1 hour
-Casting Time: 2
-Area of Effect: 1 person
-Saving Throw: None
+等级：3
+射程：施法者视觉范围
+持续时间：1 小时
+施法时间：2
+作用范围：1 个人
+豁免：无
 
-The targeted creature is blessed with fortune in battle. For the next hour, their attacks will never critically miss, even on a roll of 1, and their critical hit modifier is increased by 1. From 14th level onwards, their critical hit modifier is further increased to 2.~
+目标生物在战斗中受福佑。接下来一小时内，其攻击永不暴击失误，即便掷出 1 点，暴击修正也提高 1。14 级起，暴击修正进一步提高至 2。~
 
-OUTER_SPRINT C0BW403_NAME1 ~Heroic Cry~
-OUTER_SPRINT C0BW403_DESC ~Heroic Cry
-(Enchantment/Charm)
+OUTER_SPRINT C0BW403_NAME1 ~英勇呐喊~
+OUTER_SPRINT C0BW403_DESC ~英勇呐喊
+（附魔/魅惑系）
 
-Level: 4
-Range: Visual range of the caster
-Duration: 1 turn
-Casting Time: 2
-Area of Effect: 15-ft. radius
-Saving Throw: Neg.
+等级：4
+射程：施法者视觉范围
+持续时间：1 回合
+施法时间：2
+作用范围：15 尺半径
+豁免：无效
 
-The bard lets out a powerful shout, granting them a +2 bonus to THAC0 and damage. All enemies within a 15-ft. radius of the bard must also make a Saving Throw vs. Death at -2 or suffer a -2 penalty to Armor Class and a -4 penalty to morale rolls.~
+诗人发出一声有力呐喊，自身 THAC0 与伤害 +2。诗人 15 尺半径内所有敌人还须以 -2 进行对抗死亡豁免，否则护甲等级 -2，士气检定 -4。~
 
-OUTER_SPRINT C0BW502_NAME1 ~Greater Heroism~
-OUTER_SPRINT C0BW502_DESC ~Greater Heroism
-(Enchantment/Charm)
+OUTER_SPRINT C0BW502_NAME1 ~强效英雄术~
+OUTER_SPRINT C0BW502_DESC ~强效英雄术
+（附魔/魅惑系）
 
-Level: 5
-Range: Visual range of the caster
-Duration: 2 hours
-Casting Time: 2
-Area of Effect: 1 creature
-Saving Throw: None
+等级：5
+射程：施法者视觉范围
+持续时间：2 小时
+施法时间：2
+作用范围：1 个生物
+豁免：无
 
-This is a more powerful version of the Heroism spell. For the next two hours, the targeted creature is blessed with an enchantment which increases their competence, granting them a +25% bonus to their Hit Points, setting their THAC0 to 60% of their base, and gaining a +4 bonus to all their Saving Throws. This spell and Heroism are non-cumulative with each other, and the more recently applied spell will remove the effects of the other.~
+这是英雄术的强效版本。接下来两小时内，目标生物受增益附魔护佑：生命值 +25%，THAC0 设为基础值的 60%，所有豁免 +4。此法术与英雄术互不叠加，后施加的法术会移除另一者的效果。~
 
-OUTER_SPRINT C0BW601_NAME1 ~Dirge~
-OUTER_SPRINT C0BW601_DESC ~Dirge
-(Evocation)
+OUTER_SPRINT C0BW601_NAME1 ~挽歌~
+OUTER_SPRINT C0BW601_DESC ~挽歌
+（塑能系）
 
-Level: 6
-Range: 30 ft.
-Duration: 8 rounds
-Casting Time: 8
-Area of Effect: 10-ft. radius
-Saving Throw: None
+等级：6
+射程：30 尺
+持续时间：8 轮
+施法时间：8
+作用范围：10 尺半径
+豁免：无
 
-The bard sings a powerful song which draws upon the energies of death and destruction. For the next eight rounds, all enemies within the affected area have their maximum Hit Points and damage dealt from all sources reduced by 20%, and their movement rate is halved. If a creature leaves the area of effect, their attributes are restored.~
+诗人吟唱一首汲取死亡与毁灭能量的强曲。接下来八轮内，受影响范围内所有敌人的最大生命值与所有来源伤害降低 20%，移动速率减半。生物离开作用范围后，属性恢复。~
 
 DEFINE_ACTION_FUNCTION cd_new_portrait_icon
   INT_VAR string = 0
@@ -160,7 +160,7 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
 
 END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Battleluck~) STR_VAR bam_file = C0BW302I RET C0BW302I = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~战斗好运~) STR_VAR bam_file = C0BW302I RET C0BW302I = icon END
 
 ADD_PROJECTILE ~%MOD_FOLDER%/new_spells/pro/C0BW101P.PRO~ ~C0 Crushing Despair~
 
@@ -170,7 +170,7 @@ SAY NAME1 ~%C0BW101_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW101_DESC%~
 
 COPY_EXISTING C0BW102.SPL OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Resist Fear~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~抵抗恐惧~) END
 SAY NAME1 ~%C0BW102_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW102_DESC%~
 
@@ -184,10 +184,10 @@ SAY NAME1 ~%C0BW201_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW201_DESC%~
 
 COPY_EXISTING C0BW201A.SPL OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Disease Cured~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~疾病已治愈~) END
 
 COPY_EXISTING C0BW202.SPL OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Heroism~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~英雄术~) END
 SAY NAME1 ~%C0BW202_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW202_DESC%~
 
@@ -208,7 +208,7 @@ SAY UNIDENTIFIED_DESC ~%C0BW301_DESC%~
 
 COPY_EXISTING C0BW302.SPL OVERRIDE
   LPF ALTER_EFFECT INT_VAR match_opcode = 142 parameter2 = C0BW302I END
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Critical Hit Modifier Increased~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~暴击修正提高~) END
 SAY NAME1 ~%C0BW302_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW302_DESC%~
 
@@ -218,7 +218,7 @@ SAY NAME1 ~%C0BW403_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW403_DESC%~
 
 COPY_EXISTING C0BW502.SPL OVERRIDE
-  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Heroism~) END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~英雄术~) END
 SAY NAME1 ~%C0BW502_NAME1%~
 SAY UNIDENTIFIED_DESC ~%C0BW502_DESC%~
 
@@ -237,7 +237,7 @@ WRITE_ASCII 0x3a ~C0BW101A~
 LPF ALTER_EFFECT INT_VAR match_opcode = 146 target = 1 opcode = 148 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 4 range = 5 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW101A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW101_NAME1%~
 SAY DESC ~%C0BW101_DESC%~
 
@@ -246,7 +246,7 @@ WRITE_LONG 0x34 150
 WRITE_ASCII 0x3a ~C0BW102A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW102 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW102A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW102_NAME1%~
 SAY DESC ~%C0BW102_DESC%~
 
@@ -255,7 +255,7 @@ WRITE_LONG 0x34 150
 WRITE_ASCII 0x3a ~C0BW103A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW103 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW103A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW103_NAME1%~
 SAY DESC ~%C0BW103_DESC%~
 
@@ -264,7 +264,7 @@ WRITE_LONG 0x34 300
 WRITE_ASCII 0x3a ~C0BW201A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW201 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW201A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW201_NAME1%~
 SAY DESC ~%C0BW201_DESC%~
 
@@ -273,7 +273,7 @@ WRITE_LONG 0x34 300
 WRITE_ASCII 0x3a ~C0BW202A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW202 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW202A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW202_NAME1%~
 SAY DESC ~%C0BW202_DESC%~
 
@@ -284,7 +284,7 @@ LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW203 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 146 target = 1 opcode = 148 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 4 range = 40 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW203A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW203_NAME1%~
 SAY DESC ~%C0BW203_DESC%~
 
@@ -295,7 +295,7 @@ LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW301 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 146 target = 1 opcode = 148 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 4 range = 25 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW301A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW301_NAME1%~
 SAY DESC ~%C0BW301_DESC%~
 
@@ -304,7 +304,7 @@ WRITE_LONG 0x34 500
 WRITE_ASCII 0x3a ~C0BW302A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW302 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW302A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW302_NAME1%~
 SAY DESC ~%C0BW302_DESC%~
 
@@ -314,7 +314,7 @@ WRITE_ASCII 0x3a ~C0BW403A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW403 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 5 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW403A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW403_NAME1%~
 SAY DESC ~%C0BW403_DESC%~
 
@@ -323,7 +323,7 @@ WRITE_LONG 0x34 1500
 WRITE_ASCII 0x3a ~C0BW502A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW502 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW502A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW502_NAME1%~
 SAY DESC ~%C0BW502_DESC%~
 
@@ -334,7 +334,7 @@ LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW601 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 146 target = 1 opcode = 148 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 4 range = 25 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = C0BW601A END
-SAY NAME1 ~Scroll~
+SAY NAME1 ~卷轴~
 SAY NAME2 ~%C0BW601_NAME1%~
 SAY DESC ~%C0BW601_DESC%~
 
@@ -344,20 +344,20 @@ WRITE_ASCII 0x3a ~SPPR611A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0BW101 resource = C0BW602 END
 LPF ALTER_ITEM_HEADER INT_VAR header = 1 target = 5 END
 LPF ALTER_ITEM_HEADER STR_VAR icon = SPPR611A END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Wondrous Recall~
-SAY DESC ~Wondrous Recall
-(Alteration)
+SAY NAME1 ~卷轴~
+SAY NAME2 ~奇术召回~
+SAY DESC ~奇术召回
+（变化系）
 
-Level: 6
-Sphere: Charm, Creation
-Range: 0
-Duration: Instant
-Casting Time: 9
-Area of Effect: The caster
-Saving Throw: None
+等级：6
+领域：魅惑、创造
+射程：0
+持续时间：瞬发
+施法时间：9
+作用范围：施法者
+豁免：无
 
-This spell enables the caster to bring back to memory 2 spells that have been previously cast. If no spells have been cast yet, nothing happens. Wondrous Recall cannot recall 6th-level or higher spells.~
+此法术使施法者回忆起两个此前已施放的法术。若尚未施放过任何法术，则毫无效果。奇术召回无法召回 6 级或更高等级的法术。~
 
 COPY_EXISTING ~SPPR308.SPL~ ~OVERRIDE/C0BW303.SPL~
 WRITE_SHORT 0x1C 1
@@ -378,7 +378,7 @@ LPF CLONE_EFFECT INT_VAR match_opcode = 261 match_parameter2 = 1 parameter2 = 0 
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~SPPR308C.ITM~ THEN BEGIN
 COPY ~%MOD_FOLDER%/new_spells/iwd/SPPR308C.itm~ ~override~
-SAY NAME1 ~Remove Paralysis~
+SAY NAME1 ~解除麻痹~
 END
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~SCRL58.ITM~ THEN BEGIN
@@ -751,7 +751,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "C0_GALLANT" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_desc ~<BARDIC_SPELLS>~
-          SPRINT new_desc ~– Gains Bard-exclusive spells as priest spells.~
+          SPRINT new_desc ~– 将诗人专属法术作为牧师法术习得。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_desc%~ ~
