@@ -51,7 +51,7 @@ DEFINE_PATCH_FUNCTION REPLACE_MULTILINE
 			END
 		END
 		PATCH_IF verbose = 1 AND warned = 0 BEGIN
-			PATCH_PRINT ~正在修补 %SOURCE_FILESPEC% — 模式已替换 %num_matches% 次：%LNL%%pattern% => %string%~
+			PATCH_PRINT ~Patching %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s):%LNL%%pattern% => %string%~
 		END
 	END ELSE BEGIN
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches

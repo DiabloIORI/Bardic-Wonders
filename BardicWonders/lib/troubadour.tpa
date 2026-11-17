@@ -270,15 +270,15 @@ SAY UNIDENTIFIED_DESC ~埃达丝圣咏
 
 ACTION_IF FILE_EXISTS_IN_GAME ~garric.cre~
 THEN BEGIN
-PRINT ~可选：将加瑞克改为行吟诗人？~
+PRINT ~OPTIONAL: Make Garrick a Troubadour?~
 
-PRINT ~请选择下列一项：
-[1] 是
-[2] 否~
+PRINT ~Please choose one of the following:
+[1] Yes
+[2] No~
 
 OUTER_SPRINT ~kit~ ~placeholder_value~
 OUTER_WHILE (!(IS_AN_INT ~kit~) OR (~kit~ > 0x2) OR (~kit~ < 0x1)) BEGIN
-  PRINT ~请选择 1 或 2，然后按回车。~
+  PRINT ~Please select 1 or 2 and press Enter.~
   ACTION_READLN ~kit~
 END
       ACTION_IF ("kit" = 1) THEN BEGIN

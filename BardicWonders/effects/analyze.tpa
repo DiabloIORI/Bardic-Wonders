@@ -72,8 +72,8 @@ COPY_EXISTING ~splprot.2da~ OVERRIDE
 
 // Resistances
 DEFINE_ACTION_FUNCTION	ADD_SPLPROT	INT_VAR	stat = 0	value = 0	relation = 0	RET	new_row		BEGIN
-	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA — 属性超出范围。~	END
-	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA — 关系码超出范围。~	END
+	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA - Stat out of Bounds.~	END
+	ACTION_IF	((stat != 259) AND (stat != 260) AND (relation > 11))	BEGIN	WARN	~SPLPROT.2DA - Relation out of Bounds.~	END
 	COPY_EXISTING ~SPLPROT.2DA~	OVERRIDE
 		COUNT_2DA_COLS	cols
 		COUNT_2DA_ROWS cols rows

@@ -21,7 +21,7 @@
 | 入口 | `Setup-BardicWonders.tp2` | 26 个组件名、3 个分组名、`REQUIRE_PREDICATE` 报错提示 |
 | 对话 | `dialogue\c0leanne.d` | 老板娘莉安的全部台词与玩家选项（含长剑“挽歌”、短弓“悲叹”购买选项） |
 | effects | `effects\analyze.tpa` | 抗性/等级/豁免状态标签、50 条“生命骰：N” |
-| effects | `effects\combat_casting.tpa` | 状态名“战斗施法者”“强化战斗施法者” |
+| effects | `effects\combat_casting.tpa` | 状态名“战斗施法”“强化战斗施法” |
 | effects | `effects\poison_weapon.tpa` | 物品名“淬毒武器”及描述 |
 | effects | `effects\toughness.tpa` | 状态名“坚韧” |
 | lib 职业 | `lib\blade.tpa` `jester.tpa` `skald.tpa` `abettor.tpa` `dancer.tpa` `darkbloom.tpa` `stormdrummer.tpa` `troubadour.tpa` `deathsinger.tpa` `strategist.tpa` `kapellmeister.tpa` `gallant.tpa` | 职业名（mixed/lower）、简介 briefdesc、长描述 help、优势/劣势条目 |
@@ -196,7 +196,7 @@
 
 `ADD_PROJECTILE` 的弹道名会写入 `PROJECTL.IDS`，汉化会破坏匹配，已从 `bw_backup\` 恢复英文原名：
 
-- `effects\combat_casting.tpa:6` 战斗施法者 → `Combat Casting`
+- `effects\combat_casting.tpa:6` 战斗施法 → `Combat Casting`
 - `lib\darkbloom.tpa:157` 黑暗纠缠 → `Dark Entanglement`
 - `lib\darkbloom.tpa:158` 歌谣忽略施法者 → `Bard Song Ignore Caster`
 - `lib\darkbloom.tpa:188 / :256 / :304` 荆棘喷吐 → `Thorn Spray`
@@ -208,3 +208,5 @@
 2. **`lib\new_spells.tpa` 行尾已转回 CRLF**（此前编辑“附魔系/魅惑系”时被转成纯 LF），现全仓文本文件均为 UTF-8 无 BOM + CRLF。
 3. **保留不动**：`对抗魔杖：`（豁免类型，非魔法抗力）、`诗人`（本体同样通用）、`豁免：`（本体法术条目同用法）、`面具侍从`（名词表 Mask→马斯克 备注“仅在描述神时这样翻译”，职业名保留意译）。
 4. **校验**：中文行内旧写法清零；`ADD_PROJECTILE` 无中文；各文件 `~` 定界符数量与行数同改前一致；`bw_backup\` 英文锚点未受影响（`armored_casting.tpa:129` 等中文锚点与被锚文本同步替换，仍一一对应）。
+5. **两个相似能力名分开译（按你确定的口径）**：`Combat Casting` → **战斗施法**，`Improved Combat Casting` → **强化战斗施法**（`effects\combat_casting.tpa:25-26`、`lib\skald.tpa:31`）；`Battle Caster` → **战斗施法者**（`lib\hlas.tpa:222-223` 高阶能力、`lib\armored_casting.tpa:130` 北地诗人特性）。注意两者不是同一能力，不要互相统一。
+6. **安装日志一律不译（新规则）**：玩家在游戏里看不到的 `PRINT / PATCH_PRINT / WARN / LOG` 等日志文本保留英文。本轮已把 15 行中文日志及 `lib\troubadour.tpa` 的 2 行选项续行全部还原为英文原文，此后新增内容同样不译。

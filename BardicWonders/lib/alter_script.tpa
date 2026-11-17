@@ -16,7 +16,7 @@ BEGIN
    COPY - "%insert%" override EVALUATE_BUFFER
        READ_ASCII 0x0 internal_insert_data (BUFFER_LENGTH)
        PATCH_TRY COMPILE_BAF_TO_BCS WITH DEFAULT
-          PATCH_PRINT ~"%insert%" 不是合法的 BAF 文件，INSERT_SCRIPT_BLOCK 将失败~
+          PATCH_PRINT ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
           PATCH_RERAISE
        END
    BUT_ONLY
@@ -48,7 +48,7 @@ BEGIN
    COPY - "%insert%" override EVALUATE_BUFFER
        READ_ASCII 0x0 internal_insert_data (BUFFER_LENGTH)
        PATCH_TRY COMPILE_BAF_TO_BCS WITH DEFAULT
-          PATCH_PRINT ~"%insert%" 不是合法的 BAF 文件，INSERT_SCRIPT_BLOCK 将失败~
+          PATCH_PRINT ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
           PATCH_RERAISE
        END
    BUT_ONLY
