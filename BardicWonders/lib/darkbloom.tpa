@@ -38,16 +38,16 @@ LAF ADD_KIT_EX
 优势：
 
 – 学识 +15。
-– 魔法抗性 +5%。
+– 魔法抗力 +5%。
 – 每个法术等级额外获得一个法术位。
-– 对抗幽灵亡灵、影怪、蕈人、蹒跚怪、尖叫菇、史莱姆与鬼魂时，护甲等级 +2。
-– 获得下列德鲁伊法术，并自动抄入法术书：诅咒、兽爪、霉菌触须、荆棘喷吐、虫群术、火焰种子、伊尔达斯迷雾。
+– 对抗幽灵亡灵、影怪、蕈人、蹒跚怪、尖叫菇、史莱姆与鬼魂时，防御等级 +2。
+– 获得下列德鲁伊法术，并自动抄入法术书：诅咒、兽爪、霉菌触须、荆棘喷吐、虫群术、火焰种子、埃达丝迷雾。
 
-– 暗华诗人的歌谣“梦沼寂静”对周围所有生物（无论敌我）施加沉默，并使魔法抗性降低 10%，每 2 级再降 2%，上限 50%。所有生物可进行对抗法术豁免，+2（每 6 级修正值 -1）以避免沉默。
+– 暗华诗人的歌谣“梦沼寂静”对周围所有生物（无论敌我）施加沉默，并使魔法抗力降低 10%，每 2 级再降 2%，上限 50%。所有生物可进行对抗法术豁免，+2（每 6 级修正值 -1）以避免沉默。
 
 – 6 级：每日可使用一次“黑暗纠缠”。
 
-黑暗纠缠：借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物。生物每轮可进行一次对抗法术豁免，+3 以避免被缠绕。被缠绕的生物仍可攻击，但护甲等级 -2，魔法抗性 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。
+黑暗纠缠：借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物。生物每轮可进行一次对抗法术豁免，+3 以避免被缠绕。被缠绕的生物仍可攻击，但防御等级 -2，魔法抗力 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。
 
 – 12 级：可背刺，伤害 x2，额外造成 2d8 酸蚀伤害。另有 50% 几率使受害者被黑暗藤蔓缠绕一轮。
 
@@ -154,8 +154,8 @@ SAY UNIDENTIFIED_DESC ~死寂千年
 
 此能力取代当前的诗人歌谣。~
 
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#1.PRO~ ~黑暗纠缠~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#SO.PRO~ ~歌谣忽略施法者~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#1.PRO~ ~Dark Entanglement~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/C0BDD#SO.PRO~ ~Bard Song Ignore Caster~
 COPY ~%MOD_FOLDER%/darkbloom/C0BDD#SO.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -172,7 +172,7 @@ WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%C0BDD#1%~
 END
 SAY NAME1 ~黑暗纠缠~
 SAY UNIDENTIFIED_DESC ~黑暗纠缠
-借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物，持续五轮。被缠绕的生物仍可攻击，但护甲等级 -2，魔法抗性 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。~
+借此法术，施法者使效果范围内的黑暗植物与根须缠绕区内生物，持续五轮。被缠绕的生物仍可攻击，但防御等级 -2，魔法抗力 -10%。缠绕时有 10% 几率使生物中毒，5 秒内每秒受到 1 点伤害。~
 
 // Curse
 ACTION_IF FILE_EXISTS_IN_GAME ~SPPR112.SPL~ THEN BEGIN
@@ -185,7 +185,7 @@ COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112C.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/AREA1X.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/#BLESS.VVC~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDPRO237.PRO~ ~荆棘喷吐~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDPRO237.PRO~ ~Thorn Spray~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR112.SPL~ ~override/C0BDDS1.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 1
@@ -202,14 +202,14 @@ END
 END
 SAY NAME1 ~诅咒~
 SAY UNIDENTIFIED_DESC ~诅咒
-（召唤系）
+（咒法系）
 
 等级：1
 领域：所有
-射程：施法者视觉范围
+有效距离：施法者视野范围
 持续时间：6 轮
 施法时间：9
-作用范围：15 尺半径
+影响范围：15 尺半径
 豁免：无
 
 施放诅咒法术时，施法者降低敌方生物的士气，以及其所做的任何豁免与攻击检定 1 点。法术完成瞬间，影响以施法者所选点为中心、15 尺半径内的所有生物。离开范围的受影响生物仍受法术作用；施法完成后进入范围的生物不受影响。~
@@ -234,10 +234,10 @@ SAY UNIDENTIFIED_DESC ~兽爪
 
 等级：2
 领域：战斗
-射程：0
+有效距离：0
 持续时间：1 回合
 施法时间：5
-作用范围：施法者
+影响范围：施法者
 豁免：无
 
 此法术将施法者的双臂化为巨兽之爪，赋予 18/72 力量，并能以兽爪挥击对手，造成 2d4（外加力量加成）点挥砍伤害。施法者每轮可攻击两次，兽爪命中 +2。~
@@ -253,7 +253,7 @@ COPY ~%MOD_FOLDER%/darkbloom/BGEE/MTOUCHH.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/MTOUCHH.VVC~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326C.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDMOLD.PRO~ ~荆棘喷吐~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/IDMOLD.PRO~ ~Thorn Spray~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR326B.spl~ ~override~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 3
@@ -270,10 +270,10 @@ SAY UNIDENTIFIED_DESC ~霉菌触须
 
 等级：3
 领域：植物
-射程：触碰
+有效距离：触碰
 持续时间：特殊
 施法时间：6
-作用范围：10 尺半径
+影响范围：10 尺半径
 豁免：特殊
 
 此法术使施法者触碰的生物感染上迅速蔓延的褐色霉菌。若受感染生物对抗法术豁免失败，则感染严重，按如下受到魔法伤害：
@@ -301,7 +301,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~SPPR427.SPL~ THEN BEGIN
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427C.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/tsprayt.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro303.PRO~ ~荆棘喷吐~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro303.PRO~ ~Thorn Spray~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR427.spl~ ~override/C0BDDS4.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 4
@@ -317,13 +317,13 @@ SAY UNIDENTIFIED_DESC ~荆棘喷吐
 
 等级：4
 领域：植物
-射程：30 尺
-持续时间：瞬发
+有效距离：30 尺
+持续时间：立即
 施法时间：3
-作用范围：90 度扇形、长 17 尺
+影响范围：90 度扇形、长 17 尺
 豁免：减半
 
-借此法术，施法者可使一簇芒刺、尖钉、荆棘与硬刺自 <PRO_HISHER> 手中喷涌而出。荆棘喷吐覆盖长 17 尺的扇形，对作用范围内所有生物造成 2d10 点穿刺伤害；通过对抗死亡豁免则仅受 1d10 点伤害。~
+借此法术，施法者可使一簇芒刺、尖钉、荆棘与硬刺自 <PRO_HISHER> 手中喷涌而出。荆棘喷吐覆盖长 17 尺的扇形，对影响范围内所有生物造成 2d10 点穿刺伤害；通过对抗死亡豁免则仅受 1d10 点伤害。~
 END
 // Insect Plague
 COPY_EXISTING ~SPPR517.spl~ ~override/C0BDDS5.spl~
@@ -342,7 +342,7 @@ END
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~SPPR736.SPL~ THEN BEGIN
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736B.BAM~ ~override~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736C.BAM~ ~override~
-ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro307.PRO~ ~伊尔达斯迷雾~
+ADD_PROJECTILE ~%MOD_FOLDER%/darkbloom/BGEE/idpro307.PRO~ ~Mist of Eldath~
 COPY ~%MOD_FOLDER%/darkbloom/BGEE/SPPR736.spl~ ~override/C0BDDS7.spl~
 WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 7
@@ -352,17 +352,17 @@ SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%idpro307%~
 END
-SAY NAME1 ~伊尔达斯迷雾~
-SAY UNIDENTIFIED_DESC ~伊尔达斯迷雾
-（祈求系）
+SAY NAME1 ~埃达丝迷雾~
+SAY UNIDENTIFIED_DESC ~埃达丝迷雾
+（塑能系）
 
 等级：7
 领域：元素
-射程：施法者视觉范围
-持续时间：瞬发
+有效距离：施法者视野范围
+持续时间：立即
 施法时间：9
-作用范围：7 尺半径
+影响范围：7 尺半径
 豁免：无
 
-此法术以银蓝色迷雾笼罩作用范围——迷雾内的任何生物都将治愈疾病与毒素，并回复 25 点生命值。~
+此法术以银蓝色迷雾笼罩影响范围——迷雾内的任何生物都将治愈疾病与毒素，并回复 25 点生命值。~
 END

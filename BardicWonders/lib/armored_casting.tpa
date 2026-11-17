@@ -126,8 +126,8 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "SKALD" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_skald_new ~– 可在任意战斗风格上专精（两个熟练度点）。~
-          SPRINT old_skald_vanilla ~1 级：命中检定、护甲等级与士气 +2。~
-          SPRINT new_skald ~– 战斗施法者：战歌者可在穿戴任意护甲时施法。~
+          SPRINT old_skald_vanilla ~1 级：命中检定、防御等级与士气 +2。~
+          SPRINT new_skald ~– 战斗施法者：北地诗人可在穿戴任意护甲时施法。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_skald_vanilla%~ ~%old_skald_vanilla%

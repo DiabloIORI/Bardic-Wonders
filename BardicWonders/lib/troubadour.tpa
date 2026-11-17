@@ -261,16 +261,16 @@ WRITE_SHORT 0x1C 1
 WRITE_LONG 0x34 6
 
 COPY ~%MOD_FOLDER%/troubadour/c0trbhl.spl~ ~override~
-SAY NAME1 ~伊尔达斯圣咏~
-SAY NAME2 ~伊尔达斯圣咏~
-SAY UNIDENTIFIED_DESC ~伊尔达斯圣咏
-这首歌对行吟诗人及其 <PRO_HISHER> 盟友都是强力助力。伊尔达斯圣咏使所有受者每轮再生 5 点生命值，并免疫所有妨碍移动与影响心智的效果、毒素、疾病、等级吸取与即死效果。队伍还获得护甲等级与豁免 +4，对抗邪恶生物再 +2。此外所有受者有 5% 几率被治愈总生命值的 40%。
+SAY NAME1 ~埃达丝圣咏~
+SAY NAME2 ~埃达丝圣咏~
+SAY UNIDENTIFIED_DESC ~埃达丝圣咏
+这首歌对行吟诗人及其 <PRO_HISHER> 盟友都是强力助力。埃达丝圣咏使所有受者每轮再生 5 点生命值，并免疫所有妨碍移动与影响心智的效果、毒素、疾病、等级吸取与即死效果。队伍还获得防御等级与豁免 +4，对抗邪恶生物再 +2。此外所有受者有 5% 几率被治愈总生命值的 40%。
 
 此能力取代当前的诗人歌谣。~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~garric.cre~
 THEN BEGIN
-PRINT ~可选：将加里克改为行吟诗人？~
+PRINT ~可选：将加瑞克改为行吟诗人？~
 
 PRINT ~请选择下列一项：
 [1] 是

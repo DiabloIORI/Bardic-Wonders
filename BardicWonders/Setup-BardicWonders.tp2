@@ -15,15 +15,15 @@ END
 LANGUAGE ~English~
          ~English~
 
-BEGIN ~Bardic Wonders：刀锋改版~ DESIGNATED 1001
+BEGIN ~Bardic Wonders：舞剑士改版~ DESIGNATED 1001
 GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/blade.tpa~
 
-BEGIN ~Bardic Wonders：弄臣改版~ DESIGNATED 1002
+BEGIN ~Bardic Wonders：小丑改版~ DESIGNATED 1002
 GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/jester.tpa~
 
-BEGIN ~Bardic Wonders：战歌者改版~ DESIGNATED 1003
+BEGIN ~Bardic Wonders：北地诗人改版~ DESIGNATED 1003
 GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/skald.tpa~
 
@@ -59,7 +59,7 @@ BEGIN ~Bardic Wonders：乐长职业~ DESIGNATED 1011
 GROUP ~职业~
 INCLUDE ~%MOD_FOLDER%/LIB/kapellmeister.tpa~
 
-BEGIN ~Bardic Wonders：豪情圣武士职业~ DESIGNATED 1012
+BEGIN ~Bardic Wonders：豪情骑士职业~ DESIGNATED 1012
 GROUP ~职业~
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) ~需要安装 EEex。~
 INCLUDE ~%MOD_FOLDER%/LIB/gallant.tpa~
@@ -118,7 +118,7 @@ BEGIN ~Bardic Wonders：诗人施法等级从 2 级起算~ DESIGNATED 2011
 GROUP ~调整与补丁~
 INCLUDE ~%MOD_FOLDER%/LIB/spell_level.tpa~
 
-BEGIN ~Bardic Wonders：修补对话职业判定：豪情圣武士、法师/诗人与战士/法师/诗人（最后安装）~ DESIGNATED 3001
+BEGIN ~Bardic Wonders：修补对话职业判定：豪情骑士、法师/诗人与战士/法师/诗人（最后安装）~ DESIGNATED 3001
 GROUP ~调整与补丁~
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~2009~) OR (MOD_IS_INSTALLED ~BardicWonders/BardicWonders.tp2~ ~1012~) ~必须先安装法师/诗人与战士/法师/诗人组件。~
 INCLUDE ~%MOD_FOLDER%/LIB/mage_bard_dlg.tpa~

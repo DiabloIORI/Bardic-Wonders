@@ -32,7 +32,7 @@ SAY UNIDENTIFIED_DESC ~自由之歌
 COPY_EXISTING ~C0BWHL4.SPL~ ~OVERRIDE~
 SAY NAME1 ~军团行军曲~
 SAY UNIDENTIFIED_DESC ~军团行军曲
-使用此能力后，诗人赋能自身周围 25 尺内所有盟友，使其基础 THAC0 归零，基础每回合攻击次数等同于同级战士，并在 1 回合内伤害 +4。
+使用此能力后，诗人赋能自身周围 25 尺内所有盟友，使其基础 零级命中值 归零，基础每轮攻击次数等同于同级战士，并在 1 回合内伤害 +4。
 
 移除自由之歌与英雄之歌的效果。
 
@@ -52,7 +52,7 @@ END
 COPY_EXISTING ~C0BWHL5.SPL~ ~OVERRIDE~
 SAY NAME1 ~英雄之歌~
 SAY UNIDENTIFIED_DESC ~英雄之歌
-使用此能力后，诗人为自身周围 25 尺内所有盟友授予诗人每级 +4 的临时生命值，护甲等级与豁免 +6，持续 1 回合。
+使用此能力后，诗人为自身周围 25 尺内所有盟友授予诗人每级 +4 的临时生命值，防御等级与豁免 +6，持续 1 回合。
 
 移除英雄之歌与军团行军曲的效果。
 
@@ -61,7 +61,7 @@ SAY UNIDENTIFIED_DESC ~英雄之歌
 COPY_EXISTING ~C0BWHL6.SPL~ ~OVERRIDE~
 SAY NAME1 ~安魂挽歌~
 SAY UNIDENTIFIED_DESC ~安魂挽歌
-使用此能力后，诗人对敌人立即造成 60 点不可减免的魔法伤害，并为 25 尺范围内的盟友回复 60 点生命值。此歌谣无视一切法术防护与魔法抗性。
+使用此能力后，诗人对敌人立即造成 60 点不可减免的魔法伤害，并为 25 尺范围内的盟友回复 60 点生命值。此歌谣无视一切法术防护与魔法抗力。
 
 此能力可选一次。~
 
@@ -228,9 +228,9 @@ SAY UNIDENTIFIED_DESC ~战斗施法者
 COPY_EXISTING ~C0BWHL0.SPL~ ~OVERRIDE~
 SAY NAME1 ~战斗勇武~
 SAY UNIDENTIFIED_DESC ~战斗勇武
-既是战士又是诗人，战歌者的训练赋予其近乎战士的战斗经验，永久获得每回合一次额外攻击与 100 点特殊力量加成。
+既是战士又是诗人，北地诗人的训练赋予其近乎战士的战斗经验，永久获得每回合一次额外攻击与 100 点特殊力量加成。
 
-前提条件：仅限战歌者~
+前提条件：仅限北地诗人~
 
 COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
   // Borrowed from Rogue Rebalancing

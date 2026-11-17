@@ -3,7 +3,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~c0ekcc.spl~ BEGIN
 
 COPY ~%MOD_FOLDER%/effects/combat_casting~ ~override~
 
-ADD_PROJECTILE ~%MOD_FOLDER%/effects/combat_casting/c0ekccp.PRO~ ~战斗施法者~
+ADD_PROJECTILE ~%MOD_FOLDER%/effects/combat_casting/c0ekccp.PRO~ ~Combat Casting~
 
 DEFINE_ACTION_FUNCTION cd_new_portrait_icon
   INT_VAR string = 0

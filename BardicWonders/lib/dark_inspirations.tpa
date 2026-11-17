@@ -12,17 +12,17 @@ COPY_EXISTING ~C0SABARD.2DA~ OVERRIDE
 
 COPY_EXISTING C0BDS00.SPL OVERRIDE
 SAY NAME1 ~黑暗感召~
-SAY UNIDENTIFIED_DESC ~夜歌者的存在感召同伴，提供多种加成，只要同伴处于夜歌者视觉范围内即持续生效。同一时间只能激活一种感召。
+SAY UNIDENTIFIED_DESC ~夜歌者的存在感召同伴，提供多种加成，只要同伴处于夜歌者视野范围内即持续生效。同一时间只能激活一种感召。
 
-激励暴怒（1 级）：盟友最低伤害检定 +2，但护甲等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。
+激励暴怒（1 级）：盟友最低伤害检定 +2，但防御等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。
 
 激励雄心（3 级）：盟友施法等级 +1，法术持续时间 +10%。10 级时分别提升至 +2 与 +20%，17 级 +3 与 +30%。
 
-激励护佑（6 级）：盟友魔法抗性 +2%。11 级提升至 +5%，16 级 +7%，21 级 +10%。
+激励护佑（6 级）：盟友魔法抗力 +2%。11 级提升至 +5%，16 级 +7%，21 级 +10%。
 
 激励贪噬（10 级）：盟友攻击从目标吸取 1 点生命值。18 级吸取量增至 2 点，26 级 3 点。
 
-激励胆识（12 级）：盟友背刺与暴击修正 +1。36 级提升至 +2。
+激励胆识（12 级）：盟友背刺与致命一击修正 +1。36 级提升至 +2。
 
 激励统御（20 级）：盟友所有来源伤害 +15%。40 级提升至 +25%。~
 
@@ -44,7 +44,7 @@ COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS2.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~已习得激励护佑：盟友获得魔法抗性加成~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励护佑：盟友获得魔法抗力加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS3.SPL~
@@ -58,7 +58,7 @@ COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS4.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~已习得激励胆识：盟友获得背刺与暴击修正加成~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励胆识：盟友获得背刺与致命一击修正加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS5.SPL~
@@ -71,30 +71,30 @@ COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIS5.SPL~
 COPY_EXISTING C0BDS01.SPL OVERRIDE
 SAY NAME1 ~激励暴怒~
 SAY UNIDENTIFIED_DESC ~激励暴怒
-盟友最低伤害检定 +2，但护甲等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。~
+盟友最低伤害检定 +2，但防御等级 -1。8 级时加成与惩罚提升至 +3/-1，15 级 +4/-2，22 级 +5/-2。~
       LPF ALTER_EFFECT
       INT_VAR
       header = 0
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +2，护甲等级 -1~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +2，防御等级 -1~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 1
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +3，护甲等级 -1~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +3，防御等级 -1~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 2
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +4，护甲等级 -2~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +4，防御等级 -2~)
       END
       LPF ALTER_EFFECT
       INT_VAR
       header = 3
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +5，护甲等级 -2~)
+		parameter1 = RESOLVE_STR_REF (~激励暴怒——盟友最低伤害检定 +5，防御等级 -2~)
       END
 	  
 COPY_EXISTING ~C0BDS01a.spl~ ~override~
@@ -149,30 +149,30 @@ COPY_EXISTING ~C0BDS02b.spl~ ~override~
 COPY_EXISTING C0BDS03.SPL OVERRIDE
 SAY NAME1 ~激励护佑~
 SAY UNIDENTIFIED_DESC ~激励护佑
-盟友魔法抗性 +3%。11 级提升至 +7%，16 级 +11%，21 级 +15%。~
+盟友魔法抗力 +3%。11 级提升至 +7%，16 级 +11%，21 级 +15%。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +3%~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗力 +3%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +7%~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗力 +7%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +11%~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗力 +11%~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 3
-		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗性 +15%~)
+		parameter1 = RESOLVE_STR_REF (~激励护佑——盟友魔法抗力 +15%~)
       END
 	  
 COPY_EXISTING ~C0BDS03a.spl~ ~override~
@@ -266,18 +266,18 @@ COPY_EXISTING ~C0BDS04E.spl~ ~override~
 COPY_EXISTING C0BDS05.SPL OVERRIDE
 SAY NAME1 ~激励胆识~
 SAY UNIDENTIFIED_DESC ~激励胆识
-盟友背刺与暴击修正 +1。36 级提升至 +2。~
+盟友背刺与致命一击修正 +1。36 级提升至 +2。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与暴击修正 +1。~)
+		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与致命一击修正 +1。~)
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与暴击修正 +2。~)
+		parameter1 = RESOLVE_STR_REF (~激励胆识——盟友背刺与致命一击修正 +2。~)
       END
 	  
 COPY_EXISTING ~C0BDS05a.spl~ ~override~

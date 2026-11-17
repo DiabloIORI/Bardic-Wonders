@@ -227,7 +227,7 @@ END
 COPY_EXISTING ~C0A_A01.SPL~ OVERRIDE
 SAY NAME1 ~分析~
 SAY UNIDENTIFIED_DESC ~分析
-借此能力，使用者仔细观察目标，辨识其强弱，揭示其属性、生命骰、豁免、魔法抗性、伤害抗性以及对毒素与背刺的薄弱之处。此能力可无限次使用，但一次只能分析一个目标。~
+借此能力，使用者仔细观察目标，辨识其强弱，揭示其属性、生命骰、豁免、魔法抗力、伤害抗性以及对毒素与背刺的薄弱之处。此能力可无限次使用，但一次只能分析一个目标。~
 
 COPY_EXISTING ~C0A_A000.SPL~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = ANALYZE_LEVEL END

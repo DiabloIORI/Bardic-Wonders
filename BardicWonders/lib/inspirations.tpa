@@ -45,7 +45,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "BARD" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_desc ~– May use Bard Song ability~
-          SPRINT new_desc ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~
+          SPRINT new_desc ~– 可使用诗人感召。只要处于诗人视野范围内，感召便持续提供多种加成。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_desc%~ ~%new_desc%
@@ -113,13 +113,13 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~激励迅捷~) STR_VA
 
 COPY_EXISTING C0BDI00.SPL OVERRIDE
 SAY NAME1 ~诗人感召~
-SAY UNIDENTIFIED_DESC ~诗人的存在感召同伴，提供多种加成，只要同伴处于诗人视觉范围内即持续生效。同一时间只能激活一种感召。
+SAY UNIDENTIFIED_DESC ~诗人的存在感召同伴，提供多种加成，只要同伴处于诗人视野范围内即持续生效。同一时间只能激活一种感召。
 
 激励勇气（1 级）：盟友命中检定 +1，士气提升。命中加成 8 级时增至 +2，15 级 +3，22 级 +4。
 
 激励干练（3 级）：盟友学识与偷窃技能 +10。10 级增至 +20，17 级 +30。
 
-激励防御（6 级）：盟友对抗所有武器类型护甲等级 +2。14 级增至 +3，22 级 +4。
+激励防御（6 级）：盟友对抗所有武器类型防御等级 +2。14 级增至 +3，22 级 +4。
 
 激励再生（10 级）：盟友每 2 轮再生 1 点生命值。18 级增至 2 点，26 级 3 点。
 
@@ -138,7 +138,7 @@ COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT2.SPL~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
-		parameter1 = RESOLVE_STR_REF (~已习得激励防御：盟友获得护甲等级加成~ [GAM_11])
+		parameter1 = RESOLVE_STR_REF (~已习得激励防御：盟友获得防御等级加成~ [GAM_11])
       END
 
 COPY_EXISTING ~C0BDIT1.SPL~ ~OVERRIDE/C0BDIT3.SPL~
@@ -243,24 +243,24 @@ COPY_EXISTING ~C0BDI02b.spl~ ~override~
 COPY_EXISTING C0BDI03.SPL OVERRIDE
 SAY NAME1 ~激励防御~
 SAY UNIDENTIFIED_DESC ~激励防御
-盟友对抗所有武器类型护甲等级 +2。14 级增至 +3，22 级 +4。~
+盟友对抗所有武器类型防御等级 +2。14 级增至 +3，22 级 +4。~
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 0
-		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +2~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器防御等级 +2~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 1
-		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +3~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器防御等级 +3~ [ACT_01])
       END
       LPF ALTER_EFFECT
       INT_VAR
 	    match_opcode = 139
       header = 2
-		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器护甲等级 +4~ [ACT_01])
+		parameter1 = RESOLVE_STR_REF (~激励防御——盟友对抗所有武器防御等级 +4~ [ACT_01])
       END
 	  
 COPY_EXISTING ~C0BDI03a.spl~ ~override~
@@ -381,7 +381,7 @@ COPY_EXISTING ~C0BDI06b.spl~ ~override~
 	  
 OUTER_SPRINT old_bard ~– May use Bard Song ability.~ //old text
 
-OUTER_SPRINT new_bard ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~ //new text
+OUTER_SPRINT new_bard ~– 可使用诗人感召。只要处于诗人视野范围内，感召便持续提供多种加成。~ //new text
 
 INCLUDE ~BardicWonders\lib\dark_inspirations.tpa~
 
@@ -401,7 +401,7 @@ ACTION_FOR_EACH description IN
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "C0_GALLANT" BEGIN
           READ_2DA_ENTRY index 4 col_count kit_desc
           SPRINT old_inspiration ~<BARDIC_INSPIRATIONS>~
-          SPRINT new_inspiration ~– 可使用诗人感召。只要处于诗人视觉范围内，感召便持续提供多种加成。~
+          SPRINT new_inspiration ~– 可使用诗人感召。只要处于诗人视野范围内，感召便持续提供多种加成。~
           GET_STRREF %kit_desc% desc_text
           INNER_PATCH_SAVE desc_text ~%desc_text%~ BEGIN
             REPLACE_TEXTUALLY ~%old_inspiration%~ ~
